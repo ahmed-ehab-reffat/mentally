@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import Header from "@/components/header.tsx";
+import Header from "@/components/header/header.tsx";
 
 export const metadata: Metadata = {
   title: "Mentally",
