@@ -5,7 +5,7 @@ import logo from "@/assets/images/logoBlack.png";
 
 export default function Header() {
   return (
-    <header className="flex justify-between items-center px-8 py-2 bg-lightGray">
+    <header className="fixed z-10 w-full flex justify-between items-center px-8 py-2 bg-lightGray">
       <Link href="/" className="flex items-center">
         <Image
           src={logo}
@@ -17,12 +17,12 @@ export default function Header() {
           mentally
         </h1>
       </Link>
-      <ul className="flex justify-between gap-6 capitalize text-lg font-semibold *:duration-250 *:hover:text-main">
-        <Link href="/">showcase</Link>
-        <Link href="/">analysis</Link>
-        <Link href="/">resources</Link>
-        <Link href="/">chatbot</Link>
-        <Link href="/" className="whitespace-nowrap">
+      <ul className="flex justify-between gap-6 capitalize text-lg font-semibold *:duration-200 *:hover:text-main">
+        <Link href="/#showcase">showcase</Link>
+        <Link href="/analysis">analysis</Link>
+        <Link href="/resources">resources</Link>
+        <Link href="/chatbot">chatbot</Link>
+        <Link href="/#contact" className="whitespace-nowrap">
           contact us
         </Link>
       </ul>
