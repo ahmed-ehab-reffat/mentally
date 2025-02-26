@@ -5,7 +5,7 @@ import logo from "@/assets/images/logoBlack.png";
 
 export default function Header() {
   return (
-    <header className="fixed z-10 w-full flex justify-between items-center px-8 py-2 bg-section">
+    <header className="fixed z-10 w-full flex justify-between items-center px-8 py-2 bg-mysoftblue border-b-main border-b-[1px]">
       <Link href="/" className="flex items-center">
         <Image
           src={logo}
@@ -17,14 +17,12 @@ export default function Header() {
           mentally
         </h1>
       </Link>
-      <ul className="flex justify-between gap-6 capitalize text-lg font-semibold *:duration-200 *:hover:text-secondry">
-        <Link href="/analysis">analysis</Link>
+      <ul className="flex justify-between gap-6 capitalize text-lg font-semibold *:duration-200 *:hover:text-main">
         <Link href="/#about">about</Link>
+        <Link href="/analysis">analysis</Link>
         <Link href="/resources">resources</Link>
         <Link href="/chatbot">chatbot</Link>
-        <Link href="/#contactus" className="whitespace-nowrap">
-          contact us
-        </Link>
+        <Link href="/#contactus">contact</Link>
       </ul>
     </header>
   );

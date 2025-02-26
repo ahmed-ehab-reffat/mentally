@@ -6,10 +6,8 @@ export default function Home() {
   return (
     <>
       <Landing />
-      <main className="bg-section">
-        <About />
-        <ContactUs />
-      </main>
+      <About />
+      <ContactUs />
     </>
   );
 }
