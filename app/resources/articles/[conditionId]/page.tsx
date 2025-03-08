@@ -2,13 +2,14 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 type ConditionProps = {
-  params: {
-    condition: (typeof conditionsData)[number]["id"];
-  };
+  params: Promise<{
+    conditionId: (typeof conditionsData)[number]["id"];
+  }>;
 };
 
-export default function ConditionPage({ params }: ConditionProps) {
-  const condition = conditionsData.find((obj) => obj.id === params.condition);
+export default async function ConditionPage({ params }: ConditionProps) {
+  const { conditionId } = await params;
+  const condition = conditionsData.find((obj) => obj.id === conditionId);
 
   if (!condition) {
     notFound();
