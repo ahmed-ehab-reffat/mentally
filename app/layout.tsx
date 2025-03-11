@@ -38,7 +38,7 @@ export default function RootLayout({
     <html lang="en" className={nunito.className}>
       <body>
         <Header />
-        <main className="pt-16">{children}</main>
+        <main className="bg-lighter pt-16">{children}</main>
         <Footer />
       </body>
     </html>

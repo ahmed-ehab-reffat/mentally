@@ -18,13 +18,13 @@ export default function Header() {
           mentally
         </h1>
       </Link>
-      <ul className="flex justify-between gap-6 capitalize text-lg font-bold *:duration-200 *:hover:text-primary">
+      <nav className="flex justify-between gap-6 capitalize text-lg font-bold *:duration-200 *:hover:text-primary">
         <Link href="/">home</Link>
-        <Link href="/analysis">features</Link>
-        <Link href="/resources">resources</Link>
+        <Link href="/#features">features</Link>
+        <Link href="/#resources">resources</Link>
         <Link href="/chatbot">chatbot</Link>
         <Link href="#contactus">contact</Link>
-      </ul>
+      </nav>
     </header>
   );
 }

@@ -1,6 +1,6 @@
 export default function Testimonial() {
   return (
-    <section id="testimonials" className="bg-lighter">
+    <section id="testimonials">
       <div className="container mx-auto px-8 py-16">
         <h2 className="text-4xl font-bold text-center mb-16 capitalize">
           what our users say
@@ -20,7 +20,9 @@ export default function Testimonial() {
                   <span className="text-secondry">{testimonial.role}</span>
                 </div>
               </div>
-              <p className="mt-5 text-lg">&quot;{testimonial.quote}&quot;</p>
+              <p className="mt-5 text-lg">
+                <q>{testimonial.quote}</q>
+              </p>
             </li>
           ))}
         </ul>
