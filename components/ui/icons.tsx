@@ -1,9 +1,8 @@
 type Props = {
   className?: string;
+  onClick?: () => void;
 };
-// className="w-7 h-7 align-[-0.125em] fill-primary"
-// className="w-6 h-6 align-[-0.125em]"
-// className={className ? className : "w-6 h-6 align-[-0.125em]"}
+
 export function Facebook(props: Props) {
   return (
     <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -136,6 +135,38 @@ export function CircleCheck(props: Props) {
   return (
     <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
       <path d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-111 111-47-47c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l64 64c9.4 9.4 24.6 9.4 33.9 0L369 209z" />
+    </svg>
+  );
+}
+
+export function Xmark(props: Props) {
+  return (
+    <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+      <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" />
+    </svg>
+  );
+}
+
+export function ArrowRight(props: Props) {
+  return (
+    <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+      <path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
+    </svg>
+  );
+}
+
+export function ArrowLeft(props: Props) {
+  return (
+    <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+      <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
+    </svg>
+  );
+}
+
+export function Share(props: Props) {
+  return (
+    <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+      <path d="M352 224c53 0 96-43 96-96s-43-96-96-96s-96 43-96 96c0 4 .2 8 .7 11.9l-94.1 47C145.4 170.2 121.9 160 96 160c-53 0-96 43-96 96s43 96 96 96c25.9 0 49.4-10.2 66.6-26.9l94.1 47c-.5 3.9-.7 7.8-.7 11.9c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-25.9 0-49.4 10.2-66.6 26.9l-94.1-47c.5-3.9 .7-7.8 .7-11.9s-.2-8-.7-11.9l94.1-47C302.6 213.8 326.1 224 352 224z" />
     </svg>
   );
 }

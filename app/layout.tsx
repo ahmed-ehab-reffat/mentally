@@ -37,6 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={nunito.className}>
       <body>
+        <div id="modal"></div>
         <Header />
         <main className="bg-lighter pt-16">{children}</main>
         <Footer />
