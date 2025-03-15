@@ -1,0 +1,127 @@
+"use client";
+
+import { useRef, useEffect, useCallback, useState } from "react";
+import { useChat } from "@ai-sdk/react";
+import dynamic from "next/dynamic";
+
+import { Smile, Send } from "@/components/ui/icons";
+
+const EmojiPicker = dynamic(() => import("emoji-picker-react"), { ssr: false });
+
+type EmojiData = {
+  emoji: string;
+};
+
+export default function Chatbot() {
+  const [showEmojiPicker, setShowEmojiPicker] = useState(false);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  const { messages, input, handleInputChange, handleSubmit, status } = useChat({
+    api: "/api/chat",
+    initialMessages: [
+      {
+        id: "1",
+        content: "How can I help you today?",
+        role: "assistant",
+      },
+    ],
+    body: {
+      system:
+        "You are a helpful mental health assistant. Provide supportive and empathetic responses, but always encourage users to seek professional help for serious concerns.",
+    },
+    onError: (err) => {
+      console.error("Chat API Error:", err);
+    },
+  });
+
+  const scrollToBottom = useCallback(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, []);
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages, scrollToBottom]);
+
+  const onEmojiClick = (emojiData: EmojiData) => {
+    handleInputChange({
+      target: { value: input + emojiData.emoji },
+    } as React.ChangeEvent<HTMLInputElement>);
+    setShowEmojiPicker(false);
+  };
+
+  return (
+    <div className="flex flex-col h-screen bg-[#F8FAFC]">
+      <header className="flex items-center px-6 py-4 bg-[#E2E8F0] border-b">
+        <div className="flex items-center gap-3">
+          <div>
+            <h1 className="text-sm text-gray-600 font-bold">Dr. Mental</h1>
+            <p className="text-sm text-gray-600">online</p>
+          </div>
+        </div>
+      </header>
+
+      <div
+        className="flex-1 overflow-y-auto p-6"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fillRule='evenodd'%3E%3Cg fill='%23f0f0f0' fillOpacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          backgroundRepeat: "repeat",
+        }}
+      >
+        {messages.map((message) => (
+          <div
+            key={message.id}
+            className={`flex ${
+              message.role === "user" ? "justify-end" : "justify-start"
+            } mb-4`}
+          >
+            <div
+              className={`max-w-[80%] rounded-[20px] px-6 py-3 ${
+                message.role === "assistant"
+                  ? "bg-[#F3E8D6] text-gray-800"
+                  : "bg-blue-500 text-white"
+              }`}
+            >
+              {message.content}
+            </div>
+          </div>
+        ))}
+        <div ref={messagesEndRef} />
+      </div>
+
+      <div className="p-4 bg-[#E2E8F0] relative">
+        <form onSubmit={handleSubmit} className="relative">
+          <div className="relative flex items-center">
+            <button
+              type="button"
+              onClick={() => setShowEmojiPicker(!showEmojiPicker)}
+              className="absolute left-4 text-purple-400"
+              aria-label="Open emoji picker"
+            >
+              <Smile className="w-6 h-6" />
+            </button>
+            <input
+              value={input}
+              onChange={handleInputChange}
+              placeholder="Write your message"
+              className="w-full pl-12 pr-12 py-6 rounded-full bg-white border-0 focus-visible:ring-0 focus-visible:ring-offset-0 text-gray-600"
+            />
+            <button
+              type="submit"
+              className="absolute right-4"
+              disabled={status === "submitted" || !input.trim()}
+              aria-label="Send message"
+            >
+              <Send className="w-6 h-6 text-blue-500" />
+            </button>
+          </div>
+        </form>
+
+        {showEmojiPicker && (
+          <div className="absolute bottom-full left-0 mb-2 z-50">
+            <EmojiPicker onEmojiClick={onEmojiClick} />
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}

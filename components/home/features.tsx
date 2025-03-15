@@ -41,30 +41,28 @@ const features: {
   href: string;
 }[] = [
   {
-    icon: <Brain className="w-8 h-8 align-[-0.125em] fill-primary" />,
+    icon: <Brain className="w-8 h-8 fill-primary" />,
     title: "AI-Powered Analysis",
     description:
       "Advanced algorithms analyze your emotional state and provide personalized support.",
     href: "/features/ai-analysis",
   },
   {
-    icon: <Users className="w-8 h-8 align-[-0.125em] fill-primary" />,
+    icon: <Users className="w-8 h-8 fill-primary" />,
     title: "Group Therapy",
     description:
       "Connect with others in moderated group sessions for shared experiences and support.",
     href: "/features/group-therapy",
   },
   {
-    icon: <Lightbulb className="w-8 h-8 align-[-0.125em] fill-primary" />,
+    icon: <Lightbulb className="w-8 h-8 fill-primary" />,
     title: "Personalized Insights",
     description:
       "Begin your journey to better mental health with personalized insights and tracking.",
     href: "/features/insights",
   },
   {
-    icon: (
-      <ClipboardQuestion className="w-8 h-8 align-[-0.125em] fill-primary" />
-    ),
+    icon: <ClipboardQuestion className="w-8 h-8 fill-primary" />,
     title: "questionnaire",
     description:
       "Gain valuable insights into your mental health patterns and progress over time.",
