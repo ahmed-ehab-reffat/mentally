@@ -7,8 +7,8 @@ import { Facebook, Github, Instagram, Linkedin, X } from "./ui/icons";
 export default function Footer() {
   return (
     <footer id="contactus" className="bg-light pt-12 pb-4">
-      <div className="container px-4 mx-auto flex gap-8">
-        <div className="w-1/3">
+      <div className="container px-8 sm:px-4 mx-auto flex flex-wrap flex-col md:flex-row gap-8">
+        <div className="min-w-full lg:min-w-auto lg:flex-1">
           <Link href="/" className="block w-fit">
             <Image
               src={logo}
@@ -25,45 +25,47 @@ export default function Footer() {
             mentally
           </Link>
           <p className="text-lg my-2">
-            We&apos;re committed to delivering life-changing mental care to
+            We&apos;re committed to deliver life-changing mental care to
             everyone who needs it.
           </p>
         </div>
-        <div className="w-1/6">
-          <h6 className="uppercase font-black text-lg">links</h6>
-          <ul className="*:block *:mt-2 *:hover:underline">
-            <Link href="/#about">About</Link>
-            <Link href="/#features">Features</Link>
-            <Link href="/#resources">Resources</Link>
-            <Link href="/chatbot">Chatbot</Link>
-          </ul>
+        <div className="flex flex-1 lg:justify-around">
+          <div className="mr-24 lg:mr-0">
+            <h6 className="uppercase font-black text-lg">links</h6>
+            <ul className="*:block *:mt-2 *:hover:underline">
+              <Link href="/#about">About</Link>
+              <Link href="/#features">Features</Link>
+              <Link href="/#resources">Resources</Link>
+              <Link href="/chatbot">Chatbot</Link>
+            </ul>
+          </div>
+          <div className="">
+            <h6 className="uppercase font-black text-lg">legal</h6>
+            <ul className="*:mt-2">
+              <li>
+                <a href="#" className="hover:underline">
+                  Privacy Policy
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:underline">
+                  Licensing
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:underline">
+                  Terms &amp; Conditions
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:underline">
+                  Cookies
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div className="w-1/6">
-          <h6 className="uppercase font-black text-lg">legal</h6>
-          <ul className="*:mt-2">
-            <li>
-              <a href="#" className="hover:underline">
-                Privacy Policy
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:underline">
-                Licensing
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:underline">
-                Terms &amp; Conditions
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:underline">
-                Cookies
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div className="w-1/3">
+        <div className="flex-1">
           <h6 className="uppercase font-black">contact us</h6>
           <p className="mt-2">
             Get in touch with us via mail We are waiting for your message

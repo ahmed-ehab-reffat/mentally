@@ -8,4 +8,26 @@
   --color-lighter: #f1f5f9; /*gray*/
   --color-dark: #1e293b; /*navy*/
   --color-darker: #020817; /*black*/
+
+  --animate-slide-right: slide-right 1s ease-in-out;
+  --animate-slide-left: slide-left 1s ease-in-out;
+}
+
+@keyframes slide-right {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes slide-left {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -100%;
+    display: none;
+  }
 }

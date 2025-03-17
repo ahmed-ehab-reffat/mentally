@@ -5,7 +5,7 @@ export default function Testimonial() {
         <h2 className="text-4xl font-bold text-center mb-16 capitalize">
           what our users say
         </h2>
-        <ul className="grid md:grid-cols-3 gap-12">
+        <ul className="grid lg:grid-cols-3 gap-12">
           {testimonials.map((testimonial, index) => (
             <li
               key={index}
