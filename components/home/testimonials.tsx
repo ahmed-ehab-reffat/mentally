@@ -12,7 +12,7 @@ export default function Testimonial() {
               className="bg-light p-6 rounded-lg shadow-xl border border-primary"
             >
               <div className="flex items-center">
-                <div className="w-12 h-12 rounded-full bg-lighter flex items-center justify-center text-primary font-bold">
+                <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center text-primary font-bold">
                   {testimonial.author.charAt(0)}
                 </div>
                 <div className="ml-5">

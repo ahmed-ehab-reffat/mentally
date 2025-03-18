@@ -1,20 +1,55 @@
+"use client";
+
+import { useState } from "react";
+
+import { ArrowDown } from "../ui/icons";
+
 export default function FAQ() {
+  const [visibleAnswers, setVisibleAnswers] = useState<number[]>([]);
+  console.log(visibleAnswers);
+  function handleTrigger(index: number) {
+    setVisibleAnswers((prev) => {
+      if (!prev.includes(index)) {
+        return [...prev, index];
+      } else {
+        return prev.filter((element) => element != index);
+      }
+    });
+  }
   return (
     <section id="faq" className="bg-light">
       <div className="container mx-auto px-8 py-16">
-        <h2 className="text-4xl font-bold text-center mb-16 capitalize">
+        <h2 className="text-4xl font-bold text-primary text-center mb-16 capitalize">
           frequently asked questions
         </h2>
         <ul className="max-w-3xl mx-auto">
           {faqs.map((faq, index) => (
             <li
               key={index}
-              className="border border-gray-700 mb-4 rounded-lg overflow-hidden"
+              className="border border-secondry mb-4 rounded-lg overflow-hidden"
             >
-              <div className="px-6 py-4 hover:bg-lighter transition-colors">
-                <span className="text-left">{faq.question}</span>
+              <div
+                onClick={() => handleTrigger(index)}
+                className="px-6 py-4 font-bold cursor-pointer hover:bg-lighter hover:underline flex justify-between items-center duration-200"
+              >
+                {faq.question}
+
+                <ArrowDown
+                  className={`w-3 h-3 fill-secondry duration-200 ${
+                    visibleAnswers.includes(index) ? "rotate-180" : ""
+                  }`}
+                />
               </div>
-              <div className="px-6 pb-4 pt-2">{faq.answer}</div>
+              <div
+                id="answer"
+                className={`px-6 duration-400 transition-all ${
+                  visibleAnswers.includes(index)
+                    ? "max-h-28 py-4"
+                    : "max-h-0 py-0"
+                }`}
+              >
+                {faq.answer}
+              </div>
             </li>
           ))}
         </ul>

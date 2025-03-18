@@ -4,10 +4,10 @@ export default function About() {
   return (
     <section id="about" className="">
       <div className="container mx-auto px-5 md:px-10 py-16 text-center">
-        <div className="inline-block p-4 rounded-full bg-light">
-          <Heart className="w-10 h-10 align-[-0.125em] fill-primary" />
+        <div className="inline-block p-3 rounded-full bg-light">
+          <Heart className="w-8 h-8 fill-primary" />
         </div>
-        <h2 className="text-3xl md:text-5xl text-primary font-light mt-6 mb-8">
+        <h2 className="text-3xl md:text-5xl text-primary font-light mt-4 mb-8">
           Interactive Mental Health
         </h2>
         <p className="md:text-xl leading-relaxed">

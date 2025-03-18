@@ -1,28 +1,33 @@
 import Link from "next/link";
 
-import { Brain, Users, Lightbulb, ClipboardQuestion } from "../ui/icons";
+import {
+  Brain,
+  Users,
+  Lightbulb,
+  ClipboardQuestion,
+  ArrowRight,
+} from "../ui/icons";
 
 export default function Features() {
   return (
-    <section id="features" className="">
+    <section id="features">
       <div className="container mx-auto px-8 py-16">
         <h2 className="text-4xl font-bold text-center mb-12 text-primary">
           Our Features
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
           {features.map((feature, index) => (
             <div key={index}>
               <Link href={feature.href}>
-                <div className="bg-gradient-to-br from-gray-900 to-gray-800 p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 h-full">
-                  <div className="bg-gradient-to-r from-teal-500/20 to-blue-500/20 p-3 rounded-full w-16 h-16 flex items-center justify-center mb-4">
+                <div className="bg-light p-6 rounded-lg h-full shadow-xl">
+                  <div className="bg-white p-3 -ml-2 rounded-full w-16 h-16 flex items-center justify-center">
                     {feature.icon}
                   </div>
-                  <h3 className="text-xl font-semibold mb-2 text-white">
-                    {feature.title}
-                  </h3>
-                  <p className="text-gray-300">{feature.description}</p>
-                  <div className="mt-4 text-teal-400 flex items-center text-sm font-medium">
+                  <h3 className="text-xl font-bold my-2">{feature.title}</h3>
+                  <p>{feature.description}</p>
+                  <div className="mt-4 text-secondry flex items-center text-sm font-semibold">
                     Learn more
+                    <ArrowRight className="w-3 h-3 fill-secondry ml-1" />
                   </div>
                 </div>
               </Link>
@@ -51,7 +56,7 @@ const features: {
     icon: <Users className="w-8 h-8 fill-primary" />,
     title: "Group Therapy",
     description:
-      "Connect with others in moderated group sessions for shared experiences and support.",
+      "Connect with others in moderated group sessions for experience and support.",
     href: "/features/group-therapy",
   },
   {

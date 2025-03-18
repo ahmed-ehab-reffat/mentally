@@ -4,7 +4,7 @@ export default function Newsletter() {
   return (
     <section className="px-8 py-16">
       <div className="max-w-2xl mx-auto text-center bg-light p-8 rounded-xl border border-primary shadow-xl">
-        <div className="inline-block p-5 rounded-full bg-lighter">
+        <div className="inline-block p-5 rounded-full bg-white">
           <Envelope className="w-7 h-7 align-[-0.125em] fill-primary" />
         </div>
         <h2 className="text-3xl font-bold mb-4">Stay Updated</h2>
