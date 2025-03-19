@@ -2,37 +2,35 @@ import Link from "next/link";
 
 export default function ArticlesPage() {
   return (
-    <div className="container py-8">
-      <div className="space-y-6">
-        <div>
-          <h1 className="text-3xl font-bold">Mental Health Conditions</h1>
-          <p className="text-muted-foreground mt-2">
-            Learn more about different mental health conditions, their symptoms,
-            causes, and treatments.
-          </p>
-        </div>
+    <div className="container mx-auto px-8 py-16">
+      <div className="mb-12">
+        <h1 className="text-3xl font-bold">Mental Health Conditions</h1>
+        <p className="text-muted-foreground mt-2">
+          Learn more about different mental health conditions, their symptoms,
+          causes, and treatments.
+        </p>
+      </div>
 
-        <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          {conditions.map((condition) => (
+      <ul className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        {conditions.map((condition) => (
+          <li
+            key={condition.id}
+            className="h-full bg-light p-6 text-center rounded-lg shadow-xl flex flex-col justify-between"
+          >
+            <h3 className="text-2xl text-primary font-bold tracking-tighter mb-4">
+              {condition.title}
+            </h3>
+            <p className="text-lg mb-6">{condition.description}</p>
             <Link
               key={condition.id}
               href={`/resources/articles/${condition.id}`}
+              className="bg-white w-3/4 py-2 mx-auto text-center text-secondry rounded-md cursor-pointer hover:bg-lighter duration-200"
             >
-              <div className="h-full transition-colors hover:bg-muted/50">
-                <div>
-                  <div>{condition.title}</div>
-                  <div>{condition.description}</div>
-                </div>
-                <div>
-                  <div className="flex items-center text-sm text-primary">
-                    Learn more
-                  </div>
-                </div>
-              </div>
+              Learn more
             </Link>
-          ))}
-        </div>
-      </div>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }

@@ -30,7 +30,7 @@ export default function FAQ() {
             >
               <div
                 onClick={() => handleTrigger(index)}
-                className="px-6 py-4 font-bold cursor-pointer hover:bg-lighter hover:underline flex justify-between items-center duration-200"
+                className="px-6 py-4 font-bold cursor-pointer hover:underline flex justify-between items-center"
               >
                 {faq.question}
 
@@ -44,8 +44,8 @@ export default function FAQ() {
                 id="answer"
                 className={`px-6 duration-400 transition-all ${
                   visibleAnswers.includes(index)
-                    ? "max-h-28 py-4"
-                    : "max-h-0 py-0"
+                    ? "max-h-48 pb-4 md:max-h-28"
+                    : "max-h-0 pb-0"
                 }`}
               >
                 {faq.answer}

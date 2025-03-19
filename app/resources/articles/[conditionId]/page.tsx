@@ -1,3 +1,4 @@
+import { ArrowLeft } from "@/components/ui/icons";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -16,52 +17,68 @@ export default async function ConditionPage({ params }: ConditionProps) {
   }
 
   return (
-    <div className="container py-8">
-      <div className="space-y-6">
-        <Link
-          href="/resources/articles"
-          className="inline-flex items-center text-sm text-muted-foreground hover:text-primary"
-        >
-          Back to Articles
-        </Link>
+    <div className="container mx-auto px-8 py-16">
+      <Link
+        href="/resources/articles"
+        className="flex items-center w-fit hover:text-secondry hover:*:fill-secondry"
+      >
+        <ArrowLeft className="w-4 h-4 mr-2" />
+        All Articles
+      </Link>
 
-        <div>
-          <div>
-            <div className="text-3xl">{condition.title}</div>
-            <div className="text-lg">{condition.definition}</div>
-          </div>
-          <div className="space-y-6">
-            <div>
-              <h2 className="text-xl font-semibold mb-3">Symptoms</h2>
+      <h1 className="text-5xl font-bold text-primary py-8">
+        {condition.title}
+      </h1>
+      <div className="bg-light px-6 py-8 rounded-xl space-y-10 marker:text-primary">
+        <section id="summary">
+          <h2 className="text-3xl font-bold mb-4">Summary</h2>
+          <ul className="list-disc ml-10 text-xl space-y-2 *:w-fit *:hover:text-secondry *:hover:underline">
+            <li key="definition">
+              <a href="#definition">Definition</a>
+            </li>
+            <li key="symptoms">
+              <a href="#symptoms">Symptoms</a>
+            </li>
+            <li key="causes">
+              <a href="#causes">Causes</a>
+            </li>
+            <li key="treatment">
+              <a href="#treatment">Treatment</a>
+            </li>
+          </ul>
+        </section>
 
-              <ul className="list-disc pl-6 space-y-2">
-                {condition.symptoms.map((symptom) => (
-                  <li key={symptom}>{symptom}</li>
-                ))}
-              </ul>
-            </div>
+        <section id="definition">
+          <h2 className="text-3xl font-bold mb-4">What is autism?</h2>
+          <p className="text-xl ml-1">{condition.definition}</p>
+        </section>
 
-            <div>
-              <h2 className="text-xl font-semibold mb-3">Causes</h2>
+        <section id="symptoms">
+          <h2 className="text-3xl font-bold mb-4">Symptoms</h2>
+          <ul className="list-disc text-xl ml-10 space-y-2">
+            {condition.symptoms.map((symptom) => (
+              <li key={symptom}>{symptom}</li>
+            ))}
+          </ul>
+        </section>
 
-              <ul className="list-disc pl-6 space-y-2">
-                {condition.causes.map((cause) => (
-                  <li key={cause}>{cause}</li>
-                ))}
-              </ul>
-            </div>
+        <section id="causes">
+          <h2 className="text-3xl font-bold mb-4">Causes</h2>
+          <ul className="list-disc text-xl ml-10 space-y-2">
+            {condition.causes.map((cause) => (
+              <li key={cause}>{cause}</li>
+            ))}
+          </ul>
+        </section>
 
-            <div>
-              <h2 className="text-xl font-semibold mb-3">Treatment</h2>
-
-              <ul className="list-disc pl-6 space-y-2">
-                {condition.treatment.map((treatment) => (
-                  <li key={treatment}>{treatment}</li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
+        <section id="treatment">
+          <h2 className="text-3xl font-bold mb-4">Treatment</h2>
+          <ul className="list-disc text-xl ml-10 space-y-2">
+            {condition.treatment.map((treatment) => (
+              <li key={treatment}>{treatment}</li>
+            ))}
+          </ul>
+        </section>
       </div>
     </div>
   );
