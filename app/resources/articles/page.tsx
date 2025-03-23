@@ -2,16 +2,16 @@ import Link from "next/link";
 
 export default function ArticlesPage() {
   return (
-    <div className="container mx-auto px-8 py-16">
+    <div className="container mx-auto px-8 pt-12 pb-16">
       <div className="mb-12">
-        <h1 className="text-3xl font-bold">Mental Health Conditions</h1>
-        <p className="text-muted-foreground mt-2">
+        <h1 className="text-4xl font-bold">Mental Health Conditions</h1>
+        <p className="text-lg mt-2">
           Learn more about different mental health conditions, their symptoms,
           causes, and treatments.
         </p>
       </div>
 
-      <ul className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <ul className="grid gap-x-8 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
         {conditions.map((condition) => (
           <li
             key={condition.id}

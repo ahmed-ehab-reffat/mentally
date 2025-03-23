@@ -1,23 +1,34 @@
+import { ArrowRight } from "@/components/ui/icons";
+
 export default function CentersPage() {
   return (
-    <div className="container mx-auto px-8 py-16">
+    <div className="container mx-auto px-8 pt-12 pb-16">
       <h1 className="text-3xl font-bold mb-6">
         Mental Health Centers and Hospitals
       </h1>
       <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {centers.map((center) => (
-          <li key={center.name}>
-            <h3>{center.name}</h3>
-            <div className="mb-4">
+          <li
+            key={center.name}
+            className="h-full bg-light p-6 rounded-lg shadow-xl flex flex-col justify-between"
+          >
+            <h3 className="text-2xl text-center text-primary font-bold tracking-tighter mb-4">
+              {center.name}
+            </h3>
+            <div className="mb-4 space-y-1">
+              <p>{center.type}</p>
               <p>{center.address}</p>
               <p>Phone: {center.phone}</p>
-              <p>Email: {center.email}</p>
             </div>
-            <button type="button">
-              <a href={center.mapsUrl} className="inline-flex items-center">
+            <a href={center.mapsUrl}>
+              <button
+                type="button"
+                className="flex items-center justify-center gap-2 bg-white w-3/4 py-2 mx-auto text-secondry rounded-md cursor-pointer hover:bg-lighter duration-200"
+              >
                 View on Map
-              </a>
-            </button>
+                <ArrowRight className="w-3 h-3 fill-secondry" />
+              </button>
+            </a>
           </li>
         ))}
       </ul>
@@ -27,33 +38,68 @@ export default function CentersPage() {
 
 const centers: {
   name: string;
+  type: "Puplic" | "Private";
   address: string;
   phone: string;
-  email: string;
   mapsUrl: string;
 }[] = [
   {
     name: "Abbassia Mental Health Hospital",
+    type: "Puplic",
     address:
       "1 Salah Salem Street, Next to the Exhibition Grounds, Nasr City, Cairo",
     phone: "022616255",
-    email: "abbasssya@gmail.com",
-    mapsUrl: "https://goo.gl/maps/AbbassiaMentalHealthHospital",
+    mapsUrl: "https://maps.app.goo.gl/7Uhb9LUojy461WoK7",
   },
   {
     name: "Helwan Mental Health Hospital",
+    type: "Puplic",
     address:
       "Mansour Street Extension, between the two villages, Helwan, Cairo",
-    phone: "0225547368 / 0227137387",
-    email: "hhelwan@gmail.com",
-    mapsUrl: "https://goo.gl/maps/HelwanMentalHealthHospital",
+    phone: "0222547368 / 0227137387",
+    mapsUrl: "https://maps.app.goo.gl/jKiyvvLY6P1noaQS9",
   },
   {
-    name: "Banha Mental Health Hospital",
+    name: "Al-Khanka Central Hospital",
+    type: "Puplic",
+    address: "Al mostashfa St., Madinet El Khanka, AlQualioubeya",
+    phone: "44698816 / 44698437 / 44698845",
+    mapsUrl: "https://maps.app.goo.gl/9RsH7mEd9Sp539Eh6",
+  },
+  {
+    name: "Heliopolis Psychiatric Hospital (Al-Matar)",
+    type: "Puplic",
+    address: "Sheraton Al Matar, El Nozha, Cairo",
+    phone: "01100232349 / 0222902581 / 16023",
+    mapsUrl: "https://maps.app.goo.gl/dcSrpFFjbXJEnohDA",
+  },
+  {
+    name: "Al Mashfa",
+    type: "Private",
+    address: "43, Cairo-Ismailia Road In front of (IMC), Cairo",
+    phone: "01006422220 / 01000083561 / 20554400924",
+    mapsUrl: "https://maps.app.goo.gl/MQuGGWewMKXUMjPr6",
+  },
+  {
+    name: "Dr Adel Sadek Hospital",
+    type: "Private",
+    address: "(5) Ahmed Abd ElNabi St., Nozha ElGadida, Cairo",
+    phone: "01000042768 / 01001908904 / 02226205757",
+    mapsUrl: "https://maps.app.goo.gl/tcdWs8YZfXwjzXqz6",
+  },
+  {
+    name: "Psychiatric Health Resort (Okasha hospital)",
+    type: "Private",
     address:
-      "Faculty of Science Street, behind Banha Chest Hospital, next to the Health Directorate Training Center, Banha, Qalyubia",
-    phone: "0133232506",
-    email: "manhaaa20@gmail.com",
-    mapsUrl: "https://goo.gl/maps/BanhaMentalHealthHospital",
+      "Prof. Ahmed Okasha St., Off Mehwar Anwar El Sadaat, El Banafsig 12 District, Behind Police Academy, First Settlement, New Cairo",
+    phone: "01002406998 / 0223082300",
+    mapsUrl: "https://maps.app.goo.gl/fo4jXLqT8jU7Bs4m8",
+  },
+  {
+    name: "The Behman Hospital",
+    type: "Private",
+    address: "32 El-Marsad St., Helwan 11421, Cairo",
+    phone: "16984",
+    mapsUrl: "https://maps.app.goo.gl/vZfKS8JS1ZF5GDd87",
   },
 ];

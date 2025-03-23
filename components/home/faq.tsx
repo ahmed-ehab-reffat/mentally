@@ -6,7 +6,7 @@ import { ArrowDown } from "../ui/icons";
 
 export default function FAQ() {
   const [visibleAnswers, setVisibleAnswers] = useState<number[]>([]);
-  console.log(visibleAnswers);
+
   function handleTrigger(index: number) {
     setVisibleAnswers((prev) => {
       if (!prev.includes(index)) {
@@ -26,7 +26,7 @@ export default function FAQ() {
           {faqs.map((faq, index) => (
             <li
               key={index}
-              className="border border-secondry mb-4 rounded-lg overflow-hidden"
+              className="border border-primary mb-4 rounded-lg overflow-hidden"
             >
               <div
                 onClick={() => handleTrigger(index)}

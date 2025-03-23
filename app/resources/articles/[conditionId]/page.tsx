@@ -17,7 +17,7 @@ export default async function ConditionPage({ params }: ConditionProps) {
   }
 
   return (
-    <div className="container mx-auto px-8 py-16">
+    <div className="container mx-auto px-8 pt-8 pb-16">
       <Link
         href="/resources/articles"
         className="flex items-center w-fit hover:text-secondry hover:*:fill-secondry"
