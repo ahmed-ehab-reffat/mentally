@@ -4,6 +4,8 @@ import { useRef, useState } from "react";
 
 import { Calendar, CircleCheck, Users, Xmark } from "@/components/ui/icons";
 import Modal from "@/components/modal";
+import Button from "@/components/ui/button";
+import { upcomingSessions, guidelines, benefits } from "./data";
 
 export default function GroupTherapyPage() {
   const modalRef = useRef<HTMLDialogElement>(null!);
@@ -65,27 +67,27 @@ export default function GroupTherapyPage() {
               className="w-full px-3 py-2 border border-primary outline-none rounded-md"
             />
           </div>
-          <button
-            type="button"
-            onClick={handleSubmit}
-            className="bg-white w-full py-2 rounded-md cursor-pointer hover:bg-lighter duration-200"
-          >
+          <Button type="button" onClick={handleSubmit} className="w-full">
             Submit Registration
-          </button>
+          </Button>
         </form>
       </Modal>
-      <div className="container xl:max-w-5xl mx-auto px-8 py-16">
-        <div className="flex items-center gap-4 mb-8">
-          <Users className="w-12 h-12 fill-primary" />
-          <h1 className="text-4xl font-bold text-foreground">Group Therapy</h1>
-        </div>
-        <p className="text-xl mb-12">
-          Join our moderated group sessions where you can connect with others,
-          share experiences, and receive support in a safe and understanding
-          environment.
-        </p>
+      <div className="container xl:max-w-5xl mx-auto space-y-16 px-8 py-16">
+        <header>
+          <div className="flex items-center gap-4 mb-8">
+            <Users className="w-10 h-10 fill-primary" />
+            <h1 className="text-4xl font-bold text-primary">Group Therapy</h1>
+          </div>
+          <p className="text-xl mb-12">
+            Join our moderated group sessions where you can connect with others,
+            share experiences, and receive support in a safe and understanding
+            environment.
+          </p>
+        </header>
         <section id="sessions">
-          <h2 className="text-2xl font-bold mb-6">Upcoming Sessions</h2>
+          <h2 className="text-primary text-2xl font-bold mb-4">
+            Upcoming Sessions
+          </h2>
           <ul className="grid gap-10">
             {upcomingSessions.map((session) => (
               <li
@@ -94,31 +96,37 @@ export default function GroupTherapyPage() {
               >
                 <div className="flex justify-between">
                   <div>
-                    <h3 className="text-xl font-bold mb-2">{session.title}</h3>
+                    <h3 className="text-primary text-xl font-bold mb-2">
+                      {session.title}
+                    </h3>
                     <div className="flex items-center gap-2 mb-2">
-                      <Calendar className="w-4 h-4" />
+                      <Calendar className="w-4 h-4 fill-secondry" />
                       <span>{session.date}</span>
                     </div>
                     <p className="mb-4">{session.description}</p>
                   </div>
                   <div className="bg-white h-fit px-3 py-1 rounded-full">
-                    <span className="text-sm">{session.spots} spots left</span>
+                    <span className="text-secondry text-sm whitespace-nowrap">
+                      {session.spots} spots left
+                    </span>
                   </div>
                 </div>
-                <button
+                <Button
                   type="button"
                   onClick={() => handleClick(session.title)}
-                  className="bg-white w-full py-2 rounded-md cursor-pointer hover:bg-lighter duration-200"
+                  className="w-full"
                 >
                   Register for Session
-                </button>
+                </Button>
               </li>
             ))}
           </ul>
         </section>
 
-        <section id="benefits" className="my-16">
-          <h2 className="text-2xl font-bold mb-6">Benefits of Group Therapy</h2>
+        <section id="benefits">
+          <h2 className="text-primary text-2xl font-bold mb-4">
+            Benefits of Group Therapy
+          </h2>
           <div className="grid gap-6 md:grid-cols-3">
             {benefits.map((benefit, index) => (
               <div key={index} className="bg-light p-6 rounded-lg shadow-lg">
@@ -129,12 +137,14 @@ export default function GroupTherapyPage() {
           </div>
         </section>
 
-        <section id="guidelines" className="bg-light p-8 rounded-lg">
-          <h2 className="text-2xl font-bold mb-6">Session Guidelines</h2>
-          <ul className="space-y-4">
+        <section id="guidelines">
+          <h2 className="text-primary text-2xl font-bold mb-4">
+            Session Guidelines
+          </h2>
+          <ul className="bg-light p-8 space-y-4 rounded-lg shadow-lg">
             {guidelines.map((guideline, index) => (
               <li key={index} className="flex items-center gap-3">
-                <CircleCheck className="w-5 h-5 fill-green-500" />
+                <CircleCheck className="w-5 h-5 fill-secondry" />
                 <span>{guideline}</span>
               </li>
             ))}
@@ -144,62 +154,3 @@ export default function GroupTherapyPage() {
     </>
   );
 }
-
-const upcomingSessions: {
-  id: string;
-  title: string;
-  date: string;
-  spots: number;
-  description: string;
-}[] = [
-  {
-    id: "1",
-    title: "Anxiety Support Group",
-    date: "Every Monday at 7:00 PM - 8:30 PM",
-    spots: 5,
-    description:
-      "A supportive environment to discuss and learn coping strategies for anxiety.",
-  },
-  {
-    id: "2",
-    title: "Depression Management",
-    date: "Every Wednesday at 6:00 PM - 7:30 PM",
-    spots: 3,
-    description:
-      "Share experiences and learn techniques for managing depression.",
-  },
-  {
-    id: "3",
-    title: "Stress Relief Workshop",
-    date: "Every Friday at 5:00 PM - 6:30 PM",
-    spots: 8,
-    description:
-      "Learn practical techniques for managing daily stress and building resilience.",
-  },
-];
-
-const benefits: {
-  title: string;
-  description: string;
-}[] = [
-  {
-    title: "Shared Experiences",
-    description: "Connect with others who understand your journey",
-  },
-  {
-    title: "Professional Guidance",
-    description: "Sessions led by licensed mental health professionals",
-  },
-  {
-    title: "Safe Environment",
-    description: "A supportive and confidential space to share and heal",
-  },
-];
-
-const guidelines: string[] = [
-  "Arrive 5 minutes before the session starts",
-  "Maintain confidentiality of all participants",
-  "Be respectful and supportive of others",
-  "Share only what you're comfortable with",
-  "Listen actively when others are speaking",
-];

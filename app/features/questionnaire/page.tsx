@@ -188,10 +188,10 @@ export default function QuestionnairePage() {
 
         {result && !isAnalyzing && (
           <div className="mt-6">
-            <h3 className="text-xl font-semibold mb-4">
+            <h3 className="text-xl font-bold mb-4">
               Your Mental Health Assessment Results
             </h3>
-            <p className="text-foreground/80 mb-4">{result.summary}</p>
+            <p className=" mb-4">{result.summary}</p>
             <div className="mb-4">
               <h4 className="font-semibold">Detailed Analysis:</h4>
               <ul className="list-disc pl-4">
@@ -208,7 +208,7 @@ export default function QuestionnairePage() {
                 ))}
               </ul>
             </div>
-            <p className="text-sm text-foreground/60 mb-4">
+            <p className="text-sm mb-4">
               This assessment is for informational purposes only and is not a
               substitute for professional diagnosis.
             </p>

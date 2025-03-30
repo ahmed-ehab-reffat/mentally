@@ -35,11 +35,8 @@ export default function Header() {
         />
         <ul
           className={`${
-            toggle
-              ? "left-0 animate-slide-right"
-              : "-left-full animate-slide-left"
-          }
-           absolute top-16 w-full p-5 flex flex-col space-y-5 bg-light/80 capitalize font-bold *:w-fit *:duration-200 *:hover:text-primary md:static md:space-y-0 md:bg-transparent md:justify-between md:items-center md:flex-row md:gap-6 md:p-0 md:text-lg`}
+            toggle ? "left-0" : "-left-full"
+          } absolute top-16 w-full p-5 flex flex-col space-y-5 bg-light/80 capitalize font-bold duration-400 transition-all *:w-fit *:duration-200 *:hover:text-primary md:static md:space-y-0 md:bg-transparent md:justify-between md:items-center md:flex-row md:gap-6 md:p-0 md:text-lg`}
         >
           <Link href="/">home</Link>
           <Link href="/#features">features</Link>

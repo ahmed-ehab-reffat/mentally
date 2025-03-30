@@ -2,23 +2,23 @@
 
 import { ReactNode, useState } from "react";
 
-import { Lightbulb, ChartUp } from "@/components/ui/icons";
-import {
-  type Test,
-  type Result,
+import KeyFeatures from "@/components/features/insights/key-features.tsx";
+import RecentInsights from "@/components/features/insights/recent-insights.tsx";
+import ProgressOverview from "@/components/features/insights/progress-overview.tsx";
+import Questions, {
   type Answer,
-  tests,
-  mockData,
-  features,
-  insights,
-} from "./data.tsx";
+} from "@/components/features/insights/questions";
+import Tests, { type Test } from "@/components/features/insights/tests.tsx";
+import Results, {
+  type Result,
+} from "@/components/features/insights/result.tsx";
+
+import { Lightbulb } from "@/components/ui/icons";
+import Button from "@/components/ui/button";
 
 export default function InsightsPage() {
-  const [selectedPeriod, setSelectedPeriod] = useState<
-    "week" | "month" | "year"
-  >("week");
   const [selectedTest, setSelectedTest] = useState<Test>();
-  const [answers, setAnswers] = useState<Answer>([]);
+  const [answers, setAnswers] = useState<Answer[]>([]);
   const [result, setResult] = useState<Result>();
   const [isAnalyzing, setIsAnalyzing] = useState<boolean>(false);
 
@@ -116,185 +116,65 @@ export default function InsightsPage() {
     };
   }
 
+  function handleSelect(test: Test) {
+    setSelectedTest(test);
+    setAnswers([]);
+    setResult(undefined);
+  }
+  function handleBack() {
+    setSelectedTest(undefined);
+  }
+
   let content: ReactNode;
   if (!selectedTest) {
-    content = (
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {tests.map((test) => (
-          <button
-            key={test.id}
-            onClick={() => {
-              setSelectedTest(test);
-              setAnswers([]);
-              setResult(undefined);
-            }}
-            className="w-full uppercase rounded-lg shadow-md"
-          >
-            {test.title}
-          </button>
-        ))}
-      </div>
-    );
+    content = <Tests onSelect={handleSelect} />;
   } else if (!result) {
     content = (
       <div>
         <h3 className="text-xl font-semibold mb-4">{selectedTest.title}</h3>
-        {selectedTest.questions.map((q, index) => (
-          <div key={index} className="mb-4">
-            <p className="mb-2">{q}</p>
-            <div className="flex gap-2">
-              <button onClick={() => handleAnswerChange("Yes")}>Yes</button>
-              <button onClick={() => handleAnswerChange("No")}>No</button>
-            </div>
-          </div>
-        ))}
-        <button onClick={handleSubmit} className="mt-4" disabled={isAnalyzing}>
+        <Questions
+          questions={selectedTest.questions}
+          onAnswer={handleAnswerChange}
+        />
+        <Button onClick={handleSubmit} disabled={isAnalyzing}>
           {isAnalyzing ? "Analyzing..." : "Submit"}
-        </button>
+        </Button>
         {isAnalyzing && <progress value={50} className="w-full mt-2" />}
       </div>
     );
   } else {
-    content = (
-      <div className="mt-6">
-        <div>
-          <h2>Your Result</h2>
-        </div>
-        <main>
-          <p>{result.summary}</p>
-          <div className="mt-4">
-            <h4 className="font-bold">Detailed Analysis:</h4>
-            <ul className="list-disc pl-4">
-              {result.details.map((detail, index) => (
-                <li key={index}>{detail}</li>
-              ))}
-            </ul>
-          </div>
-          <div className="mt-4">
-            <h4 className="font-bold">Recommendations:</h4>
-            <ul className="list-disc pl-4">
-              {result.recommendations.map((recommendation, index) => (
-                <li key={index}>{recommendation}</li>
-              ))}
-            </ul>
-          </div>
-          <p className="text-sm mt-4">
-            This test is for informational purposes only and is not a substitute
-            for professional diagnosis.
-          </p>
-          <button onClick={() => setSelectedTest(undefined)} className="mt-4">
-            Back to Tests
-          </button>
-        </main>
-      </div>
-    );
+    content = <Results result={result} onBack={handleBack} />;
   }
 
   return (
-    <div className="container xl:max-w-5xl mx-auto px-8 py-16">
-      <div className="flex items-center gap-4 mb-8">
-        <Lightbulb className="w-12 h-12 fill-primary" />
-        <h1 className="text-4xl font-bold">Personalized Insights</h1>
-      </div>
-      <p className="text-xl mb-12">
-        Gain deep understanding of your mental health patterns through our
-        advanced analytics and personalized tracking system.
-      </p>
-      <section id="progress-overview" className="mb-12">
-        <header>
-          <h1>Your Progress Overview</h1>
-          <p>Track your mental health metrics over time</p>
-          <div className="mt-4">
-            {(["week", "month", "year"] as const).map((period) => (
-              <button key={period} onClick={() => setSelectedPeriod(period)}>
-                {period.charAt(0).toUpperCase() + period.slice(1)}
-              </button>
-            ))}
-          </div>
-        </header>
-        <main>
-          <div className="space-y-6">
-            <div>
-              <div className="flex justify-between mb-2">
-                <span>Mood Score</span>
-                <span>{mockData[selectedPeriod].moodScore}%</span>
-              </div>
-              <progress
-                value={mockData[selectedPeriod].moodScore}
-                className="w-full"
-              />
-            </div>
-            <div>
-              <div className="flex justify-between mb-2">
-                <span>Sleep Quality</span>
-                <span>{mockData[selectedPeriod].sleepQuality}%</span>
-              </div>
-              <progress
-                value={mockData[selectedPeriod].sleepQuality}
-                className="w-full"
-              />
-            </div>
-            <div>
-              <div className="flex justify-between mb-2">
-                <span>Anxiety Level</span>
-                <span>{mockData[selectedPeriod].anxietyLevel}%</span>
-              </div>
-              <progress
-                value={mockData[selectedPeriod].anxietyLevel}
-                className="w-full"
-              />
-            </div>
-            <div className="pt-4">
-              <div className="text-sm">Activities Completed</div>
-              <div className="text-2xl font-bold">
-                {mockData[selectedPeriod].activitiesCompleted}
-              </div>
-            </div>
-          </div>
-        </main>
-      </section>
+    <div className="container xl:max-w-6xl mx-auto space-y-16 px-8 py-16">
+      <header>
+        <div className="flex items-center gap-4 mb-8">
+          <Lightbulb className="w-10 h-10 fill-primary" />
+          <h1 className="text-4xl font-bold text-primary">
+            Personalized Insights
+          </h1>
+        </div>
+        <p className="text-xl">
+          Gain deep understanding of your mental health patterns through our
+          advanced analytics and personalized tracking system.
+        </p>
+      </header>
 
-      <div className="grid gap-12">
-        <section id="recent-insights">
-          <h2 className="text-2xl font-bold mb-6">Recent Insights</h2>
-          <ul className="grid gap-4 md:grid-cols-2">
-            {insights.map((insight, index) => (
-              <li key={index}>
-                <header>
-                  <h2 className="text-lg">{insight.title}</h2>
-                </header>
-                <main>
-                  <p className="mb-2">{insight.description}</p>
-                  <div className="flex items-center text-green-500">
-                    <ChartUp className="w-4 h-4 mr-1 fill-green-500" />
-                    {insight.improvement}
-                  </div>
-                </main>
-              </li>
-            ))}
-          </ul>
-        </section>
-        <section id="key-features">
-          <h2 className="text-2xl font-semibold mb-6">Key Features</h2>
-          <div className="grid gap-6 md:grid-cols-3">
-            {features.map((feature, index) => (
-              <div key={index} className="bg-card p-6 rounded-lg shadow-sm">
-                {feature.icon}
-                <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                <p className="text-foreground/80">{feature.description}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-        <section id="assessments">
-          <h2 className="text-2xl font-bold mb-6">Mental Health Assessments</h2>
-          <p className="mb-6">
-            Explore our range of mental health tests to gain further insights
-            into your well-being.
-          </p>
-          {content}
-        </section>
-      </div>
+      <ProgressOverview />
+      <RecentInsights />
+      <KeyFeatures />
+
+      <section id="assessments" className="bg-light p-8 rounded-lg shadow-lg">
+        <h2 className="text-primary text-2xl font-bold">
+          Mental Health Assessments
+        </h2>
+        <p className="text-lg mb-6">
+          Explore our range of mental health tests to gain further insights into
+          your well-being.
+        </p>
+        {content}
+      </section>
     </div>
   );
 }

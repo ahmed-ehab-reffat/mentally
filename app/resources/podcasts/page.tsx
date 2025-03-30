@@ -1,7 +1,15 @@
+import Button from "@/components/ui/button";
+import { Headphones } from "@/components/ui/icons";
+
 export default function PodcastsPage() {
   return (
     <div className="container mx-auto px-8 pt-12 pb-16">
-      <h1 className="text-3xl font-bold mb-6">Mental Health Podcasts</h1>
+      <div className="flex items-center gap-4 mb-8">
+        <Headphones className="w-10 h-10 fill-primary" />
+        <h1 className="text-4xl font-bold text-primary">
+          Mental Health Podcasts
+        </h1>
+      </div>
       <ul className="grid gap-x-8 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
         {podcasts.map((podcast) => (
           <li
@@ -12,14 +20,12 @@ export default function PodcastsPage() {
               {podcast.title}
             </h3>
             <p className="text-lg mb-6">{podcast.description}</p>
-            <button type="button">
-              <a
-                href={podcast.url}
-                className="block bg-white w-3/4 py-2 mx-auto text-center text-secondry rounded-md cursor-pointer hover:bg-lighter duration-200"
-              >
+
+            <a href={podcast.url}>
+              <Button type="button" className="w-3/4">
                 Listen
-              </a>
-            </button>
+              </Button>
+            </a>
           </li>
         ))}
       </ul>

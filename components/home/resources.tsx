@@ -3,7 +3,7 @@ import { Book, Video, Headphones, Hospital, ArrowRight } from "../ui/icons";
 
 export default function Resources() {
   return (
-    <section id="resources" className="">
+    <section id="resources">
       <div className="container mx-auto px-8 py-16">
         <h2 className="text-4xl font-bold text-center mb-12 text-primary">
           Our Resources

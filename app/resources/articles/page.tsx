@@ -1,15 +1,19 @@
+import { Book } from "@/components/ui/icons";
 import Link from "next/link";
 
 export default function ArticlesPage() {
   return (
     <div className="container mx-auto px-8 pt-12 pb-16">
-      <div className="mb-12">
-        <h1 className="text-4xl font-bold">Mental Health Conditions</h1>
-        <p className="text-lg mt-2">
-          Learn more about different mental health conditions, their symptoms,
-          causes, and treatments.
-        </p>
+      <div className="flex items-center gap-4 mb-8">
+        <Book className="w-10 h-10 fill-primary" />
+        <h1 className="text-4xl font-bold text-primary">
+          Mental Health Conditions
+        </h1>
       </div>
+      <p className="text-xl mb-12">
+        Learn more about different mental health conditions, their symptoms,
+        causes, and treatments.
+      </p>
 
       <ul className="grid gap-x-8 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
         {conditions.map((condition) => (

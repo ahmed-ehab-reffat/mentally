@@ -1,11 +1,14 @@
-import { ArrowRight } from "@/components/ui/icons";
+import { ArrowRight, Hospital } from "@/components/ui/icons";
 
 export default function CentersPage() {
   return (
     <div className="container mx-auto px-8 pt-12 pb-16">
-      <h1 className="text-3xl font-bold mb-6">
-        Mental Health Centers and Hospitals
-      </h1>
+      <div className="flex items-center gap-4 mb-8">
+        <Hospital className="w-10 h-10 fill-primary" />
+        <h1 className="text-4xl font-bold text-primary">
+          Mental Health Centers and Hospitals
+        </h1>
+      </div>
       <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {centers.map((center) => (
           <li

@@ -1,3 +1,4 @@
+import Button from "../ui/button";
 import { Envelope } from "../ui/icons";
 
 export default function Newsletter() {
@@ -18,12 +19,7 @@ export default function Newsletter() {
             placeholder="Enter your email"
             className="flex-1 px-3 py-2 border border-primary outline-none rounded-md placeholder:text-secondry"
           />
-          <button
-            type="button"
-            className="text-secondry bg-white px-4 py-2 rounded-md cursor-pointer hover:bg-lighter duration-200"
-          >
-            Subscribe
-          </button>
+          <Button type="button">Subscribe</Button>
         </form>
       </div>
     </section>
