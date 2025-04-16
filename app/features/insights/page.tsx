@@ -88,7 +88,6 @@ export default function InsightsPage() {
         test={selectedTest}
         Answers={answers}
         onAnswer={handleAnswerChange}
-        onBack={handleBack}
         onSubmit={handleSubmit}
         isAnalyzing={isAnalyzing}
       />

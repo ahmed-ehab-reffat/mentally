@@ -7,7 +7,6 @@ type Props = {
   test: Test;
   Answers: Answer[];
   onAnswer: (answer: Answer, index: number) => void;
-  onBack: () => void;
   onSubmit: () => void;
   isAnalyzing: boolean;
 };
@@ -16,7 +15,6 @@ export default function Questions({
   test,
   Answers,
   onAnswer,
-  onBack,
   onSubmit,
   isAnalyzing,
 }: Props) {
