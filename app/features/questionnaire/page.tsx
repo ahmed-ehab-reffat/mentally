@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import fetchAi from "@/lib/fetchAI";
+import { fetchAI } from "@/lib/utils";
 
 type Result = {
   summary: string;
@@ -53,7 +53,7 @@ export default function QuestionnairePage() {
     };
 
     try {
-      const response = await fetchAi(systemMessage, userMessage);
+      const response = await fetchAI(systemMessage, userMessage);
       const parsedResult = parseAIResponse(response);
       setResult(parsedResult);
     } catch (err) {
