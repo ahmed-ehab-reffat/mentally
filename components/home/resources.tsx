@@ -1,5 +1,13 @@
 import Link from "next/link";
-import { Book, Video, Headphones, Hospital, ArrowRight } from "../ui/icons";
+
+import {
+  Book,
+  Video,
+  Headphones,
+  Hospital,
+  ArrowRight,
+} from "@/components/ui/icons";
+import Card from "@/components/ui/card";
 
 export default function Resources() {
   return (
@@ -12,7 +20,7 @@ export default function Resources() {
           {resources.map((feature, index) => (
             <div key={index}>
               <Link href={feature.href}>
-                <div className="bg-light p-6 rounded-lg h-full shadow-xl">
+                <Card className="h-full">
                   <div className="bg-white p-3 -ml-2 rounded-full w-16 h-16 flex items-center justify-center">
                     {feature.icon}
                   </div>
@@ -22,7 +30,7 @@ export default function Resources() {
                     Learn more
                     <ArrowRight className="w-3 h-3 fill-secondry ml-1" />
                   </div>
-                </div>
+                </Card>
               </Link>
             </div>
           ))}

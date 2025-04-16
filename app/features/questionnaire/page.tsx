@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import fetchAi from "@/lib/fetchAI";
 
 type Result = {
   summary: string;
@@ -52,31 +53,8 @@ export default function QuestionnairePage() {
     };
 
     try {
-      const response = await fetch(
-        "https://api.openai.com/v1/chat/completions",
-        {
-          method: "POST",
-          headers: {
-            Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            model: "gpt-4o-mini",
-            messages: [systemMessage, userMessage],
-            max_tokens: 500,
-          }),
-        }
-      );
-
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(JSON.stringify(errorData));
-      }
-
-      const data = await response.json();
-      const aiResponse: string = data.choices[0].message.content;
-
-      const parsedResult = parseAIResponse(aiResponse);
+      const response = await fetchAi(systemMessage, userMessage);
+      const parsedResult = parseAIResponse(response);
       setResult(parsedResult);
     } catch (err) {
       console.error("Error in analysis:", err);
@@ -89,7 +67,6 @@ export default function QuestionnairePage() {
   }
 
   function parseAIResponse(response: string): Result {
-    console.log(response);
     const summary: string =
       response.split("\n")[0] ||
       "Analysis of your mental health assessment: We detected patterns suggesting a moderate level of concern.";
@@ -111,13 +88,12 @@ export default function QuestionnairePage() {
       "Try relaxation techniques",
       "Monitor your symptoms",
     ];
+    recommendations.filter((r: string) => r.trim().length > 0);
 
     return {
       summary,
       details,
-      recommendations: recommendations.filter(
-        (r: string) => r.trim().length > 0
-      ),
+      recommendations,
     };
   }
 

@@ -3,9 +3,25 @@
 @theme {
   --color-primary: #a851b6; /*purple*/
   --color-secondry: #ff8000; /*orange*/
-  --color-muted: ;
+  --color-cyan: #2cd3e1;
   --color-light: #cfe1ec; /*teal*/
   --color-lighter: #f1f5f9; /*gray*/
   --color-dark: #1e293b; /*navy*/
   --color-darker: #020817; /*black*/
+}
+
+progress::-webkit-progress-value {
+  background: var(--color-secondry);
+  border-radius: 1rem;
+  transition: all;
+  transition-duration: 400ms;
+}
+
+progress::-webkit-progress-bar {
+  background: #fff;
+  border-radius: 1rem;
+}
+
+.mark-down * {
+  all: revert !important;
 }

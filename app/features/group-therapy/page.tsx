@@ -6,6 +6,7 @@ import { Calendar, CircleCheck, Users, Xmark } from "@/components/ui/icons";
 import Modal from "@/components/modal";
 import Button from "@/components/ui/button";
 import { upcomingSessions, guidelines, benefits } from "./data";
+import Card from "@/components/ui/card";
 
 export default function GroupTherapyPage() {
   const modalRef = useRef<HTMLDialogElement>(null!);
@@ -30,7 +31,7 @@ export default function GroupTherapyPage() {
           Register for {selectedSession}
           <Xmark
             onClick={() => modalRef.current.close()}
-            className="w-4 h-4 cursor-pointer"
+            className="w-4 cursor-pointer"
           />
         </h2>
         <p className="text-sm mb-4">
@@ -42,23 +43,23 @@ export default function GroupTherapyPage() {
           ref={formRef}
           className="space-y-4"
         >
-          <div>
+          <p>
             <label className="block text-sm mb-1">Name</label>
             <input
               type="text"
               required
               className="w-full px-3 py-2 border border-primary outline-none rounded-md"
             />
-          </div>
-          <div>
+          </p>
+          <p>
             <label className="block text-sm mb-1">Email</label>
             <input
               type="email"
               required
               className="w-full px-3 py-2 border border-primary outline-none rounded-md"
             />
-          </div>
-          <div>
+          </p>
+          <p>
             <label className="block text-sm mb-1">
               Why would you like to join this session?
             </label>
@@ -66,8 +67,8 @@ export default function GroupTherapyPage() {
               required
               className="w-full px-3 py-2 border border-primary outline-none rounded-md"
             />
-          </div>
-          <Button type="button" onClick={handleSubmit} className="w-full">
+          </p>
+          <Button type="submit" onClick={handleSubmit} className="w-full">
             Submit Registration
           </Button>
         </form>
@@ -90,10 +91,7 @@ export default function GroupTherapyPage() {
           </h2>
           <ul className="grid gap-10">
             {upcomingSessions.map((session) => (
-              <li
-                key={session.id}
-                className="bg-light p-6 rounded-lg shadow-xl"
-              >
+              <Card key={session.id}>
                 <div className="flex justify-between">
                   <div>
                     <h3 className="text-primary text-xl font-bold mb-2">
@@ -118,7 +116,7 @@ export default function GroupTherapyPage() {
                 >
                   Register for Session
                 </Button>
-              </li>
+              </Card>
             ))}
           </ul>
         </section>

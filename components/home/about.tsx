@@ -1,4 +1,4 @@
-// import { Heart } from "../ui/icons";
+// import { Heart } from "@/components/ui/icons";
 
 export default function About() {
   return (

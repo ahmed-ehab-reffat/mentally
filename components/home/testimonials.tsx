@@ -1,16 +1,15 @@
+import Card from "@/components/ui/card";
+
 export default function Testimonial() {
   return (
     <section id="testimonials">
       <div className="container mx-auto px-8 py-16">
-        <h2 className="text-4xl font-bold text-center mb-16 capitalize">
+        <h2 className="text-primary text-4xl font-bold text-center mb-12 capitalize">
           what our users say
         </h2>
         <ul className="grid lg:grid-cols-3 gap-12">
           {testimonials.map((testimonial, index) => (
-            <li
-              key={index}
-              className="bg-light p-6 rounded-lg shadow-xl border border-primary"
-            >
+            <Card key={index} className="border border-primary">
               <div className="flex items-center">
                 <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center text-primary font-bold">
                   {testimonial.author.charAt(0)}
@@ -23,7 +22,7 @@ export default function Testimonial() {
               <p className="mt-5 text-lg">
                 <q>{testimonial.quote}</q>
               </p>
-            </li>
+            </Card>
           ))}
         </ul>
       </div>

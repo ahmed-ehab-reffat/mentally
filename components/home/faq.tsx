@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-import { ArrowDown } from "../ui/icons";
+import { ArrowDown } from "@/components/ui/icons";
 
 export default function FAQ() {
   const [visibleAnswers, setVisibleAnswers] = useState<number[]>([]);
@@ -19,7 +19,7 @@ export default function FAQ() {
   return (
     <section id="faq" className="bg-light">
       <div className="container mx-auto px-8 py-16">
-        <h2 className="text-4xl font-bold text-primary text-center mb-16 capitalize">
+        <h2 className="text-4xl font-bold text-primary text-center mb-12 capitalize">
           frequently asked questions
         </h2>
         <ul className="max-w-3xl mx-auto">

@@ -1,3 +1,4 @@
+import Card from "@/components/ui/card";
 import { ArrowRight, Hospital } from "@/components/ui/icons";
 
 export default function CentersPage() {
@@ -11,9 +12,9 @@ export default function CentersPage() {
       </div>
       <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {centers.map((center) => (
-          <li
+          <Card
             key={center.name}
-            className="h-full bg-light p-6 rounded-lg shadow-xl flex flex-col justify-between"
+            className="h-full flex flex-col justify-between"
           >
             <h3 className="text-2xl text-center text-primary font-bold tracking-tighter mb-4">
               {center.name}
@@ -32,7 +33,7 @@ export default function CentersPage() {
                 <ArrowRight className="w-3 h-3 fill-secondry" />
               </button>
             </a>
-          </li>
+          </Card>
         ))}
       </ul>
     </div>

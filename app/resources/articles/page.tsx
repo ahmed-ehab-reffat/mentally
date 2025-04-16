@@ -1,3 +1,4 @@
+import Card from "@/components/ui/card";
 import { Book } from "@/components/ui/icons";
 import Link from "next/link";
 
@@ -17,9 +18,9 @@ export default function ArticlesPage() {
 
       <ul className="grid gap-x-8 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
         {conditions.map((condition) => (
-          <li
+          <Card
             key={condition.id}
-            className="h-full bg-light p-6 text-center rounded-lg shadow-xl flex flex-col justify-between"
+            className="h-full text-center flex flex-col justify-between"
           >
             <h3 className="text-2xl text-primary font-bold tracking-tighter mb-4">
               {condition.title}
@@ -32,7 +33,7 @@ export default function ArticlesPage() {
             >
               Learn more
             </Link>
-          </li>
+          </Card>
         ))}
       </ul>
     </div>
