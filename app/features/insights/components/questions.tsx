@@ -1,4 +1,5 @@
 import Button from "@/components/ui/button";
+import Loading from "@/components/loading";
 import type { Test } from "./tests";
 
 export type Answer = "Yes" | "No";
@@ -45,14 +46,7 @@ export default function Questions({
           </li>
         ))}
       </ul>
-      {isAnalyzing ? (
-        <p className="text-secondry mt-8">Analyzing...</p>
-      ) : (
-        <Button onClick={onSubmit} disabled={isAnalyzing}>
-          Submit
-        </Button>
-      )}
-      {isAnalyzing && <progress value={50} className="w-full mt-2" />}
+      {isAnalyzing ? <Loading /> : <Button onClick={onSubmit}>Submit</Button>}
     </main>
   );
 }

@@ -4,7 +4,6 @@ import Progress from "@/components/ui/progress";
 
 export default function Loading() {
   const [demoProgress, setDemoProgress] = useState(0);
-  console.log(demoProgress);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -13,15 +12,15 @@ export default function Loading() {
           clearInterval(interval);
           return 100;
         }
-        return prev + 10;
+        return prev + 5;
       });
-    }, 400);
+    }, 250);
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <main className="space-y-4">
-      <div className="flex items-center justify-between mb-2">
+    <main>
+      <div className="flex items-center justify-between mb-4">
         <div>Analyzing patterns...</div>
         <div>{demoProgress}%</div>
       </div>

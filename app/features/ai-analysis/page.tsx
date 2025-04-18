@@ -10,8 +10,8 @@ import Header from "./components/header";
 import LearnMore from "./components/learn-more";
 import Analysis from "./components/analysis";
 import Result from "./components/result";
-import Loading from "./components/loading";
 import UserText from "./components/userText";
+import Loading from "@/components/loading";
 
 export default function AIAnalysisPage() {
   const [selectedTest, setSelectedTest] = useState<string>("");

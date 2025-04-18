@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useEffect, useCallback, useState } from "react";
+import { useState } from "react";
 import { useChat } from "@ai-sdk/react";
 import dynamic from "next/dynamic";
 
@@ -14,7 +14,6 @@ type EmojiData = {
 
 export default function Chatbot() {
   const [showEmojiPicker, setShowEmojiPicker] = useState(false);
-  const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const { messages, input, handleInputChange, handleSubmit, status } = useChat({
     api: "/api/chat",
@@ -33,14 +32,6 @@ export default function Chatbot() {
       console.error("Chat API Error:", err);
     },
   });
-
-  const scrollToBottom = useCallback(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, []);
-
-  useEffect(() => {
-    scrollToBottom();
-  }, [messages, scrollToBottom]);
 
   const onEmojiClick = (emojiData: EmojiData) => {
     handleInputChange({
@@ -85,7 +76,6 @@ export default function Chatbot() {
             </div>
           </div>
         ))}
-        <div ref={messagesEndRef} />
       </div>
 
       <div className="p-4 bg-[#E2E8F0] relative">

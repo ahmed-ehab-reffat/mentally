@@ -9,14 +9,12 @@ type Props = {
 export default function Result({ onBack, result }: Props) {
   return (
     <main>
-      <div>
-        <div className="mark-down">
-          <ReactMarkdown>{result}</ReactMarkdown>
-        </div>
-        <Button onClick={onBack} className="mt-4">
-          Back to Tests
-        </Button>
+      <div className="mark-down">
+        <ReactMarkdown>{result}</ReactMarkdown>
       </div>
+      <Button onClick={onBack} className="mt-4">
+        Back to Tests
+      </Button>
     </main>
   );
 }
