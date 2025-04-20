@@ -1,6 +1,7 @@
+import Link from "next/link";
+import Button from "@/components/ui/button";
 import Card from "@/components/ui/card";
 import { Book } from "@/components/ui/icons";
-import Link from "next/link";
 
 export default function ArticlesPage() {
   return (
@@ -26,12 +27,12 @@ export default function ArticlesPage() {
               {condition.title}
             </h3>
             <p className="text-lg mb-6">{condition.description}</p>
+
             <Link
               key={condition.id}
               href={`/resources/articles/${condition.id}`}
-              className="bg-white w-3/4 py-2 mx-auto text-center text-secondry rounded-md cursor-pointer hover:bg-lighter duration-200"
             >
-              Learn more
+              <Button className="w-3/4">Learn more</Button>
             </Link>
           </Card>
         ))}

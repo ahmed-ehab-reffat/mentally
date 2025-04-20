@@ -1,10 +1,12 @@
-import { ArrowLeft } from "@/components/ui/icons";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { ArrowLeft } from "@/components/ui/icons";
+import Card from "@/components/ui/card";
+import Section from "./section";
 
 type ConditionProps = {
   params: Promise<{
-    conditionId: (typeof conditionsData)[number]["id"];
+    conditionId: string;
   }>;
 };
 
@@ -29,9 +31,9 @@ export default async function ConditionPage({ params }: ConditionProps) {
       <h1 className="text-5xl font-bold text-primary py-8">
         {condition.title}
       </h1>
-      <div className="bg-light px-6 py-8 rounded-xl space-y-10 marker:text-primary">
+      <Card className="space-y-10 marker:text-secondry  scroll-smooth">
         <section id="summary">
-          <h2 className="text-3xl font-bold mb-4">Summary</h2>
+          <h2 className="text-primary text-3xl font-bold mb-4">Summary</h2>
           <ul className="list-disc ml-10 text-xl space-y-2 *:w-fit *:hover:text-secondry *:hover:underline">
             <li key="definition">
               <a href="#definition">Definition</a>
@@ -49,37 +51,16 @@ export default async function ConditionPage({ params }: ConditionProps) {
         </section>
 
         <section id="definition">
-          <h2 className="text-3xl font-bold mb-4">What is autism?</h2>
+          <h2 className="text-primary text-3xl font-bold mb-4">
+            What is {condition.title}?
+          </h2>
           <p className="text-xl ml-1">{condition.definition}</p>
         </section>
 
-        <section id="symptoms">
-          <h2 className="text-3xl font-bold mb-4">Symptoms</h2>
-          <ul className="list-disc text-xl ml-10 space-y-2">
-            {condition.symptoms.map((symptom) => (
-              <li key={symptom}>{symptom}</li>
-            ))}
-          </ul>
-        </section>
-
-        <section id="causes">
-          <h2 className="text-3xl font-bold mb-4">Causes</h2>
-          <ul className="list-disc text-xl ml-10 space-y-2">
-            {condition.causes.map((cause) => (
-              <li key={cause}>{cause}</li>
-            ))}
-          </ul>
-        </section>
-
-        <section id="treatment">
-          <h2 className="text-3xl font-bold mb-4">Treatment</h2>
-          <ul className="list-disc text-xl ml-10 space-y-2">
-            {condition.treatment.map((treatment) => (
-              <li key={treatment}>{treatment}</li>
-            ))}
-          </ul>
-        </section>
-      </div>
+        <Section title={"symptoms"} iterable={condition.symptoms} />
+        <Section title={"causes"} iterable={condition.causes} />
+        <Section title={"treatment"} iterable={condition.treatment} />
+      </Card>
     </div>
   );
 }
@@ -415,4 +396,4 @@ const conditionsData = [
     causes: ["Major life changes (e.g., divorce, job loss)", "Ongoing stress"],
     treatment: ["Psychotherapy", "Stress management", "Short-term medication"],
   },
-] as const;
+];

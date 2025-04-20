@@ -1,3 +1,4 @@
+import Button from "@/components/ui/button";
 import Card from "@/components/ui/card";
 import { ArrowRight, Hospital } from "@/components/ui/icons";
 
@@ -25,13 +26,10 @@ export default function CentersPage() {
               <p>Phone: {center.phone}</p>
             </div>
             <a href={center.mapsUrl}>
-              <button
-                type="button"
-                className="flex items-center justify-center gap-2 bg-white w-3/4 py-2 mx-auto text-secondry rounded-md cursor-pointer hover:bg-lighter duration-200"
-              >
+              <Button className="flex items-center justify-center gap-2  w-3/4 mx-auto">
                 View on Map
                 <ArrowRight className="w-3 h-3 fill-secondry" />
-              </button>
+              </Button>
             </a>
           </Card>
         ))}

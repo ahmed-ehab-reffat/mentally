@@ -35,7 +35,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={nunito.className}>
+    <html
+      lang="en"
+      className={`scroll-pt-16 scroll-smooth ${nunito.className}`}
+    >
       <body>
         <div id="modal"></div>
         <Header />

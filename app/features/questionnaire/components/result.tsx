@@ -15,11 +15,9 @@ export default function Result({ result }: Props) {
         This assessment is for informational purposes only and is not a
         substitute for professional diagnosis.
       </p>
-      <Button>
-        <Link href="/#resources" className="mt-4">
-          Proceed to Resources
-        </Link>
-      </Button>
+      <Link href="/#resources" className="mt-4">
+        <Button>Proceed to Resources</Button>
+      </Link>
     </main>
   );
 }
