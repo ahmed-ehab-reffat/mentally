@@ -21,9 +21,8 @@ export default function Tests({ selected, onSelect }: Props) {
             <Button
               key={test}
               onClick={() => onSelect(test)}
-              className={`flex justify-between items-center uppercase ${
-                test === selected && "!bg-cyan"
-              }`}
+              selected={test === selected}
+              className="flex justify-between items-center uppercase"
             >
               {test}
               <Plus className="w-3 h-3 fill-secondry" />

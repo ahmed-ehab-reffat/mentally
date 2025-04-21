@@ -91,9 +91,8 @@ export default function QuestionnairePage() {
               <Button
                 key={`question ${answers.length}: ${option}`}
                 onClick={() => setSelectedOption(option)}
-                className={`*:cursor-pointer ${
-                  option === selectedOption && "!bg-cyan"
-                }`}
+                className="*:cursor-pointer"
+                selected={option === selectedOption}
                 disabled={isAnalyzing}
               >
                 <input

@@ -1,4 +1,3 @@
-import Landing from "@/components/home/landing";
 import About from "@/components/home/about";
 import Stats from "@/components/home/stats";
 import Chatbot from "@/components/home/chatbot";
@@ -11,7 +10,6 @@ import Newsletter from "@/components/home/newsletter";
 export default function Home() {
   return (
     <>
-      <Landing />
       <About />
       <Stats />
       <Features />

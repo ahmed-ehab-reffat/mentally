@@ -26,9 +26,8 @@ export default function ProgressOverview() {
             <Button
               key={period}
               onClick={() => setSelectedPeriod(period)}
-              className={`capitalize ${
-                selectedPeriod === period ? "!bg-cyan" : ""
-              }`}
+              selected={selectedPeriod === period}
+              className="capitalize"
             >
               {period}
             </Button>

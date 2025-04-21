@@ -32,13 +32,13 @@ export default function Questions({
             <div className="flex gap-2">
               <Button
                 onClick={() => onAnswer("Yes", index)}
-                className={Answers[index] === "Yes" ? "!bg-cyan" : ""}
+                selected={Answers[index] === "Yes"}
               >
                 Yes
               </Button>
               <Button
                 onClick={() => onAnswer("No", index)}
-                className={Answers[index] === "No" ? "!bg-cyan" : ""}
+                selected={Answers[index] === "No"}
               >
                 No
               </Button>

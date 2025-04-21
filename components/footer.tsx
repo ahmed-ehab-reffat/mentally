@@ -82,27 +82,27 @@ export default function Footer() {
           <ul className="flex gap-6 mt-6">
             <li id="facebook">
               <a href="#">
-                <Facebook className="w-6 h-6" />
+                <Facebook className="w-6 h-6 hover:fill-secondry duration-300" />
               </a>
             </li>
             <li id="instagram">
               <a href="#">
-                <Instagram className="w-6 h-6" />
+                <Instagram className="w-6 h-6 hover:fill-secondry duration-300" />
               </a>
             </li>
             <li id="x">
               <a href="#">
-                <X className="w-6 h-6" />
+                <X className="w-6 h-6 hover:fill-secondry duration-300" />
               </a>
             </li>
             <li id="linkedin">
               <a href="#">
-                <Linkedin className="w-6 h-6" />
+                <Linkedin className="w-6 h-6 hover:fill-secondry duration-300" />
               </a>
             </li>
             <li id="github">
               <a href="#">
-                <Github className="w-6 h-6" />
+                <Github className="w-6 h-6 hover:fill-secondry duration-300" />
               </a>
             </li>
           </ul>
