@@ -11,8 +11,8 @@ export default function Button({
   ...props
 }: Props) {
   const classess = `${
-    selected ? "bg-primary text-white" : "bg-white text-secondry"
-  } font-bold px-4 py-2 rounded-md cursor-pointer hover:bg-primary hover:text-white duration-200 ${className}`;
+    selected ? "bg-primary text-white *:fill-white" : "bg-white text-secondry"
+  } font-bold px-4 py-2 rounded-md cursor-pointer hover:bg-primary hover:text-white hover:*:fill-white duration-200 ${className}`;
 
   return (
     <button {...props} className={classess}>

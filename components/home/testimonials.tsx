@@ -15,7 +15,9 @@ export default function Testimonial() {
                   {testimonial.author.charAt(0)}
                 </div>
                 <div className="ml-5">
-                  <h3 className="text-lg font-bold">{testimonial.author}</h3>
+                  <h3 className="text-primary text-lg font-bold">
+                    {testimonial.author}
+                  </h3>
                   <span className="text-secondry">{testimonial.role}</span>
                 </div>
               </div>

@@ -31,7 +31,7 @@ export default function Footer() {
         </div>
         <div className="flex flex-1 lg:justify-around">
           <div className="mr-24 lg:mr-0">
-            <h6 className="uppercase font-black text-lg">links</h6>
+            <h6 className="text-primary uppercase font-black text-lg">links</h6>
             <ul className="*:block *:mt-2 *:hover:underline">
               <Link href="/#about">About</Link>
               <Link href="/#features">Features</Link>
@@ -40,7 +40,7 @@ export default function Footer() {
             </ul>
           </div>
           <div className="">
-            <h6 className="uppercase font-black text-lg">legal</h6>
+            <h6 className="text-primary uppercase font-black text-lg">legal</h6>
             <ul className="*:mt-2">
               <li>
                 <a href="#" className="hover:underline">
@@ -66,7 +66,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="flex-1">
-          <h6 className="uppercase font-black">contact us</h6>
+          <h6 className="text-primary uppercase font-black">contact us</h6>
           <p className="mt-2">
             Get in touch with us via mail We are waiting for your message
           </p>
@@ -82,27 +82,27 @@ export default function Footer() {
           <ul className="flex gap-6 mt-6">
             <li id="facebook">
               <a href="#">
-                <Facebook className="w-6 h-6 hover:fill-secondry duration-300" />
+                <Facebook className="w-6 h-6 hover:fill-secondry hover:scale-110 hover:rotate-10 duration-250" />
               </a>
             </li>
             <li id="instagram">
               <a href="#">
-                <Instagram className="w-6 h-6 hover:fill-secondry duration-300" />
+                <Instagram className="w-6 h-6 hover:fill-secondry hover:scale-110 hover:rotate-10 duration-250" />
               </a>
             </li>
             <li id="x">
               <a href="#">
-                <X className="w-6 h-6 hover:fill-secondry duration-300" />
+                <X className="w-6 h-6 hover:fill-secondry hover:scale-110 hover:rotate-10 duration-250" />
               </a>
             </li>
             <li id="linkedin">
               <a href="#">
-                <Linkedin className="w-6 h-6 hover:fill-secondry duration-300" />
+                <Linkedin className="w-6 h-6 hover:fill-secondry hover:scale-110 hover:rotate-10 duration-250" />
               </a>
             </li>
             <li id="github">
               <a href="#">
-                <Github className="w-6 h-6 hover:fill-secondry duration-300" />
+                <Github className="w-6 h-6 hover:fill-secondry hover:scale-110 hover:rotate-10 duration-250" />
               </a>
             </li>
           </ul>

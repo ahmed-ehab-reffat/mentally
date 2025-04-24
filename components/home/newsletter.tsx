@@ -9,7 +9,7 @@ export default function Newsletter() {
         <div className="inline-block p-5 rounded-full bg-white">
           <Envelope className="w-7 h-7 align-[-0.125em] fill-primary" />
         </div>
-        <h2 className="text-3xl font-bold mb-4">Stay Updated</h2>
+        <h2 className="text-primary text-3xl font-bold mb-4">Stay Updated</h2>
         <p className="mb-8">
           Subscribe to our newsletter for mental health tips, updates, and
           resources.

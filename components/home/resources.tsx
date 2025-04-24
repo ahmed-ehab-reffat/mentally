@@ -14,7 +14,7 @@ export default function Resources() {
     <section id="resources">
       <div className="container mx-auto px-8 py-16">
         <h2 className="text-4xl font-bold text-center mb-12 text-primary">
-          Our Resources
+          Resources
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
           {resources.map((feature, index) => (
