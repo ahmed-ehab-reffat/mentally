@@ -37,12 +37,12 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`scroll-pt-16 scroll-smooth ${nunito.className}`}
+      className={`scroll-pt-13 sm:scroll-pt-16 scroll-smooth ${nunito.className}`}
     >
       <body>
         <div id="modal"></div>
         <Header />
-        <main className="bg-lighter pt-16">{children}</main>
+        <main className="bg-lighter pt-13 sm:pt-16">{children}</main>
         <Footer />
       </body>
     </html>
