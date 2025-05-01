@@ -18,15 +18,15 @@ export default function FAQ() {
   }
   return (
     <section id="faq" className="bg-light">
-      <div className="container mx-auto px-8 py-16">
-        <h2 className="text-4xl font-bold text-primary text-center mb-12 capitalize">
+      <div className="container mx-auto px-4 pt-10 pb-12">
+        <h2 className="text-4xl font-bold text-primary text-center mb-8 capitalize">
           frequently asked questions
         </h2>
-        <ul className="max-w-3xl mx-auto">
+        <ul className="max-w-3xl mx-auto space-y-4">
           {faqs.map((faq, index) => (
             <li
               key={index}
-              className="border border-primary mb-4 rounded-lg overflow-hidden"
+              className="border border-primary rounded-lg overflow-hidden"
             >
               <div
                 onClick={() => handleTrigger(index)}

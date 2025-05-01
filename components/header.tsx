@@ -6,7 +6,6 @@ import Link from "next/link";
 import { useState } from "react";
 
 import { Menu, Xmark } from "./ui/icons";
-import logo from "@/assets/images/logoBlack.png";
 
 export default function Header() {
   const [toggle, setToggle] = useState<boolean>(false);
@@ -18,8 +17,10 @@ export default function Header() {
     <header className="fixed z-10 w-full flex justify-between items-center px-4 sm:px-8 py-2 bg-light border-b-primary border-b-2">
       <Link href="/" className="flex items-center">
         <Image
-          src={logo}
+          src="/images/logoBlack.png"
           alt="Mentally Logo"
+          width={100}
+          height={100}
           quality={100}
           className="max-w-none w-13 sm:w-[70px] h-auto"
         />

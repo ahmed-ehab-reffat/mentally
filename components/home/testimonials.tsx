@@ -3,8 +3,8 @@ import Card from "@/components/ui/card";
 export default function Testimonial() {
   return (
     <section id="testimonials">
-      <div className="container mx-auto px-8 py-16">
-        <h2 className="text-primary text-4xl font-bold text-center mb-12 capitalize">
+      <div className="container mx-auto px-4 pt-10 pb-12">
+        <h2 className="text-primary text-4xl font-bold text-center mb-8 capitalize">
           what our users say
         </h2>
         <ul className="grid lg:grid-cols-3 gap-12">
@@ -15,7 +15,7 @@ export default function Testimonial() {
                   {testimonial.author.charAt(0)}
                 </div>
                 <div className="ml-5">
-                  <h3 className="text-primary text-lg font-bold">
+                  <h3 className="text-primary -mb-1 text-lg font-bold">
                     {testimonial.author}
                   </h3>
                   <span className="text-secondry">{testimonial.role}</span>

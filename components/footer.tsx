@@ -1,20 +1,20 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import logo from "@/assets/images/logoBlack.png";
 import { Facebook, Github, Instagram, Linkedin, X } from "./ui/icons";
 
 export default function Footer() {
   return (
     <footer id="contactus" className="bg-light pt-12 pb-4">
-      <div className="container px-8 sm:px-4 mx-auto flex flex-wrap flex-col md:flex-row gap-8">
+      <div className="container px-4 mx-auto flex flex-wrap flex-col md:flex-row gap-8">
         <div className="min-w-full lg:min-w-auto lg:flex-1">
           <Link href="/" className="block w-fit">
             <Image
-              src={logo}
+              src="/images/logoBlack.png"
               alt="Mentally Logo"
               quality={100}
               width={100}
+              height={100}
               className="h-auto"
             />
           </Link>

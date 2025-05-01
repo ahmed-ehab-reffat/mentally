@@ -1,7 +1,7 @@
 export default function Stats() {
   return (
     <section id="stats" className="bg-light">
-      <div className="container mx-auto px-8 py-16">
+      <div className="container mx-auto py-12">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-y-12 gap-x-6 lg:gap-x-8">
           {stats.map((stat, index) => (
             <div key={index} className="text-center">

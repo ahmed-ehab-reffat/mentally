@@ -12,8 +12,8 @@ import Card from "@/components/ui/card";
 export default function Resources() {
   return (
     <section id="resources">
-      <div className="container mx-auto px-8 py-16">
-        <h2 className="text-4xl font-bold text-center mb-12 text-primary">
+      <div className="container mx-auto px-4 pt-10 pb-16">
+        <h2 className="text-4xl font-bold text-center mb-8 text-primary">
           Resources
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
