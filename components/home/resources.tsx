@@ -20,7 +20,7 @@ export default function Resources() {
           {resources.map((feature, index) => (
             <div key={index}>
               <Link href={feature.href}>
-                <Card className="h-full">
+                <Card className="flex flex-col justify-between h-full">
                   <div className="bg-white p-3 -ml-2 rounded-full w-16 h-16 flex items-center justify-center">
                     {feature.icon}
                   </div>

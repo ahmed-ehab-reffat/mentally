@@ -18,7 +18,6 @@ export async function fetchAI(
     body: JSON.stringify({
       model: "gpt-4o-mini",
       messages: [systemMessage, userMessage],
-      // max_tokens: 500,
     }),
   });
 

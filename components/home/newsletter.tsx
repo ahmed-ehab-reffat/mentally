@@ -1,6 +1,7 @@
 import Button from "@/components/ui/button";
 import Card from "@/components/ui/card";
 import { Envelope } from "@/components/ui/icons";
+import Input from "@/components/ui/input";
 
 export default function Newsletter() {
   return (
@@ -15,10 +16,10 @@ export default function Newsletter() {
           resources.
         </p>
         <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-          <input
+          <Input
             type="email"
             placeholder="Enter your email"
-            className="flex-1 px-3 py-2 border border-primary outline-none rounded-md placeholder:text-secondry"
+            className="flex-1"
           />
           <Button type="button">Subscribe</Button>
         </form>

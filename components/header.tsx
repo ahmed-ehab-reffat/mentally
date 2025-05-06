@@ -41,11 +41,11 @@ export default function Header() {
             toggle ? "left-0" : "-left-full"
           } absolute top-13 sm:top-16 w-full p-5 flex flex-col space-y-5 bg-light/80 capitalize font-bold duration-400 transition-all *:w-fit *:duration-200 *:hover:text-primary md:static md:space-y-0 md:bg-transparent md:justify-between md:items-center md:flex-row md:gap-6 md:p-0 md:text-lg`}
         >
-          <Link href="/">home</Link>
           <Link href="/#features">features</Link>
           <Link href="/#resources">resources</Link>
           <Link href="/chatbot">chatbot</Link>
           <Link href="#contactus">contact</Link>
+          <Link href="/auth">login</Link>
         </ul>
       </nav>
     </header>

@@ -7,19 +7,22 @@ export default function About() {
         <h2 className="text-4xl font-bold text-primary mb-8 text-center">
           Interactive Mental Health
         </h2>
-        <p className="text-lg md:text-xl leading-relaxed">
-          Mentally is a Mental Health Support System which is a 24/7 AI-powered
-          platform designed to provide personalized mental health support.
-          <br />
-          <br />
-          It uses advanced technologies such as sentiment analysis and smart
-          chatbots to analyze emotions and offer tailored recommendations.
-          <br />
-          <br />
-          The platform also provides users with tools like meditation exercises,
-          group therapy and mental health progress tracking for holistic
-          emotional well-being.
-        </p>
+        <div className="text-lg md:text-xl leading-relaxed space-y-6">
+          <p>
+            Mentally is a Mental Health Support System which is a 24/7
+            AI-powered platform designed to provide personalized mental health
+            support.
+          </p>
+          <p>
+            It uses advanced technologies such as sentiment analysis and smart
+            chatbots to analyze emotions and offer tailored recommendations.
+          </p>
+          <p>
+            The platform also provides users with tools like meditation
+            exercises, group therapy and mental health progress tracking for
+            holistic emotional well-being.
+          </p>
+        </div>
       </div>
     </section>
   );
