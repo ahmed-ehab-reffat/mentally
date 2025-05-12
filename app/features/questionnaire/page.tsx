@@ -125,7 +125,7 @@ export default function QuestionnairePage() {
 
   return (
     <div className="container mx-auto px-8 py-16 max-w-3xl min-h-[calc(100dvh-4rem)]">
-      <div className="bg-light p-8 rounded-xl shadow-lg">{content}</div>
+      <div className="bg-foreground p-8 rounded-xl shadow-lg">{content}</div>
     </div>
   );
 }

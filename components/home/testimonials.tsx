@@ -11,14 +11,14 @@ export default function Testimonial() {
           {testimonials.map((testimonial, index) => (
             <Card key={index} className="border border-primary">
               <div className="flex items-center">
-                <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center text-primary font-bold">
+                <div className="w-12 h-12 rounded-full bg-surface flex items-center justify-center text-primary font-bold">
                   {testimonial.author.charAt(0)}
                 </div>
                 <div className="ml-5">
                   <h3 className="text-primary -mb-1 text-lg font-bold">
                     {testimonial.author}
                   </h3>
-                  <span className="text-secondry">{testimonial.role}</span>
+                  <span className="text-primary">{testimonial.role}</span>
                 </div>
               </div>
               <p className="mt-5 text-lg">

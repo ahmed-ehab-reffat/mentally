@@ -20,16 +20,14 @@ export default function Features() {
           {features.map((feature, index) => (
             <Link href={feature.href} key={index}>
               <Card className="flex flex-col justify-between h-full">
-                <div>
-                  <div className="bg-white p-3 -ml-2 rounded-full w-16 h-16 flex items-center justify-center">
-                    {feature.icon}
-                  </div>
-                  <h3 className="text-xl font-bold my-2">{feature.title}</h3>
-                  <p>{feature.description}</p>
+                <div className="bg-surface p-3 -ml-2 rounded-full w-16 h-16 flex items-center justify-center">
+                  {feature.icon}
                 </div>
-                <div className="mt-4 text-secondry flex items-center text-sm font-semibold">
+                <h3 className="text-xl font-bold my-2">{feature.title}</h3>
+                <p>{feature.description}</p>
+                <div className="mt-4 text-primary flex items-center text-sm font-semibold">
                   Learn more
-                  <ArrowRight className="w-3 h-3 fill-secondry ml-1" />
+                  <ArrowRight className="w-3 h-3 fill-primary ml-1" />
                 </div>
               </Card>
             </Link>

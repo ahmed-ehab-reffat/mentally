@@ -6,10 +6,10 @@ export default function Guidelines() {
       <h2 className="text-primary text-2xl font-bold mb-4">
         Session Guidelines
       </h2>
-      <ul className="bg-light p-8 space-y-4 rounded-lg shadow-lg">
+      <ul className="bg-foreground p-8 space-y-4 rounded-lg shadow-lg">
         {guidelines.map((guideline, index) => (
           <li key={index} className="flex items-center gap-3">
-            <CircleCheck className="w-5 h-5 fill-secondry" />
+            <CircleCheck className="w-5 h-5 fill-primary" />
             <span>{guideline}</span>
           </li>
         ))}

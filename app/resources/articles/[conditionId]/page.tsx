@@ -22,7 +22,7 @@ export default async function ConditionPage({ params }: ConditionProps) {
     <div className="container mx-auto px-8 pt-8 pb-16">
       <Link
         href="/resources/articles"
-        className="flex items-center w-fit hover:text-secondry hover:*:fill-secondry"
+        className="flex items-center w-fit hover:text-primary hover:*:fill-primary"
       >
         <ArrowLeft className="w-4 h-4 mr-2" />
         All Articles
@@ -31,10 +31,10 @@ export default async function ConditionPage({ params }: ConditionProps) {
       <h1 className="text-5xl font-bold text-primary py-8">
         {condition.title}
       </h1>
-      <Card className="space-y-10 marker:text-secondry  scroll-smooth">
+      <Card className="space-y-10 marker:text-primary  scroll-smooth">
         <section id="summary">
           <h2 className="text-primary text-3xl font-bold mb-4">Summary</h2>
-          <ul className="list-disc ml-10 text-xl space-y-2 *:w-fit *:hover:text-secondry *:hover:underline">
+          <ul className="list-disc ml-10 text-xl space-y-2 *:w-fit *:hover:text-primary *:hover:underline">
             <li key="definition">
               <a href="#definition">Definition</a>
             </li>

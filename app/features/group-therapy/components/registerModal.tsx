@@ -22,7 +22,7 @@ export default function RegisterModal({ name, modalRef, onClose }: Props) {
     <Modal ref={modalRef}>
       <h2 className="mb-2 text-lg font-bold leading-none tracking-tight flex justify-between">
         Register for {name}
-        <Xmark onClick={() => onClose} className="w-4 cursor-pointer" />
+        <Xmark onClick={onClose} className="w-4 cursor-pointer" />
       </h2>
       <p className="text-sm mb-4">
         Fill out the form below to register for the session.

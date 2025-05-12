@@ -2,7 +2,7 @@ import StatItem from "./stateItem";
 
 export default function Stats() {
   return (
-    <section id="stats" className="bg-light mx-auto py-12">
+    <section id="stats" className="bg-foreground mx-auto py-12">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-y-12 gap-x-6 lg:gap-x-8">
         {stats.map((stat, index) => (
           <StatItem

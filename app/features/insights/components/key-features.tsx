@@ -6,7 +6,7 @@ export default function KeyFeatures() {
       <h2 className="text-primary text-2xl font-bold mb-4">Key Features</h2>
       <ul className="grid gap-6 md:grid-cols-3">
         {features.map((feature, index) => (
-          <li key={index} className="bg-light p-6 rounded-lg shadow-lg">
+          <li key={index} className="bg-foreground p-6 rounded-lg shadow-lg">
             <header className="flex gap-2 text-primary mb-2">
               {feature.icon}
               <h3 className="text-xl font-bold">{feature.title}</h3>

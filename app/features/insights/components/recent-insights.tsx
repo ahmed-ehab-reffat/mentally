@@ -6,12 +6,12 @@ export default function RecentInsights() {
       <h2 className="text-primary text-2xl font-bold mb-4">Recent Insights</h2>
       <ul className="grid gap-4 md:grid-cols-2">
         {insights.map((insight, index) => (
-          <li key={index} className="bg-light p-6 rounded-lg shadow-lg">
+          <li key={index} className="bg-foreground p-6 rounded-lg shadow-lg">
             <h2 className="text-xl font-bold">{insight.title}</h2>
             <main>
               <p className="mb-2">{insight.description}</p>
-              <div className="flex items-center text-secondry">
-                <ChartUp className="w-4 mr-1 fill-secondry" />
+              <div className="flex items-center text-primary">
+                <ChartUp className="w-4 mr-1 fill-primary" />
                 {insight.improvement}
               </div>
             </main>

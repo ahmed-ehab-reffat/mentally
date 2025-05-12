@@ -17,7 +17,7 @@ export default function FAQ() {
     });
   }
   return (
-    <section id="faq" className="bg-light">
+    <section id="faq" className="bg-foreground">
       <div className="container mx-auto px-4 pt-10 pb-12">
         <h2 className="text-4xl font-bold text-primary text-center mb-8 capitalize">
           frequently asked questions
@@ -35,7 +35,7 @@ export default function FAQ() {
                 {faq.question}
 
                 <ArrowDown
-                  className={`w-3 h-3 fill-secondry duration-200 ${
+                  className={`w-3 h-3 fill-primary duration-200 ${
                     visibleAnswers.includes(index) ? "rotate-180" : ""
                   }`}
                 />

@@ -8,7 +8,7 @@ type Props = {
 
 export default function Tests({ selected, onSelect }: Props) {
   return (
-    <section id="tests" className="bg-light p-8 rounded-lg shadow-lg">
+    <section id="tests" className="bg-foreground p-8 rounded-lg shadow-lg">
       <h2 className="text-primary text-2xl font-bold">
         Select a Mental Health Test
       </h2>
@@ -25,7 +25,7 @@ export default function Tests({ selected, onSelect }: Props) {
               className="flex justify-between items-center uppercase"
             >
               {test}
-              <Plus className="w-3 h-3 fill-secondry" />
+              <Plus className="w-3 h-3 fill-primary" />
             </Button>
           ))}
         </ul>

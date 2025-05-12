@@ -5,7 +5,7 @@ import { Facebook, Github, Instagram, Linkedin, X } from "./ui/icons";
 
 export default function Footer() {
   return (
-    <footer id="contactus" className="bg-light pt-12 pb-4">
+    <footer id="contactus" className="bg-foreground pt-12 pb-4">
       <div className="container px-4 mx-auto flex flex-wrap flex-col md:flex-row gap-8">
         <div className="min-w-full lg:min-w-auto lg:flex-1">
           <Link href="/" className="block w-fit">
@@ -15,7 +15,15 @@ export default function Footer() {
               quality={100}
               width={100}
               height={100}
-              className="h-auto"
+              className="h-auto block dark:hidden"
+            />
+            <Image
+              src="/images/logoWhite.png"
+              alt="Mentally Logo"
+              quality={100}
+              width={100}
+              height={100}
+              className="h-auto hidden dark:block"
             />
           </Link>
           <Link
@@ -73,7 +81,7 @@ export default function Footer() {
           <p className="mt-2">
             Email:{" "}
             <a
-              className="text-secondry hover:underline"
+              className="text-primary hover:underline"
               href="mailto:support@mentally.com"
             >
               support@mentally.com
@@ -82,27 +90,27 @@ export default function Footer() {
           <ul className="flex gap-6 mt-6">
             <li id="facebook">
               <a href="#">
-                <Facebook className="w-6 h-6 hover:fill-secondry hover:scale-110 hover:rotate-10 duration-250" />
+                <Facebook className="w-6 h-6 hover:fill-primary hover:scale-110 hover:rotate-10 duration-250" />
               </a>
             </li>
             <li id="instagram">
               <a href="#">
-                <Instagram className="w-6 h-6 hover:fill-secondry hover:scale-110 hover:rotate-10 duration-250" />
+                <Instagram className="w-6 h-6 hover:fill-primary hover:scale-110 hover:rotate-10 duration-250" />
               </a>
             </li>
             <li id="x">
               <a href="#">
-                <X className="w-6 h-6 hover:fill-secondry hover:scale-110 hover:rotate-10 duration-250" />
+                <X className="w-6 h-6 hover:fill-primary hover:scale-110 hover:rotate-10 duration-250" />
               </a>
             </li>
             <li id="linkedin">
               <a href="#">
-                <Linkedin className="w-6 h-6 hover:fill-secondry hover:scale-110 hover:rotate-10 duration-250" />
+                <Linkedin className="w-6 h-6 hover:fill-primary hover:scale-110 hover:rotate-10 duration-250" />
               </a>
             </li>
             <li id="github">
               <a href="#">
-                <Github className="w-6 h-6 hover:fill-secondry hover:scale-110 hover:rotate-10 duration-250" />
+                <Github className="w-6 h-6 hover:fill-primary hover:scale-110 hover:rotate-10 duration-250" />
               </a>
             </li>
           </ul>

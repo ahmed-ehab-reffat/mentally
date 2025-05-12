@@ -4,7 +4,7 @@ export default function HowItWorks() {
       <h2 className="text-primary text-2xl font-bold mb-4">How It Works</h2>
       <div className="grid gap-6 md:grid-cols-3">
         {howItWorks.map((item, index) => (
-          <div key={index} className="bg-light p-6 rounded-lg shadow-lg">
+          <div key={index} className="bg-foreground p-6 rounded-lg shadow-lg">
             <h3 className="text-xl font-bold mb-2">{item.title}</h3>
             <p>{item.description}</p>
           </div>

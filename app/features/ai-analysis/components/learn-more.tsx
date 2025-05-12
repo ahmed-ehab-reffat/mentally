@@ -5,7 +5,7 @@ export default function LearnMore() {
       <p className="text-lg mb-4">
         Explore additional resources about mental health and AI technology:
       </p>
-      <ul className="pl-8 list-disc text-secondry text-lg">
+      <ul className="pl-8 list-disc text-primary text-lg">
         <li>
           <a
             href="https://www.who.int/health-topics/mental-health"

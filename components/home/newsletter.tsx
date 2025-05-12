@@ -7,7 +7,7 @@ export default function Newsletter() {
   return (
     <section className="px-4 pt-10 pb-16">
       <Card className="max-w-2xl mx-auto text-center border border-primary">
-        <div className="inline-block p-5 rounded-full bg-white">
+        <div className="inline-block p-5 rounded-full bg-surface">
           <Envelope className="w-7 h-7 align-[-0.125em] fill-primary" />
         </div>
         <h2 className="text-primary text-3xl font-bold mb-4">Stay Updated</h2>

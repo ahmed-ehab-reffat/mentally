@@ -28,7 +28,7 @@ export default function CentersPage() {
             <a href={center.mapsUrl}>
               <Button className="flex items-center justify-center gap-2  w-3/4 mx-auto">
                 View on Map
-                <ArrowRight className="w-3 h-3 fill-secondry" />
+                <ArrowRight className="w-3 h-3 fill-primary" />
               </Button>
             </a>
           </Card>

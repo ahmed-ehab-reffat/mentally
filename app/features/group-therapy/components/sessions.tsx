@@ -21,13 +21,13 @@ export default function Sessions({ onRegistir }: Props) {
                   {session.title}
                 </h3>
                 <div className="flex items-center gap-2 mb-2">
-                  <Calendar className="w-4 h-4 fill-secondry" />
+                  <Calendar className="w-4 h-4 fill-primary" />
                   <span>{session.date}</span>
                 </div>
                 <p className="mb-4">{session.description}</p>
               </div>
-              <div className="bg-white h-fit px-3 py-1 rounded-full">
-                <span className="text-secondry text-sm whitespace-nowrap">
+              <div className="bg-surface h-fit px-3 py-1 rounded-full">
+                <span className="text-primary text-sm whitespace-nowrap">
                   {session.spots} spots left
                 </span>
               </div>

@@ -12,7 +12,7 @@ export default function ProgressOverview() {
   return (
     <section
       id="progress-overview"
-      className="bg-light p-8 rounded-lg shadow-lg"
+      className="bg-foreground p-8 rounded-lg shadow-lg"
     >
       <header>
         <h2 className="text-primary text-2xl font-bold">
@@ -39,7 +39,7 @@ export default function ProgressOverview() {
           <div key={index}>
             <div className="flex justify-between text-lg font-bold mb-2">
               <span>{title}</span>
-              <span className="text-secondry">
+              <span className="text-primary">
                 {mockData[selectedPeriod].progress[index]}%
               </span>
             </div>
@@ -52,7 +52,7 @@ export default function ProgressOverview() {
 
         <div>
           <div className="text-lg font-bold">Activities Completed</div>
-          <div className="text-secondry text-2xl font-bold">
+          <div className="text-primary text-2xl font-bold">
             {mockData[selectedPeriod].activitiesCompleted}
           </div>
         </div>
