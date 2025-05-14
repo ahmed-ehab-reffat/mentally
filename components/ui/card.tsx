@@ -1,10 +1,13 @@
+import { cn } from "@/lib/utils";
+
 type Props = React.HTMLAttributes<HTMLDivElement>;
 
-export default function Card({ className = "", children, ...props }: Props) {
-  const classess = `bg-foreground p-6 rounded-xl shadow-xl ${className}`;
-
+export default function Card({ className, children, ...props }: Props) {
   return (
-    <div className={classess} {...props}>
+    <div
+      className={cn("bg-foreground p-6 rounded-xl shadow-xl", className)}
+      {...props}
+    >
       {children}
     </div>
   );

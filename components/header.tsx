@@ -88,8 +88,8 @@ export default function Header() {
             login
           </Link>
           <p onClick={toggleTheme} className="cursor-pointer">
-            <Sun className="w-5 h-5 fill-orange-400 block dark:hidden" />
-            <Moon className="w-5 h-5 hidden dark:block" />
+            <Sun className="w-5 h-5 fill-primary hidden dark:block" />
+            <Moon className="w-5 h-5 fill-primary block dark:hidden" />
           </p>
         </ul>
       </nav>

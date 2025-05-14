@@ -1,7 +1,7 @@
 "use client";
 
 import { ReactElement, useEffect, useState } from "react";
-import { fetchAI } from "@/lib/utils";
+import { fetchAI } from "@/lib/serverActions";
 import Button from "@/components/ui/button";
 import Loading from "@/components/loading";
 import Result from "./components/result";

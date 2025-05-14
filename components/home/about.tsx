@@ -1,8 +1,6 @@
-// import { Heart } from "@/components/ui/icons";
-
 export default function About() {
   return (
-    <section id="about" className="">
+    <section id="about">
       <div className="container mx-auto px-4 pt-10 pb-12">
         <h2 className="text-4xl font-bold text-primary mb-8 text-center">
           Interactive Mental Health

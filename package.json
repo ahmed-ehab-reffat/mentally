@@ -12,11 +12,13 @@
     "@ai-sdk/openai": "^1.2.5",
     "@ai-sdk/react": "^1.1.23",
     "ai": "^4.1.61",
+    "clsx": "^2.1.1",
     "emoji-picker-react": "^4.12.2",
     "next": "^15.3.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-markdown": "^10.1.0"
+    "react-markdown": "^10.1.0",
+    "tailwind-merge": "^3.3.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

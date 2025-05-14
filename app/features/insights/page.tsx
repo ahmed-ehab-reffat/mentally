@@ -2,7 +2,7 @@
 
 import { ReactElement, useState } from "react";
 
-import { fetchAI, type Message } from "@/lib/utils.ts";
+import { fetchAI, type Message } from "@/lib/serverActions";
 
 import Header from "./components/header";
 import ProgressOverview from "./components/progress-overview.tsx";

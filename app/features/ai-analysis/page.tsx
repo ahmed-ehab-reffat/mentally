@@ -2,7 +2,7 @@
 
 import { ReactElement, useState, useRef } from "react";
 
-import { fetchAI, type Message } from "@/lib/utils";
+import { fetchAI, type Message } from "@/lib/serverActions";
 import HowItWorks from "./components/how-it-works";
 import Benefits from "./components/benefits";
 import Tests from "./components/tests";

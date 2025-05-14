@@ -47,7 +47,7 @@ export default function Footer() {
               <Link href="/chatbot">Chatbot</Link>
             </ul>
           </div>
-          <div className="">
+          <div>
             <h6 className="text-primary uppercase font-black text-lg">legal</h6>
             <ul className="*:mt-2">
               <li>

@@ -6,7 +6,7 @@ import { Eye, EyeSlash } from "./icons";
 
 type Props = React.InputHTMLAttributes<HTMLInputElement>;
 
-export default function InputPassword({ className = "", ...props }: Props) {
+export default function InputPassword({ className, ...props }: Props) {
   const [isHidden, setIsHidden] = useState(false);
 
   function onToggle() {

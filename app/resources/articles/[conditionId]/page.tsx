@@ -32,8 +32,10 @@ export default async function ConditionPage({ params }: ConditionProps) {
         {condition.title}
       </h1>
       <Card className="space-y-10 marker:text-primary  scroll-smooth">
-        <section id="summary">
-          <h2 className="text-primary text-3xl font-bold mb-4">Summary</h2>
+        <section id="contents">
+          <h2 className="text-primary text-3xl font-bold mb-4">
+            Table Of Contents
+          </h2>
           <ul className="list-disc ml-10 text-xl space-y-2 *:w-fit *:hover:text-primary *:hover:underline">
             <li key="definition">
               <a href="#definition">Definition</a>
