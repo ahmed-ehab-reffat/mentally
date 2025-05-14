@@ -14,7 +14,7 @@ export default function Chatbot() {
             platform.
           </p>
 
-          <Link href="/chat">
+          <Link href="/chatbot">
             <Button className="!px-8 !py-3 text-lg !rounded-full">
               Try Our Chatbot
             </Button>
