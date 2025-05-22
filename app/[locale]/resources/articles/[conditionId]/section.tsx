@@ -10,8 +10,8 @@ export default function Section({ title, iterable }: Props) {
         {title}
       </h2>
       <ul className="list-disc text-xl ml-10 space-y-2">
-        {iterable.map((i) => (
-          <li key={i}>{i}</li>
+        {iterable.map((i, index) => (
+          <li key={index}>{i}</li>
         ))}
       </ul>
     </section>

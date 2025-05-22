@@ -1,0 +1,131 @@
+{
+  "Home": {
+    "Landing": {
+      "title1": "Together",
+      "title2": "We Can Overcome"
+    },
+    "About": {
+      "title": "Interactive Mental Health",
+      "p1": "Mentally is a Mental Health Support System which is a 24/7 AI-powered platform designed to provide personalized mental health support.",
+      "p2": "It uses advanced technologies such as sentiment analysis and smart chatbots to analyze emotions and offer tailored recommendations.",
+      "p3": "The platform also provides users with tools like meditation exercises, group therapy and mental health progress tracking for holistic emotional well-being."
+    },
+    "Stats": {
+      "active users": "active users",
+      "group sessions": "group sessions",
+      "user satisfaction": "user satisfaction",
+      "support available": "support available"
+    },
+    "CardsSection": {
+      "features": "features",
+      "resources": "resources",
+      "Learn more": "Learn more",
+      "AI-powered analysis": {
+        "title": "AI-powered analysis",
+        "description": "Advanced algorithms analyze your emotional state and provide personalized support."
+      },
+      "group therapy": {
+        "title": "group therapy",
+        "description": "Connect with others in moderated group sessions for experience and support."
+      },
+      "personalized insights": {
+        "title": "personalized insights",
+        "description": "Begin your journey to better mental health with personalized insights and tracking."
+      },
+      "questionnaire": {
+        "title": "questionnaire",
+        "description": "Gain valuable insights into your mental health patterns and progress over time."
+      },
+      "articles": {
+        "title": "articles",
+        "description": "Read expert articles and research papers"
+      },
+      "videos": {
+        "title": "videos",
+        "description": "Watch educational and therapeutic videos"
+      },
+      "podcasts": {
+        "title": "podcasts",
+        "description": "Listen to mental health podcasts"
+      },
+      "mental health centers": {
+        "title": "mental health centers",
+        "description": "Find mental health centers and hospitals near you"
+      }
+    },
+    "Chatbot": {
+      "title": "start your journey to better mental health",
+      "description": "Take the first step towards a healthier mind with our interactive platform.",
+      "button": "Try Our Chatbot"
+    },
+    "FAQ": {
+      "title": "frequently asked questions",
+      "faqs": [
+        {
+          "question": "How does the AI analysis work?",
+          "answer": "Our AI system uses advanced natural language processing to analyze your responses and emotional patterns, providing personalized support and recommendations based on your unique situation."
+        },
+        {
+          "question": "Are the group therapy sessions confidential?",
+          "answer": "Yes, all group therapy sessions are completely confidential and moderated by licensed professionals. We maintain strict privacy standards to ensure a safe space for all participants."
+        },
+        {
+          "question": "How often should I use the platform?",
+          "answer": "We recommend regular check-ins, ideally daily or weekly, to get the most benefit from the platform. However, you can use it as frequently as you need based on your personal circumstances."
+        },
+        {
+          "question": "Can I track my progress over time?",
+          "answer": "Yes, our platform provides detailed progress tracking through personalized insights, charts, and regular assessment reports to help you monitor your mental health journey."
+        }
+      ]
+    },
+    "Testimonial": {
+      "title": "what our users say",
+      "testimonials": [
+        {
+          "quote": "This platform has transformed how I manage my mental health. The AI analysis is incredibly accurate.",
+          "author": "Sarah M.",
+          "role": "User"
+        },
+        {
+          "quote": "The group therapy sessions have given me a supportive community I never knew I needed.",
+          "author": "Michael R.",
+          "role": "Group Member"
+        },
+        {
+          "quote": "The personalized insights helped me understand my patterns and make positive changes.",
+          "author": "Emma L.",
+          "role": "Active User"
+        }
+      ]
+    },
+    "Newsletter": {
+      "title": "stay updated",
+      "description": "Subscribe to our newsletter for mental health tips, updates, and resources.",
+      "Enter your email": "Enter your email",
+      "subscribe": "subscribe"
+    }
+  },
+  "Footer": {
+    "description": "We're committed to deliver life-changing mental care to everyone who needs it.",
+    "links": {
+      "title": "links",
+      "about": "about",
+      "features": "features",
+      "resources": "resources",
+      "chatbot": "chatbot"
+    },
+    "legal": {
+      "title": "legal",
+      "privacy policy": "privacy policy",
+      "licensing": "licensing",
+      "terms & conditions": "terms & conditions",
+      "cookies": "cookies"
+    },
+    "contact us": {
+      "title": "contact us",
+      "description": "Get in touch with us via mail We are waiting for your message",
+      "email": "Email"
+    }
+  }
+}

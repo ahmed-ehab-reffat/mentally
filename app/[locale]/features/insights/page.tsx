@@ -4,13 +4,13 @@ import { ReactElement, useState } from "react";
 
 import { fetchAI, type Message } from "@/lib/serverActions";
 
-import Header from "./components/header";
+import Header from "./components/header.tsx";
 import ProgressOverview from "./components/progress-overview.tsx";
 import RecentInsights from "./components/recent-insights.tsx";
 import KeyFeatures from "./components/key-features.tsx";
-import Assessments from "./components/assessments";
+import Assessments from "./components/assessments.tsx";
 import Tests, { type Test } from "./components/tests.tsx";
-import Questions, { type Answer } from "./components/questions";
+import Questions, { type Answer } from "./components/questions.tsx";
 import Results from "./components/result.tsx";
 
 export default function InsightsPage() {

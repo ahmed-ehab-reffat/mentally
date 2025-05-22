@@ -1,9 +1,12 @@
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 
 import { Facebook, Github, Instagram, Linkedin, X } from "./ui/icons";
+import { useTranslations } from "next-intl";
 
 export default function Footer() {
+  const t = useTranslations("Footer");
+
   return (
     <footer id="contactus" className="bg-foreground pt-12 pb-4">
       <div className="container px-4 mx-auto flex flex-wrap flex-col md:flex-row gap-8">
@@ -28,58 +31,51 @@ export default function Footer() {
           </Link>
           <Link
             href="/"
-            className="font-black uppercase text-2xl text-primary w-fit mb-8"
+            className="font-black font-[Nunito] uppercase text-2xl text-primary w-fit mb-8"
           >
             mentally
           </Link>
-          <p className="text-lg my-2">
-            We&apos;re committed to deliver life-changing mental care to
-            everyone who needs it.
-          </p>
+          <p className="text-lg my-2">{t("description")}</p>
         </div>
         <div className="flex flex-1 lg:justify-around">
-          <div className="mr-24 lg:mr-0">
-            <h6 className="text-primary uppercase font-black text-lg">links</h6>
-            <ul className="*:block *:mt-2 *:hover:underline">
-              <Link href="/#about">About</Link>
-              <Link href="/#features">Features</Link>
-              <Link href="/#resources">Resources</Link>
-              <Link href="/chatbot">Chatbot</Link>
+          <div className="ltr:mr-24 rtl:ml-24 lg:mr-0">
+            <h6 className="text-primary uppercase font-black text-lg">
+              {t("links.title")}
+            </h6>
+            <ul className="*:block *:mt-2 *:hover:underline *:capitalize">
+              <Link href="/#about">{t("links.about")}</Link>
+              <Link href="/#features">{t("links.features")}</Link>
+              <Link href="/#resources">{t("links.resources")}</Link>
+              <Link href="/chatbot">{t("links.chatbot")}</Link>
             </ul>
           </div>
           <div>
-            <h6 className="text-primary uppercase font-black text-lg">legal</h6>
-            <ul className="*:mt-2">
+            <h6 className="text-primary uppercase font-black text-lg">
+              {t("legal.title")}
+            </h6>
+            <ul className="*:mt-2 *:*:capitalize *:*:hover:underline">
               <li>
-                <a href="#" className="hover:underline">
-                  Privacy Policy
-                </a>
+                <a href="#">{t("legal.privacy policy")}</a>
               </li>
               <li>
-                <a href="#" className="hover:underline">
-                  Licensing
-                </a>
+                <a href="#">{t("legal.licensing")}</a>
               </li>
               <li>
-                <a href="#" className="hover:underline">
-                  Terms &amp; Conditions
-                </a>
+                <a href="#">{t("legal.terms & conditions")}</a>
               </li>
               <li>
-                <a href="#" className="hover:underline">
-                  Cookies
-                </a>
+                <a href="#">{t("legal.cookies")}</a>
               </li>
             </ul>
           </div>
         </div>
         <div className="flex-1">
-          <h6 className="text-primary uppercase font-black">contact us</h6>
+          <h6 className="text-primary uppercase font-black">
+            {t("contact us.title")}
+          </h6>
+          <p className="mt-2">{t("contact us.description")}</p>
           <p className="mt-2">
-            Get in touch with us via mail We are waiting for your message
-          </p>
-          <p className="mt-2">
-            Email:{" "}
+            {t("contact us.email") + ": "}
             <a
               className="text-primary hover:underline"
               href="mailto:support@mentally.com"
@@ -117,7 +113,7 @@ export default function Footer() {
         </div>
       </div>
       <hr className="mt-6 border-primary border-b-[1px]" />
-      <p className="text-center pt-4">
+      <p dir="ltr" className="font-[Nunito] text-center pt-4">
         &copy; {new Date().getFullYear()} Mentally, Inc.
       </p>
     </footer>

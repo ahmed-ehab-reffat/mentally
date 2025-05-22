@@ -1,3 +1,5 @@
+import { cn } from "@/lib/utils";
+
 type Props = React.SVGProps<SVGSVGElement>;
 
 export function Facebook(props: Props) {
@@ -78,9 +80,10 @@ export function Envelope(props: Props) {
   );
 }
 
-export function Book(props: Props) {
+export function Book({ className, ...props }: Props) {
   return (
     <svg
+      className={cn("rtl:rotate-y-180", className)}
       {...props}
       fill="currentColor"
       xmlns="http://www.w3.org/2000/svg"
@@ -91,9 +94,10 @@ export function Book(props: Props) {
   );
 }
 
-export function Video(props: Props) {
+export function Video({ className, ...props }: Props) {
   return (
     <svg
+      className={cn("rtl:rotate-y-180", className)}
       {...props}
       fill="currentColor"
       xmlns="http://www.w3.org/2000/svg"
@@ -143,9 +147,10 @@ export function Brain(props: Props) {
   );
 }
 
-export function Users(props: Props) {
+export function Users({ className, ...props }: Props) {
   return (
     <svg
+      className={cn("rtl:rotate-y-180", className)}
       {...props}
       fill="currentColor"
       xmlns="http://www.w3.org/2000/svg"
@@ -156,9 +161,10 @@ export function Users(props: Props) {
   );
 }
 
-export function Lightbulb(props: Props) {
+export function Lightbulb({ className, ...props }: Props) {
   return (
     <svg
+      className={cn("rtl:rotate-y-180", className)}
       {...props}
       fill="currentColor"
       xmlns="http://www.w3.org/2000/svg"
@@ -169,9 +175,10 @@ export function Lightbulb(props: Props) {
   );
 }
 
-export function ClipboardQuestion(props: Props) {
+export function ClipboardQuestion({ className, ...props }: Props) {
   return (
     <svg
+      className={cn("rtl:rotate-y-180", className)}
       {...props}
       fill="currentColor"
       xmlns="http://www.w3.org/2000/svg"
@@ -234,9 +241,10 @@ export function Xmark(props: Props) {
   );
 }
 
-export function ArrowRight(props: Props) {
+export function ArrowRight({ className, ...props }: Props) {
   return (
     <svg
+      className={cn("rtl:rotate-y-180", className)}
       {...props}
       fill="currentColor"
       xmlns="http://www.w3.org/2000/svg"
@@ -247,9 +255,10 @@ export function ArrowRight(props: Props) {
   );
 }
 
-export function ArrowLeft(props: Props) {
+export function ArrowLeft({ className, ...props }: Props) {
   return (
     <svg
+      className={cn("rtl:rotate-y-180", className)}
       {...props}
       fill="currentColor"
       xmlns="http://www.w3.org/2000/svg"

@@ -1,11 +1,13 @@
 "use client";
 
 import { useState } from "react";
-
 import { ArrowDown } from "@/components/ui/icons";
+import { useTranslations } from "next-intl";
 
 export default function FAQ() {
   const [visibleAnswers, setVisibleAnswers] = useState<number[]>([]);
+  const t = useTranslations("Home.FAQ");
+  const faqs: { question: string; answer: string }[] = t.raw("faqs");
 
   function handleTrigger(index: number) {
     setVisibleAnswers((prev) => {
@@ -16,11 +18,12 @@ export default function FAQ() {
       }
     });
   }
+
   return (
     <section id="faq" className="bg-foreground">
       <div className="container mx-auto px-4 pt-10 pb-12">
         <h2 className="text-4xl font-bold text-primary text-center mb-8 capitalize">
-          frequently asked questions
+          {t("title")}
         </h2>
         <ul className="max-w-3xl mx-auto space-y-4">
           {faqs.map((faq, index) => (
@@ -33,7 +36,6 @@ export default function FAQ() {
                 className="px-6 py-4 font-bold cursor-pointer hover:underline flex justify-between items-center"
               >
                 {faq.question}
-
                 <ArrowDown
                   className={`w-3 h-3 fill-primary duration-200 ${
                     visibleAnswers.includes(index) ? "rotate-180" : ""
@@ -57,26 +59,3 @@ export default function FAQ() {
     </section>
   );
 }
-
-const faqs: { question: string; answer: string }[] = [
-  {
-    question: "How does the AI analysis work?",
-    answer:
-      "Our AI system uses advanced natural language processing to analyze your responses and emotional patterns, providing personalized support and recommendations based on your unique situation.",
-  },
-  {
-    question: "Are the group therapy sessions confidential?",
-    answer:
-      "Yes, all group therapy sessions are completely confidential and moderated by licensed professionals. We maintain strict privacy standards to ensure a safe space for all participants.",
-  },
-  {
-    question: "How often should I use the platform?",
-    answer:
-      "We recommend regular check-ins, ideally daily or weekly, to get the most benefit from the platform. However, you can use it as frequently as you need based on your personal circumstances.",
-  },
-  {
-    question: "Can I track my progress over time?",
-    answer:
-      "Yes, our platform provides detailed progress tracking through personalized insights, charts, and regular assessment reports to help you monitor your mental health journey.",
-  },
-];
