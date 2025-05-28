@@ -37,8 +37,8 @@ export default function Footer() {
           </Link>
           <p className="text-lg my-2">{t("description")}</p>
         </div>
-        <div className="flex flex-1 lg:justify-around">
-          <div className="ltr:mr-24 rtl:ml-24 lg:mr-0">
+        <div className="flex flex-1 space-x-24 lg:space-x-0 lg:justify-around">
+          <div>
             <h6 className="text-primary uppercase font-black text-lg">
               {t("links.title")}
             </h6>

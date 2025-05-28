@@ -1,42 +1,40 @@
 "use client";
 
 import { Video } from "@/components/ui/icons";
+import { useTranslations } from "next-intl";
 
-export default function VideosPage() {
+export default function Videos() {
+  const t = useTranslations("Resources.Videos");
+
   return (
     <div className="container mx-auto px-8 pt-12 pb-16">
-      <div className="flex items-center gap-4 mb-8">
-        <Video className="w-10 h-10 fill-primary" />
-        <h1 className="text-4xl font-bold text-primary">
-          Mental Health Videos
-        </h1>
+      <div className="flex items-center gap-4 mb-8 text-primary">
+        <Video className="w-10 h-10" />
+        <h1 className="text-4xl font-bold">{t("title")}</h1>
       </div>
       <ul className="grid gap-x-6 gap-y-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {videos.map((video) => (
           <li key={video.url}>
-            <div>
-              <iframe
-                src={`https://www.youtube.com/embed/${
-                  video.url.split("v=")[1]
-                }`}
-                title={video.title}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-                className="w-full aspect-5/3 rounded-lg"
-              />
-              <div className="mt-2">
-                <h3 className="text-lg tracking-wider">{video.title}</h3>
-                <div className="text-sm">
-                  <h5>{video.author}</h5>
-                  <div className="relative hover:*:visible">
-                    <p className="text-nowrap overflow-hidden text-ellipsis">
-                      {video.description}
-                    </p>
-                    <p className="text-xs invisible absolute bg-gray-300 rounded-lg text-center px-2 py-1 w-max max-w-[110%] bottom-full left-1/2 -translate-x-1/2">
-                      {video.description}
-                    </p>
-                  </div>
-                </div>
+            <iframe
+              src={`https://www.youtube.com/embed/${video.url.split("v=")[1]}`}
+              title={video.title}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              className="w-full aspect-5/3 rounded-lg"
+            />
+            <div className="mt-2">
+              <h3 className="text-lg tracking-wider lin">{video.title}</h3>
+              <div className="relative text-sm">
+                <h5>{video.author}</h5>
+                <p
+                  dir="auto"
+                  className="peer text-nowrap overflow-hidden text-ellipsis"
+                >
+                  {video.description}
+                </p>
+                <p className="invisible peer-hover:visible text-xs absolute bg-gray-300 rounded-sm text-center px-2 py-1 w-max max-w-full bottom-1/2 left-1/2 -translate-x-1/2">
+                  {video.description}
+                </p>
               </div>
             </div>
           </li>

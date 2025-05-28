@@ -20,7 +20,7 @@ export default function Tests({ onSelect }: Props) {
           className="flex justify-between items-center uppercase"
         >
           {test.title} Test
-          <Plus className="w-3 h-3 fill-primary" />
+          <Plus className="w-3 h-3" />
         </Button>
       ))}
     </ul>

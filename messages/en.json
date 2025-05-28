@@ -106,6 +106,495 @@
       "subscribe": "subscribe"
     }
   },
+  "Resources": {
+    "Articles": {
+      "title": "mental health conditions",
+      "description": "Learn more about different mental health conditions, their symptoms, causes, and treatments.",
+      "Learn more": "Learn more",
+      "Condition": {
+        "all articles": "all articles",
+        "table of contents": "table of contents",
+        "definition": "definition",
+        "symptoms": "symptoms",
+        "causes": "causes",
+        "treatment": "treatment",
+        "What is": "What is {title}?"
+      },
+      "conditions": [
+        {
+          "id": "depression",
+          "title": "Depression",
+          "description": "A mental disorder characterized by persistent sadness and loss of interest in daily activities.",
+          "definition": "A mental disorder characterized by persistent sadness, loss of interest in daily activities, and low energy.",
+          "symptoms": [
+            "Persistent sadness or emptiness",
+            "Loss of interest in daily activities",
+            "Changes in appetite and sleep patterns",
+            "Difficulty concentrating and making decisions",
+            "Feelings of worthlessness or guilt",
+            "Suicidal thoughts in severe cases"
+          ],
+          "causes": [
+            "Genetic factors",
+            "Chemical imbalances in the brain (e.g., serotonin deficiency)",
+            "Traumatic experiences",
+            "Hormonal imbalances"
+          ],
+          "treatment": [
+            "Medication (antidepressants)",
+            "Cognitive Behavioral Therapy (CBT)",
+            "Exercise and relaxation techniques"
+          ]
+        },
+        {
+          "id": "anxiety",
+          "title": "Generalized Anxiety Disorder (GAD)",
+          "description": "A disorder characterized by excessive and persistent worry about everyday situations.",
+          "definition": "A mental disorder characterized by excessive and persistent worry about everyday situations without a clear reason.",
+          "symptoms": [
+            "Excessive worry and tension",
+            "Restlessness and irritability",
+            "Difficulty sleeping",
+            "Headaches and muscle tension",
+            "Increased heart rate"
+          ],
+          "causes": [
+            "Genetic predisposition",
+            "Brain chemistry imbalances",
+            "Stressful life events",
+            "Childhood trauma"
+          ],
+          "treatment": [
+            "Medication (anti-anxiety drugs)",
+            "Psychotherapy (CBT)",
+            "Relaxation techniques such as meditation and yoga"
+          ]
+        },
+        {
+          "id": "ocd",
+          "title": "Obsessive-Compulsive Disorder (OCD)",
+          "description": "A disorder involving unwanted repetitive thoughts and behaviors.",
+          "definition": "A disorder characterized by unwanted repetitive thoughts (obsessions) and repetitive behaviors (compulsions).",
+          "symptoms": [
+            "Excessive handwashing or cleaning",
+            "The need for extreme order and organization",
+            "Disturbing intrusive thoughts",
+            "Repetitive counting or checking"
+          ],
+          "causes": [
+            "Genetic factors",
+            "Neurotransmitter imbalances",
+            "Environmental influences"
+          ],
+          "treatment": [
+            "Cognitive Behavioral Therapy (Exposure and Response Prevention - ERP)",
+            "Antidepressants (e.g., SSRIs)"
+          ]
+        },
+        {
+          "id": "ptsd",
+          "title": "Post-Traumatic Stress Disorder (PTSD)",
+          "description": "A disorder that develops after exposure to traumatic events.",
+          "definition": "A disorder that develops after exposure to a traumatic event such as war, assault, or accidents.",
+          "symptoms": [
+            "Nightmares and flashbacks",
+            "Avoidance of trauma-related places or people",
+            "Anxiety and depression",
+            "Hypervigilance and strong reactions to triggers"
+          ],
+          "causes": [
+            "Exposure to traumatic events",
+            "Lack of social support",
+            "Genetic vulnerability"
+          ],
+          "treatment": [
+            "Cognitive Behavioral Therapy (CBT)",
+            "Exposure therapy",
+            "Antidepressants"
+          ]
+        },
+        {
+          "id": "schizophrenia",
+          "title": "Schizophrenia",
+          "description": "A severe mental disorder affecting thinking, perception, and behavior.",
+          "definition": "A severe mental disorder that affects thinking, perception, and behavior.",
+          "symptoms": [
+            "Auditory or visual hallucinations",
+            "Delusions (e.g., paranoia)",
+            "Disorganized thinking",
+            "Social withdrawal"
+          ],
+          "causes": [
+            "Genetic predisposition",
+            "Brain chemistry imbalances",
+            "Severe life stressors"
+          ],
+          "treatment": [
+            "Antipsychotic medication",
+            "Behavioral and social therapy"
+          ]
+        },
+        {
+          "id": "bipolar",
+          "title": "Bipolar Disorder",
+          "description": "A disorder characterized by extreme mood swings including mania and depression.",
+          "definition": "A mental disorder characterized by extreme mood swings, including episodes of mania and depression.",
+          "symptoms": [
+            "Manic episodes (high energy, reduced sleep, excessive confidence)",
+            "Depressive episodes (sadness, fatigue, suicidal thoughts)"
+          ],
+          "causes": [
+            "Genetic predisposition",
+            "Chemical imbalances in the brain",
+            "Psychological stress"
+          ],
+          "treatment": [
+            "Mood stabilizers (e.g., lithium)",
+            "Antidepressants",
+            "Psychotherapy"
+          ]
+        },
+        {
+          "id": "bpd",
+          "title": "Borderline Personality Disorder (BPD)",
+          "description": "A disorder involving emotional instability and unstable relationships.",
+          "definition": "A personality disorder characterized by emotional instability, unstable relationships, and impulsive behavior.",
+          "symptoms": [
+            "Rapid mood swings",
+            "Unstable relationships",
+            "Fear of abandonment",
+            "Impulsive behaviors (e.g., reckless spending, self-harm)"
+          ],
+          "causes": [
+            "Childhood trauma",
+            "Genetic factors",
+            "Brain abnormalities"
+          ],
+          "treatment": ["Dialectical Behavior Therapy (DBT)", "Psychotherapy"]
+        },
+        {
+          "id": "adhd",
+          "title": "Attention Deficit Hyperactivity Disorder (ADHD)",
+          "description": "A neurodevelopmental disorder affecting focus and impulse control.",
+          "definition": "A neurodevelopmental disorder affecting focus, impulse control, and hyperactivity.",
+          "symptoms": [
+            "Easily distracted",
+            "Difficulty sitting still",
+            "Excessive talking or movement",
+            "Trouble finishing tasks"
+          ],
+          "causes": ["Genetic factors", "Neurotransmitter imbalances"],
+          "treatment": ["Medication (Ritalin, Adderall)", "Behavioral therapy"]
+        },
+        {
+          "id": "eating-disorders",
+          "title": "Eating Disorders",
+          "description": "Disorders related to unhealthy eating behaviors and body image.",
+          "definition": "Disorders related to unhealthy eating behaviors, such as anorexia nervosa and bulimia nervosa.",
+          "symptoms": [
+            "Severe weight loss (anorexia)",
+            "Binge eating followed by purging (bulimia)",
+            "Loss of control over eating habits"
+          ],
+          "causes": [
+            "Societal pressure and body image expectations",
+            "Anxiety and depression"
+          ],
+          "treatment": ["Psychotherapy", "Medication when needed"]
+        },
+        {
+          "id": "autism",
+          "title": "Autism Spectrum Disorder (ASD)",
+          "description": "A developmental disorder affecting communication and social interactions.",
+          "definition": "A developmental disorder affecting communication and social interactions.",
+          "symptoms": [
+            "Difficulty with eye contact and social communication",
+            "Repetitive behaviors and restricted interests",
+            "Sensory sensitivities"
+          ],
+          "causes": [
+            "Genetic predisposition",
+            "Brain development abnormalities"
+          ],
+          "treatment": ["Behavioral and educational therapy", "Family support"]
+        },
+        {
+          "id": "panic-disorder",
+          "title": "Panic Disorder",
+          "description": "A disorder involving sudden and repeated panic attacks.",
+          "definition": "A disorder involving sudden and repeated panic attacks.",
+          "symptoms": [
+            "Sudden intense fear",
+            "Chest pain and shortness of breath",
+            "Dizziness or faintness",
+            "Fear of losing control"
+          ],
+          "causes": [
+            "Genetic factors",
+            "Stressful events",
+            "Brain chemistry imbalances"
+          ],
+          "treatment": ["CBT", "Anti-anxiety medication", "Breathing exercises"]
+        },
+        {
+          "id": "social-anxiety",
+          "title": "Social Anxiety Disorder",
+          "description": "A disorder characterized by intense fear of social situations.",
+          "definition": "A disorder characterized by intense fear of social situations.",
+          "symptoms": [
+            "Fear of judgment or embarrassment",
+            "Avoidance of social interaction",
+            "Physical symptoms like sweating or blushing"
+          ],
+          "causes": [
+            "Genetic predisposition",
+            "Past social trauma",
+            "Overactive amygdala"
+          ],
+          "treatment": ["CBT", "Exposure therapy", "SSRIs"]
+        },
+        {
+          "id": "phobias",
+          "title": "Specific Phobias",
+          "description": "A disorder involving intense fear of specific objects or situations.",
+          "definition": "A disorder involving intense fear of specific objects or situations.",
+          "symptoms": [
+            "Immediate fear response",
+            "Avoidance of feared object/situation",
+            "Physical symptoms like trembling"
+          ],
+          "causes": [
+            "Traumatic experiences",
+            "Learned behavior",
+            "Genetic factors"
+          ],
+          "treatment": ["Exposure therapy", "CBT", "Relaxation techniques"]
+        },
+        {
+          "id": "dissociative-disorder",
+          "title": "Dissociative Identity Disorder (DID)",
+          "description": "A disorder involving a disconnection from reality and multiple identities.",
+          "definition": "A disorder involving a disconnection from reality and multiple identities.",
+          "symptoms": [
+            "Presence of multiple identities",
+            "Memory gaps",
+            "Detachment from self"
+          ],
+          "causes": ["Severe childhood trauma", "Brain coping mechanism"],
+          "treatment": ["Psychotherapy", "Trauma-focused therapy"]
+        },
+        {
+          "id": "seasonal-affective",
+          "title": "Seasonal Affective Disorder (SAD)",
+          "description": "A type of depression related to seasonal changes.",
+          "definition": "A type of depression related to seasonal changes.",
+          "symptoms": [
+            "Low energy in winter months",
+            "Oversleeping",
+            "Cravings for carbohydrates"
+          ],
+          "causes": ["Reduced sunlight exposure", "Serotonin imbalance"],
+          "treatment": ["Light therapy", "Antidepressants", "CBT"]
+        },
+        {
+          "id": "substance-use",
+          "title": "Substance Use Disorder",
+          "description": "A disorder involving the harmful use of substances like drugs or alcohol.",
+          "definition": "A disorder involving the harmful use of substances like drugs or alcohol.",
+          "symptoms": [
+            "Loss of control over substance use",
+            "Tolerance and withdrawal",
+            "Neglect of responsibilities"
+          ],
+          "causes": [
+            "Genetic factors",
+            "Peer pressure",
+            "Mental health issues"
+          ],
+          "treatment": ["Detox programs", "Counseling", "Support groups"]
+        },
+        {
+          "id": "insomnia",
+          "title": "Insomnia Disorder",
+          "description": "A disorder characterized by difficulty falling or staying asleep.",
+          "definition": "A disorder characterized by difficulty falling or staying asleep.",
+          "symptoms": [
+            "Difficulty falling asleep",
+            "Waking up frequently",
+            "Daytime fatigue"
+          ],
+          "causes": ["Stress", "Medical conditions", "Poor sleep habits"],
+          "treatment": [
+            "Cognitive Behavioral Therapy for Insomnia (CBT-I)",
+            "Sleep hygiene",
+            "Medication"
+          ]
+        },
+        {
+          "id": "pmdd",
+          "title": "Premenstrual Dysphoric Disorder (PMDD)",
+          "description": "A severe form of PMS affecting mood and physical health.",
+          "definition": "A severe form of PMS affecting mood and physical health.",
+          "symptoms": [
+            "Severe irritability",
+            "Depression before menstruation",
+            "Physical symptoms like bloating"
+          ],
+          "causes": ["Hormonal fluctuations", "Serotonin sensitivity"],
+          "treatment": [
+            "Antidepressants (SSRIs)",
+            "Hormonal therapy",
+            "Lifestyle changes"
+          ]
+        },
+        {
+          "id": "hoarding",
+          "title": "Hoarding Disorder",
+          "description": "A disorder involving excessive accumulation of items.",
+          "definition": "A disorder involving excessive accumulation of items.",
+          "symptoms": [
+            "Inability to discard items",
+            "Cluttered living spaces",
+            "Distress at the thought of throwing things away"
+          ],
+          "causes": ["Trauma", "Genetic predisposition", "OCD link"],
+          "treatment": ["CBT", "Organization therapy", "Support groups"]
+        },
+        {
+          "id": "adjustment-disorder",
+          "title": "Adjustment Disorder",
+          "description": "A disorder caused by difficulty coping with a stressful life event.",
+          "definition": "A disorder caused by difficulty coping with a stressful life event.",
+          "symptoms": [
+            "Emotional distress",
+            "Difficulty functioning",
+            "Physical complaints"
+          ],
+          "causes": [
+            "Major life changes (e.g., divorce, job loss)",
+            "Ongoing stress"
+          ],
+          "treatment": [
+            "Psychotherapy",
+            "Stress management",
+            "Short-term medication"
+          ]
+        }
+      ]
+    },
+    "Centers": {
+      "title": "mental health centers and hospitals",
+      "Phone": "Phone",
+      "View on Map": "View on Map",
+      "centers": [
+        {
+          "name": "Abbassia Mental Health Hospital",
+          "type": "Puplic",
+          "address": "1 Salah Salem Street, Next to the Exhibition Grounds, Nasr City, Cairo",
+          "phone": "022616255",
+          "mapsUrl": "https://maps.app.goo.gl/7Uhb9LUojy461WoK7"
+        },
+        {
+          "name": "Helwan Mental Health Hospital",
+          "type": "Puplic",
+          "address": "Mansour Street Extension, between the two villages, Helwan, Cairo",
+          "phone": "0222547368 / 0227137387",
+          "mapsUrl": "https://maps.app.goo.gl/jKiyvvLY6P1noaQS9"
+        },
+        {
+          "name": "Al-Khanka Central Hospital",
+          "type": "Puplic",
+          "address": "Al mostashfa St., Madinet El Khanka, AlQualioubeya",
+          "phone": "44698816 / 44698437 / 44698845",
+          "mapsUrl": "https://maps.app.goo.gl/9RsH7mEd9Sp539Eh6"
+        },
+        {
+          "name": "Heliopolis Psychiatric Hospital (Al-Matar)",
+          "type": "Puplic",
+          "address": "Sheraton Al Matar, El Nozha, Cairo",
+          "phone": "01100232349 / 0222902581 / 16023",
+          "mapsUrl": "https://maps.app.goo.gl/dcSrpFFjbXJEnohDA"
+        },
+        {
+          "name": "Al Mashfa",
+          "type": "Private",
+          "address": "43, Cairo-Ismailia Road In front of (IMC), Cairo",
+          "phone": "01006422220 / 01000083561 / 20554400924",
+          "mapsUrl": "https://maps.app.goo.gl/MQuGGWewMKXUMjPr6"
+        },
+        {
+          "name": "Dr Adel Sadek Hospital",
+          "type": "Private",
+          "address": "(5) Ahmed Abd ElNabi St., Nozha ElGadida, Cairo",
+          "phone": "01000042768 / 01001908904 / 02226205757",
+          "mapsUrl": "https://maps.app.goo.gl/tcdWs8YZfXwjzXqz6"
+        },
+        {
+          "name": "Psychiatric Health Resort (Okasha hospital)",
+          "type": "Private",
+          "address": "Prof. Ahmed Okasha St., Off Mehwar Anwar El Sadaat, El Banafsig 12 District, Behind Police Academy, First Settlement, New Cairo",
+          "phone": "01002406998 / 0223082300",
+          "mapsUrl": "https://maps.app.goo.gl/fo4jXLqT8jU7Bs4m8"
+        },
+        {
+          "name": "The Behman Hospital",
+          "type": "Private",
+          "address": "32 El-Marsad St., Helwan 11421, Cairo",
+          "phone": "16984",
+          "mapsUrl": "https://maps.app.goo.gl/vZfKS8JS1ZF5GDd87"
+        }
+      ]
+    },
+    "Podcasts": {
+      "title": "mental health podcasts",
+      "Listen": "Listen",
+      "podcasts": [
+        {
+          "title": "The Mental Illness Happy Hour",
+          "url": "https://www.mentalpod.com/",
+          "description": "A weekly online podcast where comedians, artists, and regular folks share their experiences with mental illness."
+        },
+        {
+          "title": "Therapy Chat Podcast",
+          "url": "https://www.therapychatpodcast.com/",
+          "description": "Conversations about trauma, attachment, and mindfulness with Laura Reagan, LCSW-C."
+        },
+        {
+          "title": "The Happiness Lab with Dr. Laurie Santos",
+          "url": "https://www.happinesslab.fm/",
+          "description": "You might think you know what it takes to lead a happier life… more money, a better job, or Instagram-worthy vacations. You're dead wrong."
+        },
+        {
+          "title": "Mindful Muslim Podcast",
+          "url": "https://podcasts.apple.com/gb/podcast/mindful-muslim-mental-health/id1387835969",
+          "description": "A podcast that aims to explore and discuss mental health and well-being from an Islamic perspective."
+        },
+        {
+          "title": "Feel Better, Live More with Dr. Rangan Chatterjee",
+          "url": "https://drchatterjee.com/podcast/",
+          "description": "A podcast that aims to inspire, empower and transform the way we feel."
+        },
+        {
+          "title": "The Anxiety Coaches Podcast",
+          "url": "https://theanxietycoachespodcast.com/",
+          "description": "A podcast for anyone struggling with anxiety, panic attacks, stress, and depression."
+        },
+        {
+          "title": "The Trauma Therapist Podcast",
+          "url": "https://thetraumatherapistproject.com/podcast/",
+          "description": "A podcast about the human spirit. Hosted by Guy Macpherson, PhD."
+        },
+        {
+          "title": "The Mental Health Foundation Podcast",
+          "url": "https://www.mentalhealth.org.uk/explore-mental-health/podcasts",
+          "description": "A series of podcasts from the Mental Health Foundation exploring mental health issues."
+        }
+      ]
+    },
+    "Videos": {
+      "title": "mental health videos"
+    }
+  },
   "Footer": {
     "description": "We're committed to deliver life-changing mental care to everyone who needs it.",
     "links": {

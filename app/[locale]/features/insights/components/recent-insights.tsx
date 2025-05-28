@@ -11,7 +11,7 @@ export default function RecentInsights() {
             <main>
               <p className="mb-2">{insight.description}</p>
               <div className="flex items-center text-primary">
-                <ChartUp className="w-4 mr-1 fill-primary" />
+                <ChartUp className="w-4 mr-1" />
                 {insight.improvement}
               </div>
             </main>

@@ -25,19 +25,19 @@ const features: {
   description: string;
 }[] = [
   {
-    icon: <ChartUp className="w-6 h-6 fill-primary" />,
+    icon: <ChartUp className="w-6 h-6" />,
     title: "Progress Tracking",
     description:
       "Monitor your emotional well-being over time with detailed charts and analytics",
   },
   {
-    icon: <Bullseye className="w-6 h-6 fill-primary" />,
+    icon: <Bullseye className="w-6 h-6" />,
     title: "Goal Setting",
     description:
       "Set and track personal mental health goals with actionable steps",
   },
   {
-    icon: <Clock className="w-6 h-6 fill-primary" />,
+    icon: <Clock className="w-6 h-6" />,
     title: "Regular Check-ins",
     description:
       "Scheduled check-ins to help you stay on track with your mental health journey",

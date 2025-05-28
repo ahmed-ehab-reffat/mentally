@@ -13,16 +13,8 @@
   --color-primary: #ff8000;
   --color-background: #121212;
   --color-foreground: #1f1f1f;
+  --color-surface: #e5e7eb;
 }
-
-/* #a851b6; /*purple*/
-/* #ff8000; /*orange*/
-/* #cfe1ec; /*teal*/
-/* #f1f5f9; /*gray*/
-/* #2e4985; /*blue */
-/* #55b9c5; /*soft-blue */
-/* #1e293b; /*navy*/
-/* #020817; /* black */
 
 progress::-webkit-progress-value {
   background: var(--color-primary);

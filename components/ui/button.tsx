@@ -16,14 +16,14 @@ export default function Button({
     <button
       {...props}
       className={cn(
-        "bg-surface text-primary hover:bg-primary hover:text-white hover:*:fill-white font-bold px-4 py-2 rounded-md cursor-pointer duration-200",
+        "bg-surface text-primary hover:bg-primary hover:text-white font-bold px-4 py-2 rounded-md cursor-pointer duration-200",
         className,
         {
-          "border-2 border-white bg-transparent text-white hover:bg-surface hover:text-primary hover:*:fill-primary":
+          "border-2 border-white bg-transparent text-white hover:bg-surface hover:text-primary":
             outline,
         },
         {
-          "bg-primary text-white *:fill-white": selected,
+          "bg-primary text-white": selected,
         }
       )}
     >

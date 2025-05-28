@@ -12,9 +12,9 @@ export default function Loading() {
           clearInterval(interval);
           return 100;
         }
-        return prev + 5;
+        return prev + 1;
       });
-    }, 250);
+    }, 100);
     return () => clearInterval(interval);
   }, []);
 

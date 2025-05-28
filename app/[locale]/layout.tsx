@@ -52,7 +52,7 @@ export default async function RootLayout({
     <html
       lang={locale}
       dir={locale === "ar" ? "rtl" : "ltr"}
-      className={`dark:text-gray-200 scroll-pt-13 sm:scroll-pt-16 scroll-smooth ${
+      className={`dark:text-surface scroll-pt-13 sm:scroll-pt-16 scroll-smooth ${
         locale === "ar" ? cairo.className : nunito.className
       }`}
     >

@@ -19,6 +19,8 @@ export default function Newsletter() {
         <p className="mb-8">{t("description")}</p>
         <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
           <Input
+            id="newsletter"
+            name="newsletter"
             type="email"
             placeholder={t("Enter your email")}
             className="flex-1"
