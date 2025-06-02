@@ -1,13 +1,13 @@
-import Card from "@/components/ui/card";
 import { useTranslations } from "next-intl";
+import Card from "@/components/ui/card";
 
-export default function Testimonial() {
-  const t = useTranslations("Home.Testimonial");
+export default function Testimonials() {
+  const t = useTranslations("Home.Testimonials");
   const testimonials: {
     quote: string;
     author: string;
     role: string;
-  }[] = t.raw("testimonials");
+  }[] = t.raw("data");
 
   return (
     <section id="testimonials">

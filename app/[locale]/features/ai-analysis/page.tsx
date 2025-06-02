@@ -12,16 +12,19 @@ import Analysis from "./components/analysis";
 import Result from "./components/result";
 import UserText from "./components/userText";
 import Loading from "@/components/loading";
+import { useLocale, useTranslations } from "next-intl";
 
-export default function AIAnalysisPage() {
+export default function AIAnalysis() {
   const [selectedTest, setSelectedTest] = useState<string>("");
   const [result, setResult] = useState<string>("");
   const [isAnalyzing, setIsAnalyzing] = useState<boolean>(false);
   const textareaRef = useRef<HTMLTextAreaElement>(null!);
 
+  const t = useTranslations("Features.AIAnalysis");
+  const locale = useLocale();
+
   async function startAnalysis() {
-    if (!textareaRef.current.value || !selectedTest)
-      return alert("Please select a test and enter text");
+    if (!textareaRef.current.value || !selectedTest) return alert(t("alert"));
 
     setIsAnalyzing(true);
 
@@ -31,7 +34,7 @@ export default function AIAnalysisPage() {
         1. A summary of findings (e.g., detected patterns suggesting a level of concern)
         2. Detailed analysis (e.g., percentages for positive indicators, stress indicators, and other factors)
         3. Emotional distribution (e.g., calm, stress, uncertainty with percentages)
-        `,
+        Respond in ${locale} language only.`,
     };
 
     const userMessage: Message = {
@@ -42,9 +45,8 @@ export default function AIAnalysisPage() {
     try {
       const response = await fetchAI(systemMessage, userMessage);
       setResult(response);
-    } catch (err) {
-      console.error("Error in analysis:", err);
-      alert("An error occurred while analyzing. Please try again.");
+    } catch {
+      alert(t("error"));
       setIsAnalyzing(false);
     } finally {
       setIsAnalyzing(false);

@@ -1,10 +1,13 @@
 import { CircleCheck } from "@/components/ui/icons";
+import { useTranslations } from "next-intl";
 
 export default function Guidelines() {
+  const t = useTranslations("Features.GroupTherapy.Guidelines");
+  const guidelines: string[] = t.raw("data");
   return (
     <section id="guidelines">
-      <h2 className="text-primary text-2xl font-bold mb-4">
-        Session Guidelines
+      <h2 className="text-primary text-2xl font-bold mb-4 capitalize">
+        {t("title")}
       </h2>
       <ul className="bg-foreground p-8 space-y-4 rounded-lg shadow-lg">
         {guidelines.map((guideline, index) => (
@@ -17,11 +20,3 @@ export default function Guidelines() {
     </section>
   );
 }
-
-const guidelines: string[] = [
-  "Arrive 5 minutes before the session starts",
-  "Maintain confidentiality of all participants",
-  "Be respectful and supportive of others",
-  "Share only what you're comfortable with",
-  "Listen actively when others are speaking",
-];

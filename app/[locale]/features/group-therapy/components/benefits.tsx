@@ -1,8 +1,16 @@
+import { useTranslations } from "next-intl";
+
 export default function Benefits() {
+  const t = useTranslations("Features.GroupTherapy.Benefits");
+  const benefits: {
+    title: string;
+    description: string;
+  }[] = t.raw("data");
+
   return (
     <section id="benefits">
-      <h2 className="text-primary text-2xl font-bold mb-4">
-        Benefits of Group Therapy
+      <h2 className="text-primary text-2xl font-bold mb-4 capitalize">
+        {t("title")}
       </h2>
       <div className="grid gap-6 md:grid-cols-3">
         {benefits.map((benefit, index) => (
@@ -15,20 +23,3 @@ export default function Benefits() {
     </section>
   );
 }
-const benefits: {
-  title: string;
-  description: string;
-}[] = [
-  {
-    title: "Shared Experiences",
-    description: "Connect with others who understand your journey",
-  },
-  {
-    title: "Professional Guidance",
-    description: "Sessions led by licensed mental health professionals",
-  },
-  {
-    title: "Safe Environment",
-    description: "A supportive and confidential space to share and heal",
-  },
-];

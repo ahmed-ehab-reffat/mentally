@@ -1,5 +1,5 @@
-import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
 import Card from "@/components/ui/card";
 import { ArrowDown } from "@/components/ui/icons";
 

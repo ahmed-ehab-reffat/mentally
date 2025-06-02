@@ -5,8 +5,9 @@ import { fetchAI } from "@/lib/serverActions";
 import Button from "@/components/ui/button";
 import Loading from "@/components/loading";
 import Result from "./components/result";
+import { useLocale, useTranslations } from "next-intl";
 
-export default function QuestionnairePage() {
+export default function Questionnaire() {
   const [answers, setAnswers] = useState<string[]>([]);
   const [selectedOption, setSelectedOption] = useState<string>("");
   const [isAnalyzing, setIsAnalyzing] = useState<boolean>(false);
@@ -18,6 +19,12 @@ export default function QuestionnairePage() {
     }
   }, [answers]);
 
+  const t = useTranslations("Features.Questionnaire");
+  const locale = useLocale();
+
+  const questions: string[] = t.raw("questions");
+  const options: string[] = t.raw("options");
+
   async function handleSubmit() {
     setIsAnalyzing(true);
 
@@ -26,7 +33,8 @@ export default function QuestionnairePage() {
       content: `You are an AI mental health analyst. Analyze the following answers for a mental health assessment and provide a detailed report including:
           1. A summary of findings (e.g., detected patterns suggesting a level of concern for depression, anxiety, or other conditions)
           2. Detailed analysis (e.g., percentages or descriptions for symptoms like sadness, anxiety, sleep issues, etc.)
-          3. Recommendations (e.g., consulting a specialist, relaxation techniques, or monitoring)`,
+          3. Recommendations (e.g., consulting a specialist, relaxation techniques, or monitoring)
+          Respond in ${locale} language only.`,
     };
 
     const answersText = questions
@@ -44,11 +52,8 @@ export default function QuestionnairePage() {
     try {
       const response = await fetchAI(systemMessage, userMessage);
       setResult(response);
-    } catch (err) {
-      console.error("Error in analysis:", err);
-      alert(
-        "An error occurred while analyzing your answers. Please try again."
-      );
+    } catch {
+      alert(t("error"));
     } finally {
       setIsAnalyzing(false);
     }
@@ -75,12 +80,12 @@ export default function QuestionnairePage() {
     content = (
       <div className="space-y-6">
         <header>
-          <h1 className="text-2xl font-bold">Mental Health Assessment</h1>
-          <p className="text-sm">{`Question ${
+          <h1 className="text-2xl font-bold capitalize">{t("title")}</h1>
+          <p className="text-sm">{`${t("Question")} ${
             questions.length > answers.length
               ? answers.length + 1
               : questions.length
-          } of ${questions.length}`}</p>
+          } ${t("of")} ${questions.length}`}</p>
         </header>
         <main>
           <h2 className="text-lg font-semibold mb-6">
@@ -112,10 +117,12 @@ export default function QuestionnairePage() {
         ) : (
           <footer className="flex justify-between">
             <Button onClick={handlePrevious} disabled={answers.length === 0}>
-              Previous
+              {t("Previous")}
             </Button>
             <Button onClick={handleNext} disabled={!selectedOption}>
-              {answers.length === questions.length - 1 ? "Submit" : "Next"}
+              {answers.length === questions.length - 1
+                ? t("Submit")
+                : t("Next")}
             </Button>
           </footer>
         )}
@@ -129,27 +136,3 @@ export default function QuestionnairePage() {
     </div>
   );
 }
-
-const questions: string[] = [
-  "Over the last 2 weeks, how often have you felt down, depressed, or hopeless?",
-  "How often do you feel nervous, anxious, or on edge?",
-  "How often do you find yourself losing interest in activities that used to bring you joy?",
-  "Have you been feeling unusually tired or lacking energy even after a good rest?",
-  "How often do you struggle with concentrating or making decisions?",
-  "How often do you experience feelings of worthlessness or guilt?",
-  "Have you had trouble sleeping or have you been sleeping excessively?",
-  "How often do you worry excessively about everyday situations?",
-  "Do you feel restless or easily irritated?",
-  "Have you noticed physical symptoms like headaches or muscle tension due to stress?",
-  "Do you experience intrusive thoughts or disturbing worries that are difficult to control?",
-  "Have you avoided people, places, or situations that remind you of a traumatic experience?",
-  "Do you experience flashbacks or nightmares about a traumatic event?",
-  "Do you feel the need to repeatedly perform certain behaviors, like checking or cleaning?",
-  "Do you experience sudden mood changes or feel extremely energized at times?",
-];
-const options: string[] = [
-  "Not at all",
-  "Several days",
-  "More than half the days",
-  "Nearly every day",
-];

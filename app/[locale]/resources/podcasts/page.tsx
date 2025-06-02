@@ -1,7 +1,7 @@
+import { useTranslations } from "next-intl";
 import Button from "@/components/ui/button";
 import Card from "@/components/ui/card";
 import { Headphones } from "@/components/ui/icons";
-import { useTranslations } from "next-intl";
 
 export default function Podcasts() {
   const t = useTranslations("Resources.Podcasts");

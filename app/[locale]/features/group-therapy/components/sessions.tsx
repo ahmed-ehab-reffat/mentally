@@ -1,16 +1,26 @@
 import Button from "@/components/ui/button";
 import Card from "@/components/ui/card";
 import { Calendar } from "@/components/ui/icons";
+import { useTranslations } from "next-intl";
 
 type Props = {
   onRegistir: (name: string) => void;
 };
 
 export default function Sessions({ onRegistir }: Props) {
+  const t = useTranslations("Features.GroupTherapy.Sessions");
+  const upcomingSessions: {
+    id: string;
+    title: string;
+    date: string;
+    spots: number;
+    description: string;
+  }[] = t.raw("data");
+
   return (
     <section id="sessions">
-      <h2 className="text-primary text-2xl font-bold mb-4">
-        Upcoming Sessions
+      <h2 className="text-primary text-2xl font-bold mb-4 capitalize">
+        {t("title")}
       </h2>
       <ul className="grid gap-10">
         {upcomingSessions.map((session) => (
@@ -28,16 +38,16 @@ export default function Sessions({ onRegistir }: Props) {
               </div>
               <div className="bg-surface h-fit px-3 py-1 rounded-full">
                 <span className="text-primary text-sm whitespace-nowrap">
-                  {session.spots} spots left
+                  {session.spots} {t("spots left")}
                 </span>
               </div>
             </div>
             <Button
               type="button"
               onClick={() => onRegistir(session.title)}
-              className="w-full"
+              className="w-full capitalize"
             >
-              Register for Session
+              {t("register")}
             </Button>
           </Card>
         ))}
@@ -45,36 +55,3 @@ export default function Sessions({ onRegistir }: Props) {
     </section>
   );
 }
-
-const upcomingSessions: {
-  id: string;
-  title: string;
-  date: string;
-  spots: number;
-  description: string;
-}[] = [
-  {
-    id: "1",
-    title: "Anxiety Support Group",
-    date: "Every Monday at 7:00 PM - 8:30 PM",
-    spots: 5,
-    description:
-      "A supportive environment to discuss and learn coping strategies for anxiety.",
-  },
-  {
-    id: "2",
-    title: "Depression Management",
-    date: "Every Wednesday at 6:00 PM - 7:30 PM",
-    spots: 3,
-    description:
-      "Share experiences and learn techniques for managing depression.",
-  },
-  {
-    id: "3",
-    title: "Stress Relief Workshop",
-    date: "Every Friday at 5:00 PM - 6:30 PM",
-    spots: 8,
-    description:
-      "Learn practical techniques for managing daily stress and building resilience.",
-  },
-];

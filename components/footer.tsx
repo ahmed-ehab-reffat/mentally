@@ -1,8 +1,7 @@
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
-
-import { Facebook, Github, Instagram, Linkedin, X } from "./ui/icons";
 import { useTranslations } from "next-intl";
+import { Facebook, Github, Instagram, Linkedin, X } from "./ui/icons";
 
 export default function Footer() {
   const t = useTranslations("Footer");

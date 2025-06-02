@@ -8,9 +8,8 @@ import Sessions from "./components/sessions";
 import Benefits from "./components/benefits";
 import Guidelines from "./components/guidelines";
 
-export default function GroupTherapyPage() {
+export default function GroupTherapy() {
   const modalRef = useRef<HTMLDialogElement>(null!);
-
   const [selectedSession, setSelectedSession] = useState<string>("");
 
   function handleRegister(title: string) {

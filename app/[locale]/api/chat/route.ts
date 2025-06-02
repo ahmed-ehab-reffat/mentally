@@ -28,7 +28,6 @@ export async function POST(req: Request) {
 
     return result.toDataStreamResponse();
   } catch (error) {
-    console.error("Error in chat API route:", error);
     return new Response(
       `Error processing chat request: ${
         error instanceof Error ? error.message : "Unknown error"

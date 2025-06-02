@@ -1,6 +1,6 @@
 import { Link } from "@/i18n/navigation";
-import Button from "../ui/button";
 import { useTranslations } from "next-intl";
+import Button from "../ui/button";
 
 export default function Chatbot() {
   const t = useTranslations("Home.Chatbot");

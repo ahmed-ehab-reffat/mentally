@@ -1,8 +1,9 @@
 import Button from "@/components/ui/button";
 import Loading from "@/components/loading";
 import type { Test } from "./tests";
+import { useTranslations } from "next-intl";
 
-export type Answer = "Yes" | "No";
+export type Answer = "Yes" | "No" | "نعم" | "لا";
 
 type Props = {
   test: Test;
@@ -12,6 +13,8 @@ type Props = {
   isAnalyzing: boolean;
 };
 
+//back to tests
+
 export default function Questions({
   test,
   Answers,
@@ -19,7 +22,8 @@ export default function Questions({
   onSubmit,
   isAnalyzing,
 }: Props) {
-  //back to tests
+  const t = useTranslations("Features.Insights.Questions");
+
   return (
     <main id="questions">
       <h3 className="text-primary text-xl font-bold uppercase mb-4">
@@ -31,22 +35,26 @@ export default function Questions({
             <p className="mb-2">{q}</p>
             <div className="flex gap-2">
               <Button
-                onClick={() => onAnswer("Yes", index)}
-                selected={Answers[index] === "Yes"}
+                onClick={() => onAnswer(t("Yes") as Answer, index)}
+                selected={Answers[index] === t("Yes")}
               >
-                Yes
+                {t("Yes")}
               </Button>
               <Button
-                onClick={() => onAnswer("No", index)}
-                selected={Answers[index] === "No"}
+                onClick={() => onAnswer(t("No") as Answer, index)}
+                selected={Answers[index] === t("No")}
               >
-                No
+                {t("No")}
               </Button>
             </div>
           </li>
         ))}
       </ul>
-      {isAnalyzing ? <Loading /> : <Button onClick={onSubmit}>Submit</Button>}
+      {isAnalyzing ? (
+        <Loading />
+      ) : (
+        <Button onClick={onSubmit}>{t("Submit")}</Button>
+      )}
     </main>
   );
 }

@@ -1,13 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowDown } from "@/components/ui/icons";
 import { useTranslations } from "next-intl";
+import { ArrowDown } from "@/components/ui/icons";
 
 export default function FAQ() {
   const [visibleAnswers, setVisibleAnswers] = useState<number[]>([]);
   const t = useTranslations("Home.FAQ");
-  const faqs: { question: string; answer: string }[] = t.raw("faqs");
+  const faqs: { question: string; answer: string }[] = t.raw("data");
 
   function handleTrigger(index: number) {
     setVisibleAnswers((prev) => {

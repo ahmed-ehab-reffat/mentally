@@ -1,8 +1,8 @@
 import { Link } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
 import Button from "@/components/ui/button";
 import Card from "@/components/ui/card";
 import { Book } from "@/components/ui/icons";
-import { useTranslations } from "next-intl";
 
 export default function Articles() {
   const t = useTranslations("Resources.Articles");

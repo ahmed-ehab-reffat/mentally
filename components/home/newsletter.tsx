@@ -1,8 +1,8 @@
+import { useTranslations } from "next-intl";
 import Button from "@/components/ui/button";
 import Card from "@/components/ui/card";
 import { Envelope } from "@/components/ui/icons";
 import Input from "@/components/ui/input";
-import { useTranslations } from "next-intl";
 
 export default function Newsletter() {
   const t = useTranslations("Home.Newsletter");

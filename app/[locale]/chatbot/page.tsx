@@ -33,7 +33,7 @@ export default function Chatbot() {
     },
   });
 
-  const onEmojiClick = (emojiData: EmojiData) => {
+  const handleEmojiClick = (emojiData: EmojiData) => {
     handleInputChange({
       target: { value: input + emojiData.emoji },
     } as React.ChangeEvent<HTMLInputElement>);
@@ -108,7 +108,7 @@ export default function Chatbot() {
 
         {showEmojiPicker && (
           <div className="absolute bottom-full left-0 mb-2 z-50">
-            <EmojiPicker onEmojiClick={onEmojiClick} />
+            <EmojiPicker onEmojiClick={handleEmojiClick} />
           </div>
         )}
       </div>

@@ -1,7 +1,7 @@
 "use client";
 
-import { Video } from "@/components/ui/icons";
 import { useTranslations } from "next-intl";
+import { Video } from "@/components/ui/icons";
 
 export default function Videos() {
   const t = useTranslations("Resources.Videos");
