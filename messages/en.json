@@ -106,6 +106,24 @@
       "subscribe": "subscribe"
     }
   },
+  "Auth": {
+    "sign up": "sign up",
+    "Name": "Name",
+    "Username": "Username",
+    "Email": "Email",
+    "Email Placeholder": "Enter your email adress",
+    "Password": "Password",
+    "sign in": "sign in",
+    "log in": "log in",
+    "create acount": "create acount!",
+    "sign up description": "Register with your personal details to use all of site features",
+    "sign in description": "Enter your personal details to use all of site features and more"
+  },
+  "Chatbot": {
+    "first message": "How can I help you today?",
+    "error": "An error occurred while analyzing. Please try again.",
+    "online": "online"
+  },
   "Features": {
     "AIAnalysis": {
       "error": "An error occurred while analyzing. Please try again.",
@@ -522,6 +540,14 @@
           "Share only what you're comfortable with",
           "Listen actively when others are speaking"
         ]
+      },
+      "RegisterModal": {
+        "title": "Register for {title}",
+        "description": "Fill out the form below to register for the session.",
+        "name": "name",
+        "email": "email",
+        "textarea": "Why would you like to join this session?",
+        "submit": "submit registration"
       }
     }
   },

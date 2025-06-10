@@ -1,10 +1,13 @@
 "use client";
 
-import Button from "@/components/ui/button";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
+import Button from "@/components/ui/button";
 
 export default function Overlay() {
   const [isLeftSide, setIsLeftSide] = useState(true);
+
+  const t = useTranslations("Auth");
 
   function handleSwitch(): void {
     setIsLeftSide((prev) => !prev);
@@ -19,25 +22,25 @@ export default function Overlay() {
       <div className="relative h-full">
         <div
           className={`${
-            isLeftSide ? "-top-54" : "top-32"
+            isLeftSide ? "ltr:-top-54 rtl:top-32" : "ltr:top-32 rtl:-top-54"
           } transition-all duration-600 absolute`}
         >
           <div className="pb-36">
-            <h2 className="text-4xl font-bold mb-6">Create Acount!</h2>
-            <p className="mb-8">
-              Register with your personal details to use all of site features
-            </p>
+            <h2 className="text-4xl font-bold mb-6 capitalize">
+              {t("create acount")}
+            </h2>
+            <p className="mb-8">{t("sign up description")}</p>
             <Button onClick={handleSwitch} outline className="w-1/2 uppercase">
-              Sign Up
+              {t("sign up")}
             </Button>
           </div>
           <div>
-            <h2 className="text-4xl font-bold mb-6">Log In</h2>
-            <p className="mb-8">
-              Enter your personal details to use all of site features and more
-            </p>
+            <h2 className="text-4xl font-bold mb-6 capitalize">
+              {t("log in")}
+            </h2>
+            <p className="mb-8">{t("sign in description")}</p>
             <Button onClick={handleSwitch} outline className="w-1/2 uppercase">
-              Sign In
+              {t("sign in")}
             </Button>
           </div>
         </div>

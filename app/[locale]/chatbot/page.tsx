@@ -5,6 +5,7 @@ import { useChat } from "@ai-sdk/react";
 import dynamic from "next/dynamic";
 
 import { Smile, Send } from "@/components/ui/icons";
+import { useTranslations } from "next-intl";
 
 const EmojiPicker = dynamic(() => import("emoji-picker-react"), { ssr: false });
 
@@ -15,12 +16,14 @@ type EmojiData = {
 export default function Chatbot() {
   const [showEmojiPicker, setShowEmojiPicker] = useState(false);
 
+  const t = useTranslations("Chatbot");
+
   const { messages, input, handleInputChange, handleSubmit, status } = useChat({
-    api: "/api/chat",
+    api: `api/chat`,
     initialMessages: [
       {
         id: "1",
-        content: "How can I help you today?",
+        content: t("first message"),
         role: "assistant",
       },
     ],
@@ -28,8 +31,8 @@ export default function Chatbot() {
       system:
         "You are a helpful mental health assistant. Provide supportive and empathetic responses, but always encourage users to seek professional help for serious concerns.",
     },
-    onError: (err) => {
-      console.error("Chat API Error:", err);
+    onError: () => {
+      alert(t("error"));
     },
   });
 
@@ -41,13 +44,11 @@ export default function Chatbot() {
   };
 
   return (
-    <div className="flex flex-col h-screen bg-[#F8FAFC]">
-      <header className="flex items-center px-6 py-4 bg-[#E2E8F0] border-b">
-        <div className="flex items-center gap-3">
-          <div>
-            <h1 className="text-sm text-gray-600 font-bold">Dr. Mental</h1>
-            <p className="text-sm text-gray-600">online</p>
-          </div>
+    <div className="flex flex-col h-[calc(100dvh-4rem)] bg-[#F8FAFC]">
+      <header className="flex items-center gap-3 text-sm text-gray-600 px-6 py-4 bg-[#E2E8F0] border-b">
+        <div>
+          <h1 className="font-bold">Dr. Mentally</h1>
+          <p>{t("online")}</p>
         </div>
       </header>
 
@@ -79,31 +80,29 @@ export default function Chatbot() {
       </div>
 
       <div className="p-4 bg-[#E2E8F0] relative">
-        <form onSubmit={handleSubmit} className="relative">
-          <div className="relative flex items-center">
-            <button
-              type="button"
-              onClick={() => setShowEmojiPicker(!showEmojiPicker)}
-              className="absolute left-4 text-purple-400"
-              aria-label="Open emoji picker"
-            >
-              <Smile className="w-6 h-6" />
-            </button>
-            <input
-              value={input}
-              onChange={handleInputChange}
-              placeholder="Write your message"
-              className="w-full pl-12 pr-12 py-6 rounded-full bg-white border-0 focus-visible:ring-0 focus-visible:ring-offset-0 text-gray-600"
-            />
-            <button
-              type="submit"
-              className="absolute right-4"
-              disabled={status === "submitted" || !input.trim()}
-              aria-label="Send message"
-            >
-              <Send className="w-6 h-6 text-blue-500" />
-            </button>
-          </div>
+        <form onSubmit={handleSubmit} className="relative flex items-center">
+          <button
+            type="button"
+            onClick={() => setShowEmojiPicker(!showEmojiPicker)}
+            className="absolute ltr:left-4 rtl:right-4 text-purple-400"
+            aria-label="Open emoji picker"
+          >
+            <Smile className="w-6 h-6" />
+          </button>
+          <input
+            value={input}
+            onChange={handleInputChange}
+            placeholder="Write your message"
+            className="w-full pl-12 pr-12 py-6 rounded-full bg-white border-0 focus-visible:ring-0 focus-visible:ring-offset-0 text-gray-600"
+          />
+          <button
+            type="submit"
+            className="absolute ltr:right-4 rtl:left-4"
+            disabled={status === "submitted" || !input.trim()}
+            aria-label="Send message"
+          >
+            <Send className="w-6 h-6 text-blue-500" />
+          </button>
         </form>
 
         {showEmojiPicker && (

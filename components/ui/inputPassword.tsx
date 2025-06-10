@@ -23,12 +23,12 @@ export default function InputPassword({ className, ...props }: Props) {
       {isHidden ? (
         <Eye
           onClick={onToggle}
-          className="w-4 h-4 relative float-end -mt-7 mr-2 z-10 cursor-pointer"
+          className="w-4 h-4 relative float-end -mt-7 ltr:mr-2 rtl:ml-2 z-10 cursor-pointer"
         />
       ) : (
         <EyeSlash
           onClick={onToggle}
-          className="w-4 h-4 relative float-end -mt-7 mr-2 z-10 cursor-pointer"
+          className="w-4 h-4 relative float-end -mt-7 ltr:mr-2 rtl:ml-2 z-10 cursor-pointer"
         />
       )}
     </>
