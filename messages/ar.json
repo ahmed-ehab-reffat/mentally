@@ -1,4 +1,14 @@
 {
+  "Header": {
+    "features": "الميزات",
+    "resources": "الموارد",
+    "chatbot": "الدردشة الآلية",
+    "contact": "التواصل",
+    "login": "تسجيل الدخول",
+    "light mode": "الوضع الساطع",
+    "dark mode": "الوضع الداكن",
+    "lang": "عربي"
+  },
   "Home": {
     "Landing": {
       "title1": "معًا",

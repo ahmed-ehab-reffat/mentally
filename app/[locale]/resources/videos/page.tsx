@@ -23,7 +23,7 @@ export default function Videos() {
               className="w-full aspect-5/3 rounded-lg"
             />
             <div className="mt-2">
-              <h3 className="text-lg tracking-wider lin">{video.title}</h3>
+              <h3 className="text-lg tracking-wider">{video.title}</h3>
               <div className="relative text-sm">
                 <h5>{video.author}</h5>
                 <p

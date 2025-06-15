@@ -1,15 +1,16 @@
 "use client";
 
 import Image from "next/image";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
 import { useEffect, useState } from "react";
 import { Menu, Moon, Sun, Xmark } from "./ui/icons";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const locale = useLocale();
   const pathname = usePathname();
+  const locale = useLocale();
+  const t = useTranslations("Header");
 
   useEffect(() => {
     const theme = localStorage.getItem("theme");
@@ -42,7 +43,7 @@ export default function Header() {
       dir="ltr"
       className="fixed z-50 w-full flex justify-between items-center px-4 sm:px-8 py-2 bg-foreground border-b-primary border-b-2"
     >
-      <Link href="/" className="flex items-center gap-2 sm:gap-4">
+      <Link href="/" className="flex items-center gap-2">
         <Image
           src="/images/logoBlack.png"
           alt="Mentally Logo"
@@ -74,29 +75,45 @@ export default function Header() {
         <ul
           className={`${
             isOpen ? "left-0" : "-left-full"
-          } absolute top-13 sm:top-16 w-full p-5 flex flex-col space-y-5 bg-foreground/80 capitalize font-bold duration-400 transition-all *:w-fit *:duration-200 *:hover:text-primary md:static md:space-y-0 md:bg-transparent md:justify-between md:items-center md:flex-row md:gap-6 md:p-0 md:text-lg`}
+          } absolute top-13 sm:top-16 w-full p-5 flex flex-col items-center space-y-5 bg-foreground/80 capitalize font-bold duration-400 transition-all *:text-nowrap *:w-fit *:duration-200 *:hover:text-primary md:static md:space-y-0 md:bg-transparent md:justify-between md:flex-row md:gap-4 md:p-0 ${
+            locale === "en" ? "md:text-lg" : ""
+          }`}
         >
           <Link href="/#features" onClick={handleClose}>
-            features
+            {t("features")}
           </Link>
           <Link href="/#resources" onClick={handleClose}>
-            resources
+            {t("resources")}
           </Link>
           <Link href="/chatbot" onClick={handleClose}>
-            chatbot
+            {t("chatbot")}
           </Link>
           <Link href="#contactus" onClick={handleClose}>
-            contact
+            {t("contact")}
           </Link>
           <Link href="/auth" onClick={handleClose}>
-            login
+            {t("login")}
           </Link>
-          <p onClick={toggleTheme} className="cursor-pointer">
+          <div
+            onClick={toggleTheme}
+            className="cursor-pointer flex gap-2 items-center"
+            dir={locale === "en" ? "ltr" : "rtl"}
+          >
             <Sun className="w-5 h-5 fill-primary hidden dark:block" />
             <Moon className="w-5 h-5 fill-primary block dark:hidden" />
-          </p>
-          <Link href={pathname} locale={locale === "en" ? "ar" : "en"}>
-            {locale.toUpperCase()}
+            <p className="hidden dark:block dark:md:hidden capitalize">
+              {t("light mode")}
+            </p>
+            <p className="block dark:hidden md:hidden capitalize">
+              {t("dark mode")}
+            </p>
+          </div>
+          <Link
+            href={pathname}
+            locale={locale === "en" ? "ar" : "en"}
+            className="uppercase"
+          >
+            {t("lang")}
           </Link>
         </ul>
       </nav>

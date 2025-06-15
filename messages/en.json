@@ -1,4 +1,14 @@
 {
+  "Header": {
+    "features": "features",
+    "resources": "resources",
+    "chatbot": "chatbot",
+    "contact": "contact",
+    "login": "login",
+    "light mode": "light mode",
+    "dark mode": "dark mode",
+    "lang": "en"
+  },
   "Home": {
     "Landing": {
       "title1": "Together",
