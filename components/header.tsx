@@ -91,9 +91,9 @@ export default function Header() {
           <Link href="#contactus" onClick={handleClose}>
             {t("contact")}
           </Link>
-          <Link href="/auth" onClick={handleClose}>
+          {/* <Link href="/auth" onClick={handleClose}>
             {t("login")}
-          </Link>
+          </Link> */}
           <div
             onClick={toggleTheme}
             className="cursor-pointer flex gap-2 items-center"
