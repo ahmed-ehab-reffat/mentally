@@ -11,8 +11,8 @@ export default function Testimonials() {
 
   return (
     <section id="testimonials">
-      <div className="container mx-auto px-4 pt-10 pb-12">
-        <h2 className="text-primary text-4xl font-bold text-center mb-8 capitalize">
+      <div className="container mx-auto px-6 pt-10 pb-12">
+        <h2 className="text-primary text-3xl sm:text-4xl font-bold text-center mb-8 capitalize">
           {t("title")}
         </h2>
         <ul className="grid lg:grid-cols-3 gap-12">

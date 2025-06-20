@@ -75,7 +75,7 @@ export default function Header() {
         <ul
           className={`${
             isOpen ? "left-0" : "-left-full"
-          } absolute top-13 sm:top-16 w-full p-5 flex flex-col items-center space-y-5 bg-foreground/80 capitalize font-bold duration-400 transition-all *:text-nowrap *:w-fit *:duration-200 *:hover:text-primary md:static md:space-y-0 md:bg-transparent md:justify-between md:flex-row md:gap-4 md:p-0 ${
+          } absolute top-13 sm:top-16 w-2/5 sm:w-1/3 h-dvh p-5 flex flex-col items-center gap-5 bg-foreground capitalize font-bold duration-400 transition-all md:static md:w-fit md:h-fit md:justify-between md:flex-row md:gap-4 md:p-0 *:duration-200 *:hover:text-primary ${
             locale === "en" ? "md:text-lg" : ""
           }`}
         >
@@ -91,20 +91,6 @@ export default function Header() {
           <Link href="#contactus" onClick={handleClose}>
             {t("contact")}
           </Link>
-          <div
-            onClick={toggleTheme}
-            className="cursor-pointer flex gap-2 items-center"
-            dir={locale === "en" ? "ltr" : "rtl"}
-          >
-            <Sun className="w-5 h-5 fill-primary hidden dark:block" />
-            <Moon className="w-5 h-5 fill-primary block dark:hidden" />
-            <p className="hidden dark:block dark:md:hidden capitalize">
-              {t("light mode")}
-            </p>
-            <p className="block dark:hidden md:hidden capitalize">
-              {t("dark mode")}
-            </p>
-          </div>
           <Link
             href={pathname}
             locale={locale === "en" ? "ar" : "en"}
@@ -112,6 +98,14 @@ export default function Header() {
           >
             {t("lang")}
           </Link>
+          <div
+            onClick={toggleTheme}
+            className="cursor-pointer flex gap-2 items-center"
+            dir={locale === "en" ? "ltr" : "rtl"}
+          >
+            <Sun className="w-5 h-5 fill-primary hidden dark:block" />
+            <Moon className="w-5 h-5 fill-primary block dark:hidden" />
+          </div>
         </ul>
       </nav>
     </header>

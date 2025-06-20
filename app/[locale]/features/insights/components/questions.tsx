@@ -26,7 +26,7 @@ export default function Questions({
 
   return (
     <main id="questions">
-      <h3 className="text-primary text-xl font-bold uppercase mb-4">
+      <h3 className="text-primary text-lg sm:text-xl font-bold uppercase mb-4">
         {test.title}
       </h3>
       <ul>

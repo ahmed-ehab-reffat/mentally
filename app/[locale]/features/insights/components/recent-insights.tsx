@@ -12,13 +12,15 @@ export default function RecentInsights() {
 
   return (
     <section id="recent-insights">
-      <h2 className="text-primary text-2xl font-bold mb-4 capitalize">
+      <h2 className="text-primary text-xl sm:text-2xl font-bold mb-4 capitalize">
         {t("title")}
       </h2>
       <ul className="grid gap-4 md:grid-cols-2">
         {insights.map((insight, index) => (
           <li key={index} className="bg-foreground p-6 rounded-lg shadow-lg">
-            <h2 className="text-xl font-bold">{insight.title}</h2>
+            <h2 className="text-lg sm:text-xl font-bold text-primary">
+              {insight.title}
+            </h2>
             <main>
               <p className="mb-2">{insight.description}</p>
               <div className="flex items-center text-primary gap-1">

@@ -368,7 +368,7 @@
             ]
           },
           {
-            "title": "parent",
+            "title": "parent Test",
             "questions": [
               "Does your child seem unusually sad or withdrawn?",
               "Does your child have trouble sleeping or eating?",
@@ -482,9 +482,9 @@
       ],
       "options": [
         "Not at all",
-        "Several days",
-        "More than half the days",
-        "Nearly every day"
+        "Couple of days",
+        "Most days",
+        "Almost every day"
       ],
       "Result": {
         "description": "This assessment is for informational purposes only and is not a substitute for professional diagnosis.",

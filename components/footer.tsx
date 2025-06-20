@@ -8,7 +8,7 @@ export default function Footer() {
 
   return (
     <footer id="contactus" className="bg-foreground pt-12 pb-4">
-      <div className="container px-4 mx-auto flex flex-wrap flex-col md:flex-row gap-8">
+      <div className="container px-6 mx-auto flex flex-wrap flex-col md:flex-row gap-8">
         <div className="min-w-full lg:min-w-auto lg:flex-1">
           <Link href="/" className="block w-fit">
             <Image

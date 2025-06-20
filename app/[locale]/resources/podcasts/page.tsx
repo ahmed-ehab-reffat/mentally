@@ -12,10 +12,12 @@ export default function Podcasts() {
   }[] = t.raw("podcasts");
 
   return (
-    <div className="container mx-auto px-8 pt-12 pb-16">
-      <div className="flex items-center gap-4 mb-8 text-primary">
-        <Headphones className="w-10 h-10" />
-        <h1 className="text-4xl font-bold capitalize">{t("title")}</h1>
+    <div className="container mx-auto px-6 pt-12 pb-16">
+      <div className="flex items-center gap-2 sm:gap-4 mb-8 text-primary">
+        <Headphones className="min-w-8 min-h-8 w-8 h-8 sm:w-10 sm:h-10" />
+        <h1 className="text-2xl sm:text-4xl font-bold capitalize">
+          {t("title")}
+        </h1>
       </div>
       <ul className="grid gap-x-8 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
         {podcasts.map((podcast) => (
@@ -23,7 +25,7 @@ export default function Podcasts() {
             key={podcast.url}
             className="h-full text-center flex flex-col justify-between"
           >
-            <h3 className="text-2xl text-primary font-bold tracking-tighter mb-4">
+            <h3 className="text-xl sm:text-2xl text-primary font-bold tracking-tighter mb-4">
               {podcast.title}
             </h3>
             <p className="text-lg mb-6">{podcast.description}</p>

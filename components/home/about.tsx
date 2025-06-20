@@ -4,8 +4,8 @@ export default function About() {
   const t = useTranslations("Home.About");
   return (
     <section id="about">
-      <div className="container mx-auto px-4 pt-10 pb-12">
-        <h2 className="text-4xl font-bold text-primary mb-8 text-center">
+      <div className="container mx-auto px-6 pt-10 pb-12">
+        <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-8 text-center">
           {t("title")}
         </h2>
         <div className="text-lg md:text-xl leading-relaxed space-y-6">

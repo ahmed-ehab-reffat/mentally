@@ -5,7 +5,7 @@ type Props = React.HTMLAttributes<HTMLDivElement>;
 export default function Card({ className, children, ...props }: Props) {
   return (
     <div
-      className={cn("bg-foreground p-6 rounded-xl shadow-xl", className)}
+      className={cn("bg-foreground p-4 sm:p-6 rounded-xl shadow-xl", className)}
       {...props}
     >
       {children}
