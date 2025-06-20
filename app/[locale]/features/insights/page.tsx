@@ -103,7 +103,7 @@ export default function Insights() {
   }
 
   return (
-    <div className="container xl:max-w-6xl mx-auto space-y-16 px-8 py-16">
+    <div className="container xl:max-w-6xl mx-auto space-y-12 sm:space-y-16 px-6 py-16">
       <Header />
       <ProgressOverview />
       <RecentInsights />

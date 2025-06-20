@@ -1,6 +1,7 @@
 "use client";
 
 import Button from "@/components/ui/button";
+import Card from "@/components/ui/card";
 import Progress from "@/components/ui/progress";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
@@ -13,10 +14,7 @@ export default function ProgressOverview() {
   const progresses: string[] = t.raw("progresses");
 
   return (
-    <section
-      id="progress-overview"
-      className="bg-foreground p-8 rounded-lg shadow-lg"
-    >
+    <Card id="progress-overview">
       <header>
         <h2 className="text-primary text-2xl font-bold capitalize">
           {t("title")}
@@ -50,8 +48,7 @@ export default function ProgressOverview() {
             />
           </div>
         ))}
-
-        <div className="w-fit">
+        <div className="w-fit mx-auto sm:m-0">
           <div className="text-lg font-bold capitalize">
             {t("activities completed")}
           </div>
@@ -60,7 +57,7 @@ export default function ProgressOverview() {
           </div>
         </div>
       </main>
-    </section>
+    </Card>
   );
 }
 

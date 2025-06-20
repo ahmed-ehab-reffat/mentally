@@ -5,7 +5,7 @@ export default function LearnMore() {
 
   return (
     <section id="learn-more">
-      <h2 className="text-primary text-2xl font-bold capitalize">
+      <h2 className="text-primary text-xl sm:text-2xl font-bold capitalize">
         {t("title")}
       </h2>
       <p className="text-lg mb-4">{t("description")}</p>

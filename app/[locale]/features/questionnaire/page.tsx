@@ -6,6 +6,7 @@ import Button from "@/components/ui/button";
 import Loading from "@/components/loading";
 import Result from "./components/result";
 import { useLocale, useTranslations } from "next-intl";
+import Card from "@/components/ui/card";
 
 export default function Questionnaire() {
   const [answers, setAnswers] = useState<string[]>([]);
@@ -78,9 +79,11 @@ export default function Questionnaire() {
     content = <Result result={result} />;
   } else {
     content = (
-      <div className="space-y-6">
+      <div className="space-y-4 sm:space-y-6">
         <header>
-          <h1 className="text-2xl font-bold capitalize">{t("title")}</h1>
+          <h1 className="text-xl sm:text-2xl text-primary font-bold capitalize">
+            {t("title")}
+          </h1>
           <p className="text-sm">{`${t("Question")} ${
             questions.length > answers.length
               ? answers.length + 1
@@ -88,7 +91,7 @@ export default function Questionnaire() {
           } ${t("of")} ${questions.length}`}</p>
         </header>
         <main>
-          <h2 className="text-lg font-semibold mb-6">
+          <h2 className="sm:text-lg font-semibold mb-6">
             {questions[answers.length] || questions[answers.length - 1]}
           </h2>
           <ul role="radiogroup" className="grid grid-cols-2 gap-4">
@@ -96,7 +99,7 @@ export default function Questionnaire() {
               <Button
                 key={`question ${answers.length}: ${option}`}
                 onClick={() => setSelectedOption(option)}
-                className="*:cursor-pointer"
+                className="*:cursor-pointer text-sm sm:text-base"
                 selected={option === selectedOption}
                 disabled={isAnalyzing}
               >
@@ -131,8 +134,8 @@ export default function Questionnaire() {
   }
 
   return (
-    <div className="container mx-auto px-8 py-16 max-w-3xl min-h-[calc(100dvh-4rem)]">
-      <div className="bg-foreground p-8 rounded-xl shadow-lg">{content}</div>
+    <div className="container mx-auto flex justify-center items-center px-6 py-16 max-w-3xl min-h-[calc(100dvh-3.25rem)] sm:min-h-[calc(100dvh-4rem)]">
+      <Card className="">{content}</Card>
     </div>
   );
 }

@@ -6,7 +6,7 @@ export default function KeyFeatures() {
 
   return (
     <section id="key-features">
-      <h2 className="text-primary text-2xl font-bold mb-4 capitalize">
+      <h2 className="text-primary text-xl sm:text-2xl font-bold mb-4 capitalize">
         {t("title")}
       </h2>
       <ul className="grid gap-6 md:grid-cols-3">
@@ -14,7 +14,7 @@ export default function KeyFeatures() {
           <li key={index} className="bg-foreground p-6 rounded-lg shadow-lg">
             <header className="flex gap-2 text-primary mb-2">
               {feature.icon}
-              <h3 className="text-xl font-bold capitalize">
+              <h3 className="text-lg sm:text-xl font-bold capitalize">
                 {t(`${feature.title}.title`)}
               </h3>
             </header>

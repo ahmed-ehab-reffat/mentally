@@ -32,7 +32,7 @@ export default async function Condition({ params }: Props) {
   }
 
   return (
-    <div className="container mx-auto px-8 pt-8 pb-16">
+    <div className="container mx-auto px-6 pt-8 pb-16 scroll-pt-36">
       <Link
         href="/resources/articles"
         className="flex items-center gap-2 w-fit capitalize hover:text-primary"
@@ -41,15 +41,15 @@ export default async function Condition({ params }: Props) {
         {t("Condition.all articles")}
       </Link>
 
-      <h1 className="text-5xl font-bold text-primary py-8">
+      <h1 className="text-2xl sm:text-4xl font-bold text-primary py-8">
         {condition.title}
       </h1>
-      <Card className="space-y-10 marker:text-primary  scroll-smooth">
+      <Card className="*:not-first:pt-10 marker:text-primary  scroll-smooth">
         <section id="contents" className="capitalize">
-          <h2 className="text-primary text-3xl font-bold mb-4">
+          <h2 className="text-primary text-xl sm:text-3xl font-bold mb-4">
             {t("Condition.table of contents")}
           </h2>
-          <ul className="list-disc ltr:ml-10 rtl:mr-10 text-xl space-y-2 *:w-fit *:hover:text-primary *:hover:underline">
+          <ul className="list-disc ltr:ml-5 ltr:sm:ml-10 rtl:mr-5 rtl:sm:mr-10 text-lg sm:text-xl space-y-2 *:w-fit *:hover:text-primary *:hover:underline">
             <li key="definition">
               <a href="#definition">{t("Condition.definition")}</a>
             </li>
@@ -66,10 +66,10 @@ export default async function Condition({ params }: Props) {
         </section>
 
         <section id="definition">
-          <h2 className="text-primary text-3xl font-bold mb-4">
+          <h2 className="text-primary text-xl sm:text-3xl font-bold mb-4">
             {t("Condition.What is", { title: condition.title })}
           </h2>
-          <p className="text-xl ml-1">{condition.definition}</p>
+          <p className="text-lg sm:text-xl ml-1">{condition.definition}</p>
         </section>
 
         <Section

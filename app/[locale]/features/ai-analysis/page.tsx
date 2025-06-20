@@ -70,7 +70,7 @@ export default function AIAnalysis() {
   }
 
   return (
-    <div className="container xl:max-w-6xl mx-auto space-y-16 px-8 py-16">
+    <div className="container xl:max-w-6xl mx-auto space-y-12 sm:space-y-16 px-6 py-16">
       <Header />
       <Tests selected={selectedTest} onSelect={handleSelectTest} />
       <Analysis title={selectedTest}>{content}</Analysis>

@@ -9,7 +9,7 @@ export default function HowItWorks() {
 
   return (
     <section id="how-it-works">
-      <h2 className="text-primary text-2xl font-bold mb-4 capitalize">
+      <h2 className="text-primary text-xl sm:text-2xl font-bold mb-4 capitalize">
         {t("title")}
       </h2>
       <div className="grid gap-6 md:grid-cols-3">

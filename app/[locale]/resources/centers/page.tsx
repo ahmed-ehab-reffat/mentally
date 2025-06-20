@@ -15,10 +15,12 @@ export default function Centers() {
   }[] = t.raw("centers");
 
   return (
-    <div className="container mx-auto px-8 pt-12 pb-16">
-      <div className="flex items-center gap-4 mb-8 text-primary">
-        <Hospital className="w-10 h-10" />
-        <h1 className="text-4xl font-bold capitalize">{t("title")}</h1>
+    <div className="container mx-auto px-6 pt-12 pb-16">
+      <div className="flex items-center gap-2 sm:gap-4 mb-8 text-primary">
+        <Hospital className="min-w-8 min-h-8 w-8 h-8 sm:w-10 sm:h-10" />
+        <h1 className="text-2xl sm:text-4xl font-bold capitalize">
+          {t("title")}
+        </h1>
       </div>
       <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {centers.map((center) => (
@@ -26,7 +28,7 @@ export default function Centers() {
             key={center.name}
             className="h-full flex flex-col justify-between"
           >
-            <h3 className="text-2xl text-center text-primary font-bold tracking-tighter mb-4">
+            <h3 className="text-xl sm:text-2xl text-center text-primary font-bold tracking-tighter mb-4">
               {center.name}
             </h3>
             <div className="mb-4 space-y-1">

@@ -7,7 +7,7 @@ export default function Benefits() {
 
   return (
     <section id="benefits">
-      <h2 className="text-primary text-2xl font-bold mb-4 capitalize">
+      <h2 className="text-primary text-xl sm:text-2xl font-bold mb-4 capitalize">
         {t("title")}
       </h2>
       <ul className="bg-foreground p-8 space-y-4 rounded-lg shadow-lg">

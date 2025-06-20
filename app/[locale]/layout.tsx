@@ -56,7 +56,7 @@ export default async function RootLayout({
         locale === "ar" ? cairo.className : nunito.className
       }`}
     >
-      <body>
+      <body className="">
         <NextIntlClientProvider>
           <div id="modal"></div>
           <Header />

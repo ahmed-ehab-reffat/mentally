@@ -21,8 +21,8 @@ export default function FAQ() {
 
   return (
     <section id="faq" className="bg-foreground">
-      <div className="container mx-auto px-4 pt-10 pb-12">
-        <h2 className="text-4xl font-bold text-primary text-center mb-8 capitalize">
+      <div className="container mx-auto px-6 pt-10 pb-12">
+        <h2 className="text-3xl sm:text-4xl font-bold text-primary text-center mb-8 capitalize">
           {t("title")}
         </h2>
         <ul className="max-w-3xl mx-auto space-y-4">

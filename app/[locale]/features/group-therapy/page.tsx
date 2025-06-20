@@ -27,7 +27,7 @@ export default function GroupTherapy() {
         modalRef={modalRef}
         onClose={handleClose}
       />
-      <div className="container xl:max-w-5xl mx-auto space-y-16 px-8 py-16">
+      <div className="container xl:max-w-5xl mx-auto space-y-12 sm:space-y-16 px-6 py-16">
         <Header />
         <Sessions onRegistir={handleRegister} />
         <Benefits />
