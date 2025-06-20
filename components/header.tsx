@@ -91,6 +91,9 @@ export default function Header() {
           <Link href="#contactus" onClick={handleClose}>
             {t("contact")}
           </Link>
+          {/* <Link href="/auth" onClick={handleClose}>
+            {t("login")}
+          </Link> */}
           <Link
             href={pathname}
             locale={locale === "en" ? "ar" : "en"}
