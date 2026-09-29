@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useChat } from "@ai-sdk/react";
+import { isTextUIPart, TextStreamChatTransport, type UIMessage } from "ai";
 import dynamic from "next/dynamic";
 
 import { Smile, Send } from "@/components/ui/icons";
@@ -18,28 +19,31 @@ export default function Chatbot() {
 
   const t = useTranslations("Chatbot");
 
-  const { messages, input, handleInputChange, handleSubmit, status } = useChat({
-    api: `api/chat`,
-    initialMessages: [
+  const [input, setInput] = useState("");
+
+  const { messages, sendMessage, status } = useChat<UIMessage>({
+    transport: new TextStreamChatTransport({ api: `api/chat` }),
+    messages: [
       {
         id: "1",
-        content: t("first message"),
         role: "assistant",
+        parts: [{ type: "text", text: t("first message") }],
       },
     ],
-    body: {
-      system:
-        "You are a helpful mental health assistant. Provide supportive and empathetic responses, but always encourage users to seek professional help for serious concerns.",
-    },
     onError: () => {
       alert(t("error"));
     },
   });
 
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!input.trim()) return;
+    sendMessage({ text: input });
+    setInput("");
+  };
+
   const handleEmojiClick = (emojiData: EmojiData) => {
-    handleInputChange({
-      target: { value: input + emojiData.emoji },
-    } as React.ChangeEvent<HTMLInputElement>);
+    setInput((prev) => prev + emojiData.emoji);
     setShowEmojiPicker(false);
   };
 
@@ -73,7 +77,10 @@ export default function Chatbot() {
                   : "bg-blue-500 text-white"
               }`}
             >
-              {message.content}
+              {message.parts
+                .filter(isTextUIPart)
+                .map((part) => part.text)
+                .join("")}
             </div>
           </div>
         ))}
@@ -91,7 +98,7 @@ export default function Chatbot() {
           </button>
           <input
             value={input}
-            onChange={handleInputChange}
+            onChange={(e) => setInput(e.target.value)}
             placeholder="Write your message"
             className="w-full pl-12 pr-12 py-6 rounded-full bg-white border-0 focus-visible:ring-0 focus-visible:ring-offset-0 text-gray-600"
           />

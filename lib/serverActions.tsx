@@ -1,5 +1,7 @@
 "use server";
 
+import { anthropic, FALLBACK_OPTIONS, MODEL } from "@/lib/anthropic";
+
 export type Message = {
   role: string;
   content: string;
@@ -9,24 +11,20 @@ export async function fetchAI(
   systemMessage: Message,
   userMessage: Message
 ): Promise<string> {
-  const response = await fetch("https://api.openai.com/v1/chat/completions", {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      model: "gpt-4o-mini",
-      messages: [systemMessage, userMessage],
-    }),
+  const response = await anthropic.beta.messages.create({
+    ...FALLBACK_OPTIONS,
+    model: MODEL,
+    max_tokens: 16000,
+    system: systemMessage.content,
+    messages: [{ role: "user", content: userMessage.content }],
   });
 
-  if (!response.ok) {
-    const errorData = await response.json();
-    throw new Error(JSON.stringify(errorData));
+  if (response.stop_reason === "refusal") {
+    throw new Error("The AI declined to answer this request.");
   }
 
-  const data = await response.json();
-  const aiResponse: string = data.choices[0].message.content;
+  const aiResponse: string = response.content
+    .flatMap((block) => (block.type === "text" ? [block.text] : []))
+    .join("");
   return aiResponse;
 }

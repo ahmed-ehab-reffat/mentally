@@ -9,8 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@ai-sdk/openai": "^4.0.46",
     "@ai-sdk/react": "^4.0.80",
+    "@anthropic-ai/sdk": "^0.129.0",
     "ai": "^7.0.77",
     "clsx": "^2.1.1",
     "emoji-picker-react": "^4.19.1",

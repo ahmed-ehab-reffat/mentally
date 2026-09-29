@@ -1,3 +1,3 @@
-To run locally you need to add a .env file and add your OpenAI api key
+To run locally you need to add a .env file and add your Anthropic api key
 
-OPENAI_API_KEY="YOUR-OPENAI-API-KEY"
+ANTHROPIC_API_KEY="YOUR-ANTHROPIC-API-KEY"
